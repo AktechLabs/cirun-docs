@@ -1,0 +1,307 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Privacy Policy" href="../privacy_policy.html" /><link rel="prev" title="Reference" href="index.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Cirun.yml - Cirun.io</title>
+      <link rel="stylesheet" href="../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" href="../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Cirun.io</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Cirun.io</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cirun.yml</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy_policy.html">Privacy Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../toc.html">Terms of Use</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/aktechlabs/cirun-docs">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://cirun.io">Cirun.io</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://aktechlabs.slack.com/">Slack</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://twitter.com/aktechlabs">Twitter</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="cirun-yml">
+<h1>Cirun.yml<a class="headerlink" href="#cirun-yml" title="Permalink to this headline">¶</a></h1>
+<p>API documentation for Cirun.yml file.</p>
+<div class="section" id="runners-runners">
+<h2>Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code><a class="headerlink" href="#runners-runners" title="Permalink to this headline">¶</a></h2>
+<p>It containers the spec for the runners that will be spun on each commit.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp</span>
+    <span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2004-focal-v20210429</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<div class="section" id="name-name">
+<h3>Name: <code class="docutils literal notranslate"><span class="pre">name</span></code><a class="headerlink" href="#name-name" title="Permalink to this headline">¶</a></h3>
+<p>Name of the runner.</p>
+</div>
+<div class="section" id="cloud-cloud">
+<h3>Cloud: <code class="docutils literal notranslate"><span class="pre">cloud</span></code><a class="headerlink" href="#cloud-cloud" title="Permalink to this headline">¶</a></h3>
+<p>Name of the cloud provider, here are the possible options:</p>
+<ul class="simple">
+<li><p>Google Cloud Platform</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Amazon Web Services</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DigitalOCcean</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">do</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gpu-gpu">
+<h3>GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code><a class="headerlink" href="#gpu-gpu" title="Permalink to this headline">¶</a></h3>
+<p>Name of the GPU if runner is required with a GPU. See Cloud provider’s
+documentaion for <code class="docutils literal notranslate"><span class="pre">gpu</span></code> names.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instance-type-instance-type">
+<h3>Instance Type: <code class="docutils literal notranslate"><span class="pre">instance_type</span></code><a class="headerlink" href="#instance-type-instance-type" title="Permalink to this headline">¶</a></h3>
+<p>Name of the instance depending on the cloud provider.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="machine-image-machine-image">
+<h3>Machine Image: <code class="docutils literal notranslate"><span class="pre">machine_image</span></code><a class="headerlink" href="#machine-image-machine-image" title="Permalink to this headline">¶</a></h3>
+<p>The OS image for the runner.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2004-focal-v20210429</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="preemptible-preemptible">
+<h3>Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code><a class="headerlink" href="#preemptible-preemptible" title="Permalink to this headline">¶</a></h3>
+<p>Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-count">
+<h3>Count: <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#count-count" title="Permalink to this headline">¶</a></h3>
+<p>Number of instance to spin up on every commit for the given runner spec, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../privacy_policy.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Privacy Policy</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Reference</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Cirun.io
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../_sources/reference/yaml.md.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Cirun.yml</a><ul>
+<li><a class="reference internal" href="#runners-runners">Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code></a><ul>
+<li><a class="reference internal" href="#name-name">Name: <code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#cloud-cloud">Cloud: <code class="docutils literal notranslate"><span class="pre">cloud</span></code></a></li>
+<li><a class="reference internal" href="#gpu-gpu">GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code></a></li>
+<li><a class="reference internal" href="#instance-type-instance-type">Instance Type: <code class="docutils literal notranslate"><span class="pre">instance_type</span></code></a></li>
+<li><a class="reference internal" href="#machine-image-machine-image">Machine Image: <code class="docutils literal notranslate"><span class="pre">machine_image</span></code></a></li>
+<li><a class="reference internal" href="#preemptible-preemptible">Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code></a></li>
+<li><a class="reference internal" href="#count-count">Count: <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>
