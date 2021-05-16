@@ -10,7 +10,7 @@ On Demand scalable GitHub Actions runners on Cloud.
 ```{toctree}
 quickstart
 reference/index
-privacy_policy
+privacy
 toc
 ```
 
