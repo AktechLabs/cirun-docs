@@ -12,8 +12,9 @@ runners:
     cloud: gcp
     gpu: nvidia-tesla-t4
     instance_type: n1-standard-1
-    machine_image: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2004-focal-v20210429
+    machine_image: ubuntu-minimal-2004-lts
     preemptible: true
+    workflow: .github/workflows/test.yml
     count: 2
 
 ```
@@ -58,27 +59,68 @@ gpu: nvidia-tesla-t4
 Name of the instance depending on the cloud provider.
 
 ```yaml
-instance_type: n1-standard-1
+instance_type: n1-standard-1  # For GCP
+```
+
+```yaml
+instance_type: t3.nano  # For AWS
+```
+
+```yaml
+instance_type: s-1vcpu-1gb  # For DigitalOcean
 ```
 
 ### Machine Image: `machine_image`
 
 The OS image for the runner.
 
+#### GCP
+
+It can be seen from "gcloud compute images list"
+
 ```yaml
-machine_image: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2004-focal-v20210429
+machine_image: ubuntu-minimal-2004-lts
 ```
+
+#### AWS
+
+Amazon Machine image ID
+
+```yaml
+machine_image: ami-06fd8a495a537da8b
+```
+
+#### DigitalOcean
+
+Slug of the machine image, can be obtained from DigitalOcean CLI via:
+`doctl compute image list --public`
+
+```yaml
+machine_image: ubuntu-20-04-x64
+```
+
+
 ### Preemptible: `preemptible`
 
 Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is `false`.
+This is not applicable for DigitalOcean as they don't support preemptible instances.
 
 ```yaml
 preemptible: true
 ```
 
+### Workflow: `workflow`
+
+Path of the relevant workflow for this runner.
+
+```yaml
+workflow: .github/workflows/test.yml
+```
+
 ### Count: `count`
 
 Number of instance to spin up on every commit for the given runner spec, default is `1`.
+This is useful when you have a matrix in a workflow to run multiple jobs at once.
 
 ```yaml
 count: 2
