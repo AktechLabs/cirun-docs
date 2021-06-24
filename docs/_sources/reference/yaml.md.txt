@@ -39,7 +39,7 @@ cloud: gcp
 cloud: aws
 ```
 
-* DigitalOCcean
+* DigitalOcean
 
 ```yaml
 cloud: do
