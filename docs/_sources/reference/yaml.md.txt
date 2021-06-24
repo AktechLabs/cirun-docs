@@ -109,6 +109,14 @@ This is not applicable for DigitalOcean as they don't support preemptible instan
 preemptible: true
 ```
 
+### Region: `region`
+
+Region to spin up runners in your cloud account.
+
+```yaml
+region: us-central1-b  # Example for GCP
+```
+
 ### Workflow: `workflow`
 
 Path of the relevant workflow for this runner.
