@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Cirun.yml" href="yaml.html" /><link rel="prev" title="Quickstart" href="../quickstart.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Privacy Policy" href="../privacy.html" /><link rel="prev" title="Cloud" href="index.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Reference - Cirun.io</title>
+        <title>Cloud Authentication - Cirun.io</title>
       <link rel="stylesheet" href="../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css">
@@ -91,7 +91,7 @@
       <a href="../index.html"><div class="brand">Cirun.io</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -111,13 +111,13 @@
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html">Cirun.yml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Cirun.yml Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/yaml.html">Cirun.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/examples.html">Cirun.yml Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cloud/index.html">Cloud</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html">Cloud Authentication</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Cloud</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cloud Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy Policy</a></li>
@@ -140,25 +140,35 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="reference">
-<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
-<p>Reference Documentation.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">Cirun.yml</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html#runners-runners">Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code></a></li>
+        <div class="section" id="cloud-authentication">
+<h1>Cloud Authentication<a class="headerlink" href="#cloud-authentication" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="google-cloud-platform">
+<h2>Google Cloud Platform<a class="headerlink" href="#google-cloud-platform" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Create a Service Account with Compute Engine Admin Permissions</p></li>
+<li><p>Make to enabled Compute Engine API: <a class="reference external" href="https://cloud.google.com/apis/docs/getting-started#enabling_apis">https://cloud.google.com/apis/docs/getting-started#enabling_apis</a></p></li>
+<li><p>Paste you Service Account JSON in the “Cloud” Tab of Cirun Dashboard under GCP section.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Cirun.yml Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#gcp">GCP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#digitalocean">DigitalOcean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#aws">AWS</a></li>
+<div class="section" id="gpu">
+<h3>GPU<a class="headerlink" href="#gpu" title="Permalink to this headline">¶</a></h3>
+<p>If you need to be able to create GPU enabled runners, make sure to request
+Google to increase your quota for GPUs, its 0 by default. See <a class="reference external" href="https://cloud.google.com/compute/quotas#gpu_quota">https://cloud.google.com/compute/quotas#gpu_quota</a></p>
+</div>
+</div>
+<div class="section" id="amazon-web-services">
+<h2>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Create an IAM account to EC2Admin Permissions</p></li>
+<li><p>Generate an “Access Key” and “Secret Key” for that IAM user</p></li>
+<li><p>Paste your “Access Key” and “Secret Key” in the “Cloud” Tab of Cirun Dashboard under AWS section.</p></li>
 </ul>
-</li>
-</ul>
+</div>
+<div class="section" id="digitalocean">
+<h2>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h2>
+<p>Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.</p>
 </div>
 </div>
 
@@ -166,23 +176,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="yaml.html">
+          <a class="next-page" href="../privacy.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Cirun.yml</div>
+                <div class="title">Privacy Policy</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../quickstart.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quickstart</div>
+                <div class="title">Cloud</div>
                 
               </div>
             </a>
@@ -196,7 +206,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/reference/index.md.txt"
+            <a class="muted-link" href="../_sources/cloud/auth.md.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -204,8 +214,32 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Cloud Authentication</a><ul>
+<li><a class="reference internal" href="#google-cloud-platform">Google Cloud Platform</a><ul>
+<li><a class="reference internal" href="#gpu">GPU</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#amazon-web-services">Amazon Web Services</a></li>
+<li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
