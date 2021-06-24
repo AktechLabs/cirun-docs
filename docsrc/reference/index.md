@@ -6,6 +6,7 @@ Reference Documentation.
 :maxdepth: 1
 
 yaml
+examples
 ```
 
 [myst-markdown]: https://myst-parser.readthedocs.io/en/latest/
