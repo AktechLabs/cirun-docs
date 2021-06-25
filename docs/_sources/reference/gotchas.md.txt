@@ -29,7 +29,7 @@ The first time you setup Cirun (first push to trigger cirun runner creation) the
 be a runner attached to your repository.
 
 ```{admonition} Solution
-The solution to this is try again (push again) after few minutes.
+The solution to this is to try again (push again) after few minutes.
 ```
 Cirun creates the runner the first time you push to your repository with
 the labels mentioned in the `.cirun.yml`, so that the next time the workflow
