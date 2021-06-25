@@ -16,7 +16,7 @@ make html
 To build and preview docs:
 
 ```bash
-cd docsrc && make html && open _build/html/index.html
+cd docsrc && make html && open _build/html/index.html && cd ..
 ```
 
 ## Update `docs/`

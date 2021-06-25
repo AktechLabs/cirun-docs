@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Cloud Authentication" href="auth.html" /><link rel="prev" title="Gotchas" href="../reference/gotchas.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Cloud" href="../cloud/index.html" /><link rel="prev" title="Cirun.yml Examples" href="examples.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Cloud - Cirun.io</title>
+        <title>Gotchas - Cirun.io</title>
       <link rel="stylesheet" href="../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css">
@@ -91,7 +91,7 @@
       <a href="../index.html"><div class="brand">Cirun.io</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -111,15 +111,15 @@
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../reference/yaml.html">Cirun.yml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/examples.html">Cirun.yml Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/gotchas.html">Gotchas</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Cirun.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Cirun.yml Examples</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Cloud</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="auth.html">Cloud Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auth.html#cloud-login-page">Cloud Login Page</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cloud/index.html">Cloud</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html">Cloud Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html#cloud-login-page">Cloud Login Page</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy Policy</a></li>
@@ -142,22 +142,42 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="cloud">
-<h1>Cloud<a class="headerlink" href="#cloud" title="Permalink to this headline">¶</a></h1>
-<p>Cloud Documentation.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="auth.html">Cloud Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="auth.html#google-cloud-platform">Google Cloud Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auth.html#amazon-web-services">Amazon Web Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auth.html#digitalocean">DigitalOcean</a></li>
+        <div class="section" id="gotchas">
+<h1>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="no-runner-matching-labels">
+<h2>No Runner matching labels<a class="headerlink" href="#no-runner-matching-labels" title="Permalink to this headline">¶</a></h2>
+<div class="error admonition">
+<p class="admonition-title">Error</p>
+<p>No runner matching the specified labels was found: self-hosted</p>
+</div>
+<p>This is the most common gotcha a new user faces.</p>
+<p>The most common reason for this is, either of the following:</p>
+<ul class="simple">
+<li><p>There are no runners configured for the repository or yet not configured.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="auth.html#cloud-login-page">Cloud Login Page</a></li>
+<p><img alt="No runners" src="../_images/no-runners.png"/></p>
+<ul class="simple">
+<li><p>None of the configured runners matches the label from the workflow. Consider the
+following case, here the attached runner has labels: (<code class="docutils literal notranslate"><span class="pre">self-hosted,</span> <span class="pre">linux,</span> <span class="pre">x64,</span> <span class="pre">cirun.io,</span> <span class="pre">cpu,</span> <span class="pre">gcp,</span> <span class="pre">cirun-runner,</span></code>) and lets say the workflow you are trying to run
+requires a runner with label <code class="docutils literal notranslate"><span class="pre">self-hosted</span></code> and <code class="docutils literal notranslate"><span class="pre">gpu</span></code> and now clearly the runner
+below does not have <code class="docutils literal notranslate"><span class="pre">gpu</span></code> label, hence the workflow will fail immediately.</p></li>
 </ul>
+<p><img alt="No runners matching labels" src="../_images/no-matching-labels.png"/></p>
+<p>GitHub workflows fail immediately if there is no action runner available for your builds.
+The first time you setup Cirun (first push to trigger cirun runner creation) there won’t
+be a runner attached to your repository.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">Solution</p>
+<p>The solution to this is try again (push again) after few minutes.</p>
+</div>
+<p>Cirun creates the runner the first time you push to your repository with
+the labels mentioned in the <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code>, so that the next time the workflow
+is triggered, GitHub is able to queue the workflow run, so that Cirun can
+spin up a runner on the cloud for the GitHub Actions to run jobs on it.
+This process takes a few minutes.</p>
 </div>
 </div>
 
@@ -165,23 +185,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="auth.html">
+          <a class="next-page" href="../cloud/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Cloud Authentication</div>
+                <div class="title">Cloud</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../reference/gotchas.html">
+          <a class="prev-page" href="examples.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Gotchas</div>
+                <div class="title">Cirun.yml Examples</div>
                 
               </div>
             </a>
@@ -195,7 +215,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/cloud/index.md.txt"
+            <a class="muted-link" href="../_sources/reference/gotchas.md.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -203,8 +223,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Gotchas</a><ul>
+<li><a class="reference internal" href="#no-runner-matching-labels">No Runner matching labels</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

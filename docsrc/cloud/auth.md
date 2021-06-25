@@ -21,3 +21,7 @@ Google to increase your quota for GPUs, its 0 by default. See <https://cloud.goo
 ## DigitalOcean
 
 Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.
+
+# Cloud Login Page
+
+![Cirun cloud page](../images/cloud.png)

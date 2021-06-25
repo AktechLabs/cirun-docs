@@ -7,6 +7,7 @@ Reference Documentation.
 
 yaml
 examples
+gotchas
 ```
 
 [myst-markdown]: https://myst-parser.readthedocs.io/en/latest/
