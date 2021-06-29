@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Custom Images for Runner" href="custom_images.html" /><link rel="prev" title="Cloud" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Privacy Policy" href="../privacy.html" /><link rel="prev" title="Cloud Authentication" href="auth.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Cloud Authentication - Cirun.io</title>
+        <title>Custom Images for Runner - Cirun.io</title>
       <link rel="stylesheet" href="../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css">
@@ -118,9 +118,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Cloud</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cloud Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloud-login-page">Cloud Login Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_images.html">Custom Images for Runner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">Cloud Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html#cloud-login-page">Cloud Login Page</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Custom Images for Runner</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy Policy</a></li>
@@ -146,60 +146,108 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="cloud-authentication">
-<h1>Cloud Authentication<a class="headerlink" href="#cloud-authentication" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="google-cloud-platform">
-<h2>Google Cloud Platform<a class="headerlink" href="#google-cloud-platform" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Create a Service Account with Compute Engine Admin Permissions</p></li>
-<li><p>Make to enabled Compute Engine API: <a class="reference external" href="https://cloud.google.com/apis/docs/getting-started#enabling_apis">https://cloud.google.com/apis/docs/getting-started#enabling_apis</a></p></li>
-<li><p>Paste you Service Account JSON in the “Cloud” Tab of Cirun Dashboard under GCP section.</p></li>
-</ul>
-<div class="section" id="gpu">
-<h3>GPU<a class="headerlink" href="#gpu" title="Permalink to this headline">¶</a></h3>
-<p>If you need to be able to create GPU enabled runners, make sure to request
-Google to increase your quota for GPUs, its 0 by default. See <a class="reference external" href="https://cloud.google.com/compute/quotas#gpu_quota">https://cloud.google.com/compute/quotas#gpu_quota</a></p>
+        <div class="section" id="custom-images-for-runner">
+<h1>Custom Images for Runner<a class="headerlink" href="#custom-images-for-runner" title="Permalink to this headline">¶</a></h1>
+<p>You can use custom images for your runners as well. One use case for that
+is you want pre installed packages.</p>
+<div class="section" id="aws-custom-ami">
+<h2>AWS Custom AMI<a class="headerlink" href="#aws-custom-ami" title="Permalink to this headline">¶</a></h2>
+<p>One of the most common applications of Cirun is the ability to run CI on
+a GPU enabled machine and for running GPU tests it’s good to have nvidia
+drivers pre-installed.</p>
+<p>AWS Marketplace has many such useful images, which can  help make your
+CI faster.</p>
+<div class="section" id="nvidia-deep-learning-ami">
+<h3>NVIDIA Deep Learning AMI<a class="headerlink" href="#nvidia-deep-learning-ami" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take an example of using an NVIDIA Deep Learning AMI for GPU enabled
+runners.</p>
+<p>To use any AMI (Amazon Machine Image) in your <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code>, you need two things:</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<ol class="simple">
+<li><p>The AMI ID for the runner in that region (default region is <code class="docutils literal notranslate"><span class="pre">eu-west-1</span></code>).</p></li>
+<li><p>Accept Terms and condition for the AMI.</p></li>
+</ol>
+</div>
+<p>Here are the steps to achieve the above.</p>
+<ol>
+<li><p>Go to <a class="reference external" href="https://aws.amazon.com/marketplace">AWS Marketplace</a> and Search for “<strong>NVIDIA Deep Learning AMI</strong>”.</p></li>
+<li><p>In the search results click on the “<strong>NVIDIA Deep Learning AMI</strong>”.</p>
+<p><img alt="Cirun cloud page" src="../_images/nvidia-aws-ami.png"/></p>
+</li>
+<li><p>Click on “<strong>Continue to Subscribe</strong>” on the top right to accept terms and condition. (You need to be
+logged in to your AWS account for this). You should see the following page
+after subscribing.
+<img alt="Cirun cloud page" src="../_images/nvidia-aws-ami-subscribed.png"/></p></li>
+<li><p>Click on “<strong>Continue to configuration</strong>” button on the top right.
+<img alt="Cirun cloud page" src="../_images/nvidia-aws-ami-config.png"/></p></li>
+<li><p>Here you can see the Ami Id of the image, which now you can use in your <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code> as following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span>
+    <span class="nt">region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">eu-west-1</span>  <span class="c1"># this is default region anyways (only required if using an AMI ID from different region)</span>
+</pre></div>
+</div>
+<p><img alt="Cirun cloud page" src="../_images/nvidia-aws-ami-id.png"/></p>
+</li>
+</ol>
+<p>In the above photo we can see the AMI ID for “<strong>NVIDIA Deep Learning AMI</strong>” in the Ireland region (<code class="docutils literal notranslate"><span class="pre">eu-west-1</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pricing: This AMI is free to use, the pricing you see on the right is the price for the instance
+not for the AMI.</p>
 </div>
 </div>
-<div class="section" id="amazon-web-services">
-<h2>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Create an IAM account to EC2Admin Permissions</p></li>
-<li><p>Generate an “Access Key” and “Secret Key” for that IAM user</p></li>
-<li><p>Paste your “Access Key” and “Secret Key” in the “Cloud” Tab of Cirun Dashboard under AWS section.</p></li>
-</ul>
+<div class="section" id="aws-marketplace-nvidia-deep-learning-ami-cirun-yml">
+<h3>AWS Marketplace NVIDIA Deep Learning AMI <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code><a class="headerlink" href="#aws-marketplace-nvidia-deep-learning-ami-cirun-yml" title="Permalink to this headline">¶</a></h3>
+<div class="error admonition">
+<p class="admonition-title">Note</p>
+<p>It is important to accept terms and conditions of the AMI you want to use, using
+the process described above, otherwise you’ll not be able to provision the
+runner.</p>
 </div>
-<div class="section" id="digitalocean">
-<h2>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h2>
-<p>Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
+    <span class="c1"># Cloud Provider: AWS</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">g4dn.xlarge</span>
+    <span class="c1"># NVIDIA Deep Learning AMI from AWS Marketplace</span>
+    <span class="c1"># https://aws.amazon.com/marketplace/pp/prodview-e7zxdqduz4cbs</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span>
+    <span class="c1"># preemptible instances seems quite less reliable.</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="cloud-login-page">
-<h1>Cloud Login Page<a class="headerlink" href="#cloud-login-page" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Cirun cloud page" src="../_images/cloud.png"/></p>
+</div>
 </div>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="custom_images.html">
+          <a class="next-page" href="../privacy.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Custom Images for Runner</div>
+                <div class="title">Privacy Policy</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="auth.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Cloud</div>
+                <div class="title">Cloud Authentication</div>
                 
               </div>
             </a>
@@ -213,7 +261,7 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/cloud/auth.md.txt"
+            <a class="muted-link" href="../_sources/cloud/custom_images.md.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -233,16 +281,14 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Cloud Authentication</a><ul>
-<li><a class="reference internal" href="#google-cloud-platform">Google Cloud Platform</a><ul>
-<li><a class="reference internal" href="#gpu">GPU</a></li>
+<li><a class="reference internal" href="#">Custom Images for Runner</a><ul>
+<li><a class="reference internal" href="#aws-custom-ami">AWS Custom AMI</a><ul>
+<li><a class="reference internal" href="#nvidia-deep-learning-ami">NVIDIA Deep Learning AMI</a></li>
+<li><a class="reference internal" href="#aws-marketplace-nvidia-deep-learning-ami-cirun-yml">AWS Marketplace NVIDIA Deep Learning AMI <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#amazon-web-services">Amazon Web Services</a></li>
-<li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloud-login-page">Cloud Login Page</a></li>
 </ul>
 
           </div>

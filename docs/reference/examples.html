@@ -120,6 +120,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cloud/index.html">Cloud</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html">Cloud Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html#cloud-login-page">Cloud Login Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud/custom_images.html">Custom Images for Runner</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy Policy</a></li>
@@ -178,7 +179,7 @@
 </div>
 <div class="section" id="digitalocean">
 <h2>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on GCP via Cirun.io</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on DigitalOcean via Cirun.io</span>
 <span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
 <span class="nt">runners</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">do-runner</span>
@@ -199,14 +200,14 @@
 </div>
 <div class="section" id="aws">
 <h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on GCP via Cirun.io</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span>
 <span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
 <span class="nt">runners</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
     <span class="c1"># Cloud Provider: AWS</span>
     <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
     <span class="c1"># Cheapest VM on AWS</span>
-    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">t3.nano</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">t2.nano</span>
     <span class="c1"># Ubuntu-20.4, ami image"</span>
     <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span>
     <span class="c1"># preemptible instances seems quite less reliable.</span>

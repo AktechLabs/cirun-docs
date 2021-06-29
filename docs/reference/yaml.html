@@ -120,6 +120,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cloud/index.html">Cloud</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html">Cloud Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cloud/auth.html#cloud-login-page">Cloud Login Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud/custom_images.html">Custom Images for Runner</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy Policy</a></li>
@@ -191,9 +192,20 @@
 <div class="section" id="gpu-gpu">
 <h3>GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code><a class="headerlink" href="#gpu-gpu" title="Permalink to this headline">¶</a></h3>
 <p>Name of the GPU if runner is required with a GPU. See Cloud provider’s
-documentaion for <code class="docutils literal notranslate"><span class="pre">gpu</span></code> names.</p>
+documentation for <code class="docutils literal notranslate"><span class="pre">gpu</span></code> names.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This flag also installs nvidia-drivers in the given VM</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For using GPUs on AWS, we recommend using <strong>NVIDIA Deep Learning AMI</strong> from AWS
+Marketplace. See the Custom Images section for the documentation on how to use
+that. Also note this flag is not required for <strong>NVIDIA Deep Learning AMI</strong> image
+on AWS.</p>
 </div>
 </div>
 <div class="section" id="instance-type-instance-type">

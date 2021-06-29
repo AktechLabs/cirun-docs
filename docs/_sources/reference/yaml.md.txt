@@ -48,10 +48,21 @@ cloud: do
 ### GPU: `gpu`
 
 Name of the GPU if runner is required with a GPU. See Cloud provider's
-documentaion for `gpu` names.
+documentation for `gpu` names.
 
 ```yaml
 gpu: nvidia-tesla-t4
+```
+
+```{note}
+This flag also installs nvidia-drivers in the given VM
+```
+
+```{note}
+For using GPUs on AWS, we recommend using **NVIDIA Deep Learning AMI** from AWS
+Marketplace. See the Custom Images section for the documentation on how to use
+that. Also note this flag is not required for **NVIDIA Deep Learning AMI** image
+on AWS.
 ```
 
 ### Instance Type: `instance_type`
