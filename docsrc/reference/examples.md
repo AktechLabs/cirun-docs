@@ -32,7 +32,7 @@ runners:
 ## DigitalOcean
 
 ```yaml
-# Self-Hosted Github Action Runners on GCP via Cirun.io
+# Self-Hosted Github Action Runners on DigitalOcean via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml.html
 runners:
   - name: do-runner
@@ -53,14 +53,14 @@ runners:
 ## AWS
 
 ```yaml
-# Self-Hosted Github Action Runners on GCP via Cirun.io
+# Self-Hosted Github Action Runners on AWS via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml.html
 runners:
   - name: gpu-runner
     # Cloud Provider: AWS
     cloud: aws
     # Cheapest VM on AWS
-    instance_type: t3.nano
+    instance_type: t2.nano
     # Ubuntu-20.4, ami image"
     machine_image: ami-06fd8a495a537da8b
     # preemptible instances seems quite less reliable.
