@@ -7,6 +7,7 @@ Cloud Documentation.
 
 auth
 custom_images
+arm
 ```
 
 [myst-markdown]: https://myst-parser.readthedocs.io/en/latest/
