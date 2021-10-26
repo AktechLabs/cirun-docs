@@ -82,3 +82,50 @@ runners:
     # See .github/workflows/build-gpu.yml
     count: 1
 ```
+
+## AZURE Custom Images
+
+For making custom images in azure user needs to just capture an existing vm and create image in a resource group.
+
+### Nginx Ubuntu custom image
+
+Let's take an example of how to create a custom image on azure. We will make a ubuntu image with nginx pre-installed. Then we will create a vm using this custom image. Here are the steps to achieve the above.
+
+1. Create a ubuntu vm in a new or existing resource group from azure dashboard.
+2. SSH into the vm and install nginx using.
+   ```
+   sudo apt install nginx
+   ```
+3. Now capture the vm using capture button inside the vm. "For Share image to Shared image gallery" option select "No, capture only a managed image". 
+4. Also tick the checkbox having option "Automatically delete this virtual machine after creating the image".
+5. Change the name of vm and click on review and create.
+6. After the image has been created go to the resource group in which you have created the image. Your image will be present here.
+7. To list all custom images using azure cli use
+   ```
+   az image list
+   ```
+8. The above commad shows all the custom images available on your auzre. It also shows "id" for all custom images. This is the parameter we use to make vm with custom image.
+
+### AZURE custom image vm `.cirun.yml`
+
+The .cirun.yml for above custom image will look like
+
+```yaml
+# Self-Hosted Github Action Runners on AZURE via Cirun.io
+# Reference: https://docs.cirun.io/reference/yaml.html
+runners:
+  - name: azure-runner
+    # Cloud Provider: AZURE
+    cloud: azure
+    instance_type: Standard_DS1_v2
+    machine_image:
+      # myResourceGroup is the name of resource group in which image is present, myCustomImage is the name of image
+      # use az image list in azure cli to know your image id 
+      id: /subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage
+    # preemptible instances seems quite less reliable.
+    preemptible: false
+    # Path of the relevant workflow file
+    workflow: .github/workflows/test.yml
+    # Number of runners to provision on every trigger on Actions job
+    count: 1
+```
