@@ -26,7 +26,7 @@ Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.
 Authentication using Azure is divided into two parts
 
 ### Register Application
-- Goto `Azure Active Directory` from your azure dashboard.
+- Goto `Azure Active Directory` from your Azure dashboard.
 - Register a new application in App registrations with name "cirun" and give it "Accounts in any organizational directory (Any Azure AD directory - Multitenant)" access.
 ![App registration](../images/azure-active-directory-light.png)
 - Now copy the "Application (client) ID", "Directory (tenant) ID"

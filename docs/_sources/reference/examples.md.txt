@@ -45,7 +45,7 @@ runners:
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
     # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8
+    # 2 because testing on Python 3.7, 3.8
     # See .github/workflows/build-gpu.yml
     count: 2
 ```
@@ -68,23 +68,22 @@ runners:
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
     # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8
+    # 2 because testing on Python 3.7, 3.8
     # See .github/workflows/build-gpu.yml
     count: 2
 ```
 
-## AZURE
+## Azure
 
 ```yaml
-# Self-Hosted Github Action Runners on AZURE via Cirun.io
+# Self-Hosted Github Action Runners on Azure via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml.html
 runners:
   - name: azure-runner
-    # Cloud Provider: AZURE
+    # Cloud Provider: Azure
     cloud: azure
-    # Cheapest VM on AZURE
     instance_type: Standard_DS1_v2
-    # Takes 4 parameters(publisher, offer, sku, version) for already available images provided by azure
+    # Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure
     # For custom images takes 1 parameter(id)
     machine_image:
       publisher: Canonical
@@ -96,7 +95,7 @@ runners:
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
     # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8
+    # 2 because testing on Python 3.7, 3.8
     # See .github/workflows/build-gpu.yml
     count: 2
 ```

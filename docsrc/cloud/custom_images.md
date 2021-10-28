@@ -83,13 +83,13 @@ runners:
     count: 1
 ```
 
-## AZURE Custom Images
+## Azure Custom Images
 
-For making custom images in azure user needs to just capture an existing VM and create the image in a resource group.
+For making custom images in Azure user needs to just capture an existing VM and create the image in a resource group.
 
 ### Nginx Ubuntu custom image
 
-Let's take an example of how to create a custom image on azure. We will make a ubuntu image with Nginx pre-installed. Then we will create a VM using this custom image. Here are the steps to achieve the above.
+Let's take an example of how to create a custom image on Azure. We will make a ubuntu image with Nginx pre-installed. Then we will create a VM using this custom image. Here are the steps to achieve the above.
 
 1. Create a ubuntu VM in a new or existing resource group from the Azure dashboard.
 2. SSH into the VM and install Nginx using.
@@ -100,27 +100,27 @@ Let's take an example of how to create a custom image on azure. We will make a u
 4. Also, tick the checkbox having the option "Automatically delete this virtual machine after creating the image".
 5. Change the name of VM and click on review and create.
 6. After the image has been created go to the resource group in which you have created the image. Your image will be present here.
-7. To list all custom images using azure CLI use
+7. To list all custom images using Azure CLI use
    ```
    az image list
    ```
-8. The above command shows all the custom images available on your azure. It also shows "id" for all custom images. This is the parameter we use to make VM with a custom image.
+8. The above command shows all the custom images available on your Azure. It also shows "id" for all custom images. This is the parameter we use to make VM with a custom image.
 
-### AZURE custom image vm `.cirun.yml`
+### Azure custom image vm `.cirun.yml`
 
 The .cirun.yml for above custom image will look like
 
 ```yaml
-# Self-Hosted Github Action Runners on AZURE via Cirun.io
+# Self-Hosted Github Action Runners on Azure via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml.html
 runners:
   - name: azure-runner
-    # Cloud Provider: AZURE
+    # Cloud Provider: Azure
     cloud: azure
     instance_type: Standard_DS1_v2
     machine_image:
       # myResourceGroup is the name of the resource group in which the image is present, myCustomImage is the name of the image
-      # use az image list in azure CLI to know your image id 
+      # use az image list in Azure CLI to know your image id 
       id: /subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage
     # preemptible instances seems quite less reliable.
     preemptible: false

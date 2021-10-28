@@ -193,7 +193,7 @@
     <span class="c1"># Path of the relevant workflow file</span>
     <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
     <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
-    <span class="c1"># 3 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
     <span class="c1"># See .github/workflows/build-gpu.yml</span>
     <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
@@ -216,23 +216,22 @@
     <span class="c1"># Path of the relevant workflow file</span>
     <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
     <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
-    <span class="c1"># 3 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
     <span class="c1"># See .github/workflows/build-gpu.yml</span>
     <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="azure">
-<h2>AZURE<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AZURE via Cirun.io</span>
+<h2>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Azure via Cirun.io</span>
 <span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
 <span class="nt">runners</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure-runner</span>
-    <span class="c1"># Cloud Provider: AZURE</span>
+    <span class="c1"># Cloud Provider: Azure</span>
     <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
-    <span class="c1"># Cheapest VM on AZURE</span>
     <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>
-    <span class="c1"># Takes 4 parameters(publisher, offer, sku, version) for already available images provided by azure</span>
+    <span class="c1"># Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure</span>
     <span class="c1"># For custom images takes 1 parameter(id)</span>
     <span class="nt">machine_image</span><span class="p">:</span>
       <span class="nt">publisher</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Canonical</span>
@@ -244,7 +243,7 @@
     <span class="c1"># Path of the relevant workflow file</span>
     <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
     <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
-    <span class="c1"># 3 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
     <span class="c1"># See .github/workflows/build-gpu.yml</span>
     <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
@@ -310,7 +309,7 @@
 <li><a class="reference internal" href="#gcp">GCP</a></li>
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
 <li><a class="reference internal" href="#aws">AWS</a></li>
-<li><a class="reference internal" href="#azure">AZURE</a></li>
+<li><a class="reference internal" href="#azure">Azure</a></li>
 </ul>
 </li>
 </ul>
