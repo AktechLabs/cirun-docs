@@ -84,7 +84,7 @@ runners:
     cloud: azure
     # Cheapest VM on AZURE
     instance_type: Standard_DS1_v2
-    # Takes 4 parameter(publisher, offer, sku, version) for already available images provided by azure
+    # Takes 4 parameters(publisher, offer, sku, version) for already available images provided by azure
     # For custom images takes 1 parameter(id)
     machine_image:
       publisher: Canonical

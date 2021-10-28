@@ -122,7 +122,7 @@ machine_image: ubuntu-20-04-x64
 
 #### Azure
 
-Machine image takes 4 parameters(publisher, offer, sku, version) for available images on azure. For custom images it takes only one parameter(id). Images can be obtained from azure CLI via:
+Machine image takes 4 parameters(publisher, offer, sku, version) for available images on azure. For custom images, it takes only one parameter(id). Images can be obtained from azure CLI via:
 `az vm image list --output table`
 
 ```yaml
