@@ -189,6 +189,12 @@
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">do</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>Azure</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="gpu-gpu">
 <h3>GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code><a class="headerlink" href="#gpu-gpu" title="Permalink to this headline">¶</a></h3>
@@ -221,6 +227,9 @@ on AWS.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">s-1vcpu-1gb</span>  <span class="c1"># For DigitalOcean</span>
 </pre></div>
 </div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>  <span class="c1"># For Azure</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="machine-image-machine-image">
 <h3>Machine Image: <code class="docutils literal notranslate"><span class="pre">machine_image</span></code><a class="headerlink" href="#machine-image-machine-image" title="Permalink to this headline">¶</a></h3>
@@ -244,6 +253,18 @@ on AWS.</p>
 <p>Slug of the machine image, can be obtained from DigitalOcean CLI via:
 <code class="docutils literal notranslate"><span class="pre">doctl</span> <span class="pre">compute</span> <span class="pre">image</span> <span class="pre">list</span> <span class="pre">--public</span></code></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="azure">
+<h4>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h4>
+<p>Machine image takes 4 parameters(publisher, offer, sku, version) for available images on azure. For custom images, it takes only one parameter(id). Images can be obtained from azure CLI via:
+<code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">vm</span> <span class="pre">image</span> <span class="pre">list</span> <span class="pre">--output</span> <span class="pre">table</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span>
+  <span class="nt">publisher</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Canonical</span>
+  <span class="nt">offer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span>
+  <span class="nt">sku</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 </pre></div>
 </div>
 </div>
@@ -345,6 +366,7 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 <li><a class="reference internal" href="#gcp">GCP</a></li>
 <li><a class="reference internal" href="#aws">AWS</a></li>
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
+<li><a class="reference internal" href="#azure">Azure</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#preemptible-preemptible">Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code></a></li>
