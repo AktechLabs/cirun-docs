@@ -45,6 +45,12 @@ cloud: aws
 cloud: do
 ```
 
+* Azure
+
+```yaml
+cloud: azure
+```
+
 ### GPU: `gpu`
 
 Name of the GPU if runner is required with a GPU. See Cloud provider's
@@ -81,6 +87,10 @@ instance_type: t3.nano  # For AWS
 instance_type: s-1vcpu-1gb  # For DigitalOcean
 ```
 
+```yaml
+instance_type: Standard_DS1_v2  # For Azure
+```
+
 ### Machine Image: `machine_image`
 
 The OS image for the runner.
@@ -108,6 +118,19 @@ Slug of the machine image, can be obtained from DigitalOcean CLI via:
 
 ```yaml
 machine_image: ubuntu-20-04-x64
+```
+
+#### Azure
+
+Machine image takes 4 parameters(publisher, offer, sku, version) for available images on Azure. For custom images, it takes only one parameter(id). Images can be obtained from Azure CLI via:
+`az vm image list --output table`
+
+```yaml
+machine_image:
+  publisher: Canonical
+  offer: UbuntuServer
+  sku: 18.04-LTS
+  version: latest
 ```
 
 

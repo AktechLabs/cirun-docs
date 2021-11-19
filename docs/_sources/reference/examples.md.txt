@@ -45,7 +45,7 @@ runners:
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
     # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8
+    # 2 because testing on Python 3.7, 3.8
     # See .github/workflows/build-gpu.yml
     count: 2
 ```
@@ -61,14 +61,41 @@ runners:
     cloud: aws
     # Cheapest VM on AWS
     instance_type: t2.nano
-    # Ubuntu-20.4, ami image"
+    # Ubuntu-20.4, ami image
     machine_image: ami-06fd8a495a537da8b
     # preemptible instances seems quite less reliable.
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
     # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8
+    # 2 because testing on Python 3.7, 3.8
+    # See .github/workflows/build-gpu.yml
+    count: 2
+```
+
+## Azure
+
+```yaml
+# Self-Hosted Github Action Runners on Azure via Cirun.io
+# Reference: https://docs.cirun.io/reference/yaml.html
+runners:
+  - name: azure-runner
+    # Cloud Provider: Azure
+    cloud: azure
+    instance_type: Standard_DS1_v2
+    # Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure
+    # For custom images takes 1 parameter(id)
+    machine_image:
+      publisher: Canonical
+      offer: UbuntuServer
+      sku: 18.04-LTS
+      version: latest
+    # preemptible instances seems quite less reliable.
+    preemptible: false
+    # Path of the relevant workflow file
+    workflow: .github/workflows/test.yml
+    # Number of runners to provision on every trigger on Actions job
+    # 2 because testing on Python 3.7, 3.8
     # See .github/workflows/build-gpu.yml
     count: 2
 ```

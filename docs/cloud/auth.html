@@ -174,6 +174,30 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
 <h2>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h2>
 <p>Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.</p>
 </div>
+<div class="section" id="azure">
+<h2>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
+<p>Authentication using Azure is divided into two parts</p>
+<div class="section" id="register-application">
+<h3>Register Application<a class="headerlink" href="#register-application" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Goto <code class="docutils literal notranslate"><span class="pre">Azure</span> <span class="pre">Active</span> <span class="pre">Directory</span></code> from your Azure dashboard.</p></li>
+<li><p>Register a new application in App registrations with name “cirun” and give it “Accounts in any organizational directory (Any Azure AD directory - Multitenant)” access.
+<img alt="App registration" src="../_images/azure-active-directory-light.png"/></p></li>
+<li><p>Now copy the “Application (client) ID”, “Directory (tenant) ID”</p></li>
+<li><p>Click on the “Certificates &amp; secrets” and create a new client secret and copy the “Value”</p></li>
+<li><p>Now goto Subscriptions from Home and copy subscription id</p></li>
+</ul>
+</div>
+<div class="section" id="give-access-to-application">
+<h3>Give access to Application<a class="headerlink" href="#give-access-to-application" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click on your Subscriptions, goto Access control(IAM), click on “Add role assignment” then select “Contributor”, click on “Select members” and search for “cirun” and select it.
+<img alt="Access control" src="../_images/azure-access-management-light.png"/></p></li>
+<li><p>Click on “Review and assign”</p></li>
+<li><p>Paste your “Subscription ID”, “Tenant ID”, “Client ID” and “Client Secret” in the Cirun Dashboard.</p></li>
+</ul>
+</div>
+</div>
 </div>
 <div class="section" id="cloud-login-page">
 <h1>Cloud Login Page<a class="headerlink" href="#cloud-login-page" title="Permalink to this headline">¶</a></h1>
@@ -241,6 +265,11 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
 </li>
 <li><a class="reference internal" href="#amazon-web-services">Amazon Web Services</a></li>
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
+<li><a class="reference internal" href="#azure">Azure</a><ul>
+<li><a class="reference internal" href="#register-application">Register Application</a></li>
+<li><a class="reference internal" href="#give-access-to-application">Give access to Application</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#cloud-login-page">Cloud Login Page</a></li>
