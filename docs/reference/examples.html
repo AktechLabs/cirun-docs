@@ -249,6 +249,31 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="openstack">
+<h2>Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Openstack via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack-runner</span>
+    <span class="c1"># Cloud Provider: Openstack</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack</span>
+    <span class="c1"># Instance type refers to flavors in openstack</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">m1.small</span>
+    <span class="c1"># By default openstack provides cirros image</span>
+    <span class="c1"># To build custom image check the custom image docs</span>
+    <span class="c1"># This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span>
+    <span class="c1"># preemptible instances not supported</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+</div>
 </div>
 
       </article>
@@ -310,6 +335,7 @@
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
 <li><a class="reference internal" href="#aws">AWS</a></li>
 <li><a class="reference internal" href="#azure">Azure</a></li>
+<li><a class="reference internal" href="#openstack">Openstack</a></li>
 </ul>
 </li>
 </ul>

@@ -195,6 +195,12 @@
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>Openstack</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="gpu-gpu">
 <h3>GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code><a class="headerlink" href="#gpu-gpu" title="Permalink to this headline">¶</a></h3>
@@ -228,6 +234,9 @@ on AWS.</p>
 </pre></div>
 </div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>  <span class="c1"># For Azure</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">m1.small</span>  <span class="c1"># For Openstack</span>
 </pre></div>
 </div>
 </div>
@@ -268,11 +277,18 @@ on AWS.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="openstack">
+<h4>Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h4>
+<p>In OpenStack cloud by default you are provided with cirros image, you can also build your custom image and use them. You can see all your images in the dashboard or can also use the OpenStack CLI command <code class="docutils literal notranslate"><span class="pre">openstack</span> <span class="pre">image</span> <span class="pre">list</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="preemptible-preemptible">
 <h3>Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code><a class="headerlink" href="#preemptible-preemptible" title="Permalink to this headline">¶</a></h3>
 <p>Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.
-This is not applicable for DigitalOcean as they don’t support preemptible instances.</p>
+This is not applicable for DigitalOcean and Openstack as they don’t support preemptible instances.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
@@ -367,6 +383,7 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 <li><a class="reference internal" href="#aws">AWS</a></li>
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
 <li><a class="reference internal" href="#azure">Azure</a></li>
+<li><a class="reference internal" href="#openstack">Openstack</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#preemptible-preemptible">Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code></a></li>

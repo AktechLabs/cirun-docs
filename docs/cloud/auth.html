@@ -198,6 +198,81 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
 </ul>
 </div>
 </div>
+<div class="section" id="openstack">
+<h2>Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
+<p>For authentication in Openstack first, we need to build Openstack.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Setting up OpenStack will make substantial changes to your system during installation. Only run it on servers or virtual machines that are dedicated to this purpose. The virtual machine will need a multi-core processor and at least 8GB of memory and 100GB of disk space to run smoothly. It has been tested on DigitalOcean(8GB/4vcpu/160GB) and GoogleCloud(n1-standard-4) virtual machines.</p>
+</div>
+<p>We will use DevStack to build OpenStack, it is a series of extensible scripts used to quickly bring up a complete OpenStack environment. Use the following steps to build it or you can also follow the documentation available at the <a class="reference external" href="https://docs.openstack.org/devstack/latest">Openstack website</a>.</p>
+<div class="section" id="add-new-user">
+<h4>Add new user<a class="headerlink" href="#add-new-user" title="Permalink to this headline">¶</a></h4>
+<p>Devstack should be run as a non-root user with sudo permissions enabled. To create a new user named stack or anything you prefer and give it sudo privileges use the below commands</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo useradd -s /bin/bash -d /opt/stack -m stack
+<span class="nb">echo</span> <span class="s2">"stack ALL=(ALL) NOPASSWD: ALL"</span> <span class="p">|</span> sudo tee /etc/sudoers.d/stack
+sudo -u stack -i
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-devstack">
+<h4>Download DevStack<a class="headerlink" href="#download-devstack" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://opendev.org/openstack/devstack <span class="o">&amp;&amp;</span> <span class="nb">cd</span> devstack
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-local-conf">
+<h4>Create a local.conf<a class="headerlink" href="#create-a-local-conf" title="Permalink to this headline">¶</a></h4>
+<p>Create a local.conf file with four passwords preset at the root of the devstack git repo. Make sure to change the passwords.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[[</span>local<span class="p">|</span>localrc<span class="o">]]</span>
+<span class="nv">ADMIN_PASSWORD</span><span class="o">=</span>secret
+<span class="nv">DATABASE_PASSWORD</span><span class="o">=</span><span class="nv">$ADMIN_PASSWORD</span>
+<span class="nv">RABBIT_PASSWORD</span><span class="o">=</span><span class="nv">$ADMIN_PASSWORD</span>
+<span class="nv">SERVICE_PASSWORD</span><span class="o">=</span><span class="nv">$ADMIN_PASSWORD</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-the-install">
+<h4>Start the install<a class="headerlink" href="#start-the-install" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./stack.sh
+</pre></div>
+</div>
+<p>This will take a 15 - 20 minutes, largely depending on the speed of your internet connection. Many git trees and packages will be installed during this process. After the setup has completed log in to the web UI by pointing your browser to the following URL <code class="docutils literal notranslate"><span class="pre">http://10.20.20.1</span></code> or <code class="docutils literal notranslate"><span class="pre">http://&lt;ip</span> <span class="pre">of</span> <span class="pre">vm&gt;</span></code>. The username is admin and password will be the password you kept while creating local.conf.</p>
+</div>
+</div>
+<div class="section" id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>From dashboard go to <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Access</span></code> and click on <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Credentials</span></code></p></li>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">ID</span></code> and paste these credentials in the Cirun dashboard.
+<img alt="Authentication" src="../_images/openstack-authentication.png"/></p></li>
+</ul>
+</div>
+<div class="section" id="router-setup">
+<h3>Router setup<a class="headerlink" href="#router-setup" title="Permalink to this headline">¶</a></h3>
+<p>In OpenStack, you need to manually set up the network so that the VM that is/will be created has an internet connection. To set up the router follow the below steps.</p>
+<ul class="simple">
+<li><p>When you will open the network section from the sidebar on the OpenStack dashboard you will see two networks public and shared. The public is the public net and we can connect to it by creating a router.
+<img alt="Openstack Network" src="../_images/openstack-network.png"/></p></li>
+<li><p>The network topology will look like this
+<img alt="Openstack Network Topology" src="../_images/openstack-network-topology.png"/></p></li>
+<li><p>To connect the VM to the internet we need to connect a Router to the public network and then connect that router to the network with which our VM is/will be connected(by default it is shared).</p></li>
+<li><p>Goto Router from the side panel and create a router, under the External Network select <code class="docutils literal notranslate"><span class="pre">public</span></code>.
+<img alt="Router Image" src="https://user-images.githubusercontent.com/55244069/141321487-a873e30e-ffaf-4e08-b371-9c8efff9f809.png"/></p></li>
+<li><p>Go inside the router and add an interface by clicking <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Interface</span></code> and selecting the Subnet(shared) with which your VM is/will be connected.</p></li>
+</ul>
+<p><img alt="Adding Interface" src="https://user-images.githubusercontent.com/55244069/141322128-906e7823-42f0-4e39-8683-168626a130d6.png"/></p>
+<ul class="simple">
+<li><p>After completing the above steps the final network topology will look like</p></li>
+</ul>
+<p><img alt="Final Network Topology" src="../_images/openstack-final-network-topology.png"/></p>
+<ul class="simple">
+<li><p>Now if you will create a VM then you will be able to ping any IP.</p></li>
+</ul>
+</div>
+</div>
 </div>
 <div class="section" id="cloud-login-page">
 <h1>Cloud Login Page<a class="headerlink" href="#cloud-login-page" title="Permalink to this headline">¶</a></h1>
@@ -268,6 +343,18 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
 <li><a class="reference internal" href="#azure">Azure</a><ul>
 <li><a class="reference internal" href="#register-application">Register Application</a></li>
 <li><a class="reference internal" href="#give-access-to-application">Give access to Application</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#openstack">Openstack</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a><ul>
+<li><a class="reference internal" href="#add-new-user">Add new user</a></li>
+<li><a class="reference internal" href="#download-devstack">Download DevStack</a></li>
+<li><a class="reference internal" href="#create-a-local-conf">Create a local.conf</a></li>
+<li><a class="reference internal" href="#start-the-install">Start the install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#authentication">Authentication</a></li>
+<li><a class="reference internal" href="#router-setup">Router setup</a></li>
 </ul>
 </li>
 </ul>

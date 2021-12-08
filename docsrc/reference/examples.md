@@ -113,6 +113,7 @@ runners:
     instance_type: m1.small
     # By default openstack provides cirros image
     # To build custom image check the custom image docs
+    # This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first
     machine_image: cirros-0.5.2-x86_64-disk
     # preemptible instances not supported
     preemptible: false
