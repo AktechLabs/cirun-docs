@@ -129,3 +129,30 @@ runners:
     # Number of runners to provision on every trigger on Actions job
     count: 1
 ```
+
+## Openstack Custom Images
+
+In OpenStack only cirros image is provided by default, this image is not suitable for the runners to run the jobs. To build a custom image we need to download a cloud image and create an Openstack image from it. Here we will create a `ubuntu-20.04` cloud image.
+
+### Ubuntu image
+
+Ubuntu cloud images are available at [https://cloud-images.ubuntu.com](https://cloud-images.ubuntu.com). You can create any image but for this tutorial, we will use `focal` cloud images.
+
+- Open the terminal and make sure you are `stack` or the user that build OpenStack
+```bash
+sudo -u stack -i
+```
+- Cd into devstack and authenticate yourself
+```bash
+cd devstack && source openrc admin
+```
+- Go to [https://cloud-images.ubuntu.com/focal/current](https://cloud-images.ubuntu.com/focal/current) and copy the url of `focal-server-cloudimg-amd64.img`
+- Download the image by using wget <url of focal-server-cloudimg-amd64.img>
+```bash
+wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
+```
+- After the image has been downloaded you can create an image named `ubuntu-20.04` with disk type `qcow2` using the below command
+```bash
+openstack image create --file focal-server-cloudimg-amd64.img --disk-format qcow2 ubuntu-20.04
+```
+- Now if the above steps were fine you would have created an image named `ubuntu-20.04`. You can verify it using `openstack image list` or visiting the image section on the dashboard.
