@@ -275,6 +275,42 @@ runner.</p>
 </div>
 </div>
 </div>
+<div class="section" id="openstack-custom-images">
+<h2>Openstack Custom Images<a class="headerlink" href="#openstack-custom-images" title="Permalink to this headline">¶</a></h2>
+<p>In OpenStack only cirros image is provided by default, this image is not suitable for the runners to run the jobs. To build a custom image we need to download a cloud image and create an Openstack image from it. Here we will create a <code class="docutils literal notranslate"><span class="pre">ubuntu-20.04</span></code> cloud image.</p>
+<div class="section" id="ubuntu-image">
+<h3>Ubuntu image<a class="headerlink" href="#ubuntu-image" title="Permalink to this headline">¶</a></h3>
+<p>Ubuntu cloud images are available at <a class="reference external" href="https://cloud-images.ubuntu.com">https://cloud-images.ubuntu.com</a>. You can create any image but for this tutorial, we will use <code class="docutils literal notranslate"><span class="pre">focal</span></code> cloud images.</p>
+<ul class="simple">
+<li><p>Open the terminal and make sure you are <code class="docutils literal notranslate"><span class="pre">stack</span></code> or the user that build OpenStack</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u stack -i
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Cd into devstack and authenticate yourself</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> devstack <span class="o">&amp;&amp;</span> <span class="nb">source</span> openrc admin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Go to <a class="reference external" href="https://cloud-images.ubuntu.com/focal/current">https://cloud-images.ubuntu.com/focal/current</a> and copy the url of <code class="docutils literal notranslate"><span class="pre">focal-server-cloudimg-amd64.img</span></code></p></li>
+<li><p>Download the image by using wget <url focal-server-cloudimg-amd64.img="" of=""></url></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>After the image has been downloaded you can create an image named <code class="docutils literal notranslate"><span class="pre">ubuntu-20.04</span></code> with disk type <code class="docutils literal notranslate"><span class="pre">qcow2</span></code> using the below command</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openstack image create --file focal-server-cloudimg-amd64.img --disk-format qcow2 ubuntu-20.04
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now if the above steps were fine you would have created an image named <code class="docutils literal notranslate"><span class="pre">ubuntu-20.04</span></code>. You can verify it using <code class="docutils literal notranslate"><span class="pre">openstack</span> <span class="pre">image</span> <span class="pre">list</span></code> or visiting the image section on the dashboard.</p></li>
+</ul>
+</div>
+</div>
 </div>
 
       </article>
@@ -340,6 +376,10 @@ runner.</p>
 <li><a class="reference internal" href="#azure-custom-images">Azure Custom Images</a><ul>
 <li><a class="reference internal" href="#nginx-ubuntu-custom-image">Nginx Ubuntu custom image</a></li>
 <li><a class="reference internal" href="#azure-custom-image-vm-cirun-yml">Azure custom image vm <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#openstack-custom-images">Openstack Custom Images</a><ul>
+<li><a class="reference internal" href="#ubuntu-image">Ubuntu image</a></li>
 </ul>
 </li>
 </ul>

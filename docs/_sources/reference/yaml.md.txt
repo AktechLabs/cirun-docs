@@ -51,6 +51,12 @@ cloud: do
 cloud: azure
 ```
 
+* Openstack
+
+```yaml
+cloud: openstack
+```
+
 ### GPU: `gpu`
 
 Name of the GPU if runner is required with a GPU. See Cloud provider's
@@ -89,6 +95,10 @@ instance_type: s-1vcpu-1gb  # For DigitalOcean
 
 ```yaml
 instance_type: Standard_DS1_v2  # For Azure
+```
+
+```yaml
+instance_type: m1.small  # For Openstack
 ```
 
 ### Machine Image: `machine_image`
@@ -133,11 +143,18 @@ machine_image:
   version: latest
 ```
 
+#### Openstack
+
+In OpenStack cloud by default you are provided with cirros image, you can also build your custom image and use them. You can see all your images in the dashboard or can also use the OpenStack CLI command `openstack image list`.
+
+```yaml
+machine_image: cirros-0.5.2-x86_64-disk
+```
 
 ### Preemptible: `preemptible`
 
 Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is `false`.
-This is not applicable for DigitalOcean as they don't support preemptible instances.
+This is not applicable for DigitalOcean and Openstack as they don't support preemptible instances.
 
 ```yaml
 preemptible: true
