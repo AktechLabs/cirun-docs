@@ -201,6 +201,7 @@ Google to increase your quota for GPUs, its 0 by default. See <a class="referenc
 <div class="section" id="openstack">
 <h2>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
 <p>For authentication in OpenStack first, we need to build OpenStack.</p>
+<p>(Skip this step if you already have an OpenStack installation up and running.)</p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
@@ -242,15 +243,6 @@ sudo -u stack -i
 <p>This will take a 15 - 20 minutes, largely depending on the speed of your internet connection. Many git trees and packages will be installed during this process. After the setup has completed log in to the web UI by pointing your browser to the following URL <code class="docutils literal notranslate"><span class="pre">http://10.20.20.1</span></code> or <code class="docutils literal notranslate"><span class="pre">http://&lt;ip</span> <span class="pre">of</span> <span class="pre">vm&gt;</span></code>. The username is admin and password will be the password you kept while creating local.conf.</p>
 </div>
 </div>
-<div class="section" id="authentication">
-<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>From dashboard go to <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Access</span></code> and click on <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Credentials</span></code></p></li>
-<li><p>Copy <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">ID</span></code> and paste these credentials in the Cirun dashboard in the Cloud section.</p>
-<p><img alt="Authentication" src="../_images/openstack-authentication.png"/></p>
-</li>
-</ul>
-</div>
 <div class="section" id="router-setup-for-internet-access-in-the-vm">
 <h3>Router setup (For internet access in the VM)<a class="headerlink" href="#router-setup-for-internet-access-in-the-vm" title="Permalink to this headline">¶</a></h3>
 <p>In OpenStack, you need to manually set up the network so that the VM that is/will be created has an internet connection. To set up the router follow the below steps.</p>
@@ -278,6 +270,42 @@ sudo -u stack -i
 <ul class="simple">
 <li><p>Now if you will create a VM then you will be able to ping any IP.</p></li>
 </ul>
+</div>
+<div class="section" id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>From dashboard go to <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Access</span></code> and click on <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Credentials</span></code></p></li>
+</ul>
+<p><img alt="Authentication" src="../_images/openstack-authentication.png"/></p>
+<ul class="simple">
+<li><p>Copy the following</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">URL</span></code> and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">ID</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>and paste these credentials in the Cirun dashboard in the Cloud section.</p>
+<p><img alt="Cloud OpenStack Credentials" src="../_images/cloud-openstack-creds.png"/></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Network</span></code> : In the network section you need to add the network you created (say <code class="docutils literal notranslate"><span class="pre">shared</span></code>) above unless
+you already have an existing network which you would like to use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">ID</span></code>: In the Domain ID section you need to write <code class="docutils literal notranslate"><span class="pre">default</span></code> unless you already have a
+domain, which you can find out from “Identity &gt; Domain” section in the OpenStack dashboard. Use
+the Domain ID of the Domain you would like to use.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Example Values for OpenStack Credentials</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">User Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w"></span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supersecretpassword1234</span><span class="w"></span>
+<span class="nt">Authentication URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://159.223.166.1/identity</span><span class="w"></span>
+<span class="nt">Project ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c4c175d2801237c198153545db21e6ef</span><span class="w"></span>
+<span class="nt">Domain ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">63a9cbe8cd3d12e112786c990f93ecd0</span><span class="w"></span>
+<span class="nt">Network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -360,8 +388,8 @@ sudo -u stack -i
 <li><a class="reference internal" href="#start-the-install">Start the install</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#authentication">Authentication</a></li>
 <li><a class="reference internal" href="#router-setup-for-internet-access-in-the-vm">Router setup (For internet access in the VM)</a></li>
+<li><a class="reference internal" href="#authentication">Authentication</a></li>
 </ul>
 </li>
 </ul>

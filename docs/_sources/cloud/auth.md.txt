@@ -43,6 +43,8 @@ Authentication using Azure is divided into two parts
 
 For authentication in OpenStack first, we need to build OpenStack.
 
+(Skip this step if you already have an OpenStack installation up and running.)
+
 ### Setup
 ```{admonition} Warning
 :class: warning
@@ -80,12 +82,6 @@ SERVICE_PASSWORD=$ADMIN_PASSWORD
 ```
 This will take a 15 - 20 minutes, largely depending on the speed of your internet connection. Many git trees and packages will be installed during this process. After the setup has completed log in to the web UI by pointing your browser to the following URL `http://10.20.20.1` or `http://<ip of vm>`. The username is admin and password will be the password you kept while creating local.conf.
 
-### Authentication
-
-- From dashboard go to `API Access` and click on `View Credentials`
-- Copy `User Name`, `Authentication URL` and `Project ID` and paste these credentials in the Cirun dashboard in the Cloud section.
-
-  ![Authentication](../images/openstack-authentication.png)
 
 ### Router setup (For internet access in the VM)
 
@@ -114,6 +110,40 @@ In OpenStack, you need to manually set up the network so that the VM that is/wil
 ![Final Network Topology](../images/openstack-final-network-topology.png)
 
 - Now if you will create a VM then you will be able to ping any IP.
+
+### Authentication
+
+- From dashboard go to `API Access` and click on `View Credentials`
+
+![Authentication](../images/openstack-authentication.png)
+
+- Copy the following
+  - `User Name`
+  - `Authentication URL` and
+  - `Project ID`
+
+
+and paste these credentials in the Cirun dashboard in the Cloud section.
+
+![Cloud OpenStack Credentials](../images/cloud-openstack-creds.png)
+
+- `Network` : In the network section you need to add the network you created (say `shared`) above unless
+you already have an existing network which you would like to use.
+
+- `Domain ID`: In the Domain ID section you need to write `default` unless you already have a
+domain, which you can find out from "Identity > Domain" section in the OpenStack dashboard. Use
+the Domain ID of the Domain you would like to use.
+
+* Example Values for OpenStack Credentials
+
+```yaml
+User Name: admin
+Password: supersecretpassword1234
+Authentication URL: http://159.223.166.1/identity
+Project ID: c4c175d2801237c198153545db21e6ef
+Domain ID: 63a9cbe8cd3d12e112786c990f93ecd0
+Network: shared
+```
 
 # Cloud Login Page
 
