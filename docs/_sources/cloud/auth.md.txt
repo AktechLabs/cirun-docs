@@ -134,6 +134,9 @@ you already have an existing network which you would like to use.
 domain, which you can find out from "Identity > Domain" section in the OpenStack dashboard. Use
 the Domain ID of the Domain you would like to use.
 
+- `Password`: The password for OpenStack dashboard for the given user.
+
+
 * Example Values for OpenStack Credentials
 
 ```yaml
