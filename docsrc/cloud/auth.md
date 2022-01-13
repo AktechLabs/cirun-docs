@@ -39,8 +39,9 @@ Authentication using Azure is divided into two parts
 - Click on "Review and assign"
 - Paste your "Subscription ID", "Tenant ID", "Client ID" and "Client Secret" in the Cirun Dashboard.
 
-## Openstack
-For authentication in Openstack first, we need to build Openstack.
+## OpenStack
+
+For authentication in OpenStack first, we need to build OpenStack.
 
 ### Setup
 ```{admonition} Warning
@@ -80,23 +81,28 @@ SERVICE_PASSWORD=$ADMIN_PASSWORD
 This will take a 15 - 20 minutes, largely depending on the speed of your internet connection. Many git trees and packages will be installed during this process. After the setup has completed log in to the web UI by pointing your browser to the following URL `http://10.20.20.1` or `http://<ip of vm>`. The username is admin and password will be the password you kept while creating local.conf.
 
 ### Authentication
+
 - From dashboard go to `API Access` and click on `View Credentials`
-- Copy `User Name`, `Authentication URL` and `Project ID` and paste these credentials in the Cirun dashboard.
+- Copy `User Name`, `Authentication URL` and `Project ID` and paste these credentials in the Cirun dashboard in the Cloud section.
+
   ![Authentication](../images/openstack-authentication.png)
 
-### Router setup
+### Router setup (For internet access in the VM)
 
 In OpenStack, you need to manually set up the network so that the VM that is/will be created has an internet connection. To set up the router follow the below steps.
 
 - When you will open the network section from the sidebar on the OpenStack dashboard you will see two networks public and shared. The public is the public net and we can connect to it by creating a router.
+
 ![Openstack Network](../images/openstack-network.png)
 
 - The network topology will look like this
+
 ![Openstack Network Topology](../images/openstack-network-topology.png)
 
 - To connect the VM to the internet we need to connect a Router to the public network and then connect that router to the network with which our VM is/will be connected(by default it is shared).
 
 - Goto Router from the side panel and create a router, under the External Network select `public`.
+
 ![Router Image](https://user-images.githubusercontent.com/55244069/141321487-a873e30e-ffaf-4e08-b371-9c8efff9f809.png)
 
 - Go inside the router and add an interface by clicking `Add Interface` and selecting the Subnet(shared) with which your VM is/will be connected.
