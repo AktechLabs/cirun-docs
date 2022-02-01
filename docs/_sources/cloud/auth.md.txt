@@ -3,8 +3,13 @@
 ## Google Cloud Platform
 
 - Create a Service Account with Compute Engine Admin Permissions
-- Make to enabled Compute Engine API: <https://cloud.google.com/apis/docs/getting-started#enabling_apis>
-- Paste you Service Account JSON in the "Cloud" Tab of Cirun Dashboard under GCP section.
+![App registration](../images/gcp1.png)
+![App registration](../images/gcp3.png)
+- Add a new key pair to your created service account, download JSON file, and paste the JSON content on the Cirun dashboard
+![App registration](../images/gcp2.png)
+![App registration](../images/gcp4.png)
+- Visit <https://console.cloud.google.com/apis/library?project> and search compute engine and enable the API.     
+![App registration](../images/gcp5.png)
 
 ### GPU
 

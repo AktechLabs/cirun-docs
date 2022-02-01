@@ -151,126 +151,126 @@
 <h1>Cirun.yml Examples<a class="headerlink" href="#cirun-yml-examples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="gcp">
 <h2>GCP<a class="headerlink" href="#gcp" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on GCP via Cirun.io</span><span class="w"></span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
-<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu-runner</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cloud Provider: GCP</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cheapest GPU on GCP</span><span class="w"></span>
-<span class="w">    </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cheapest VM on GCP, with GPU attachable</span><span class="w"></span>
-<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Ubuntu-20.4, can be seen from "gcloud compute images list"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
-<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 3 because testing on Python 3.7, 3.8, 3.9</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Adding the GPU label, this matches the runs-on param from .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># So that this runner is selected for running .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on GCP via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
+    <span class="c1"># Cloud Provider: GCP</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp</span>
+    <span class="c1"># Cheapest GPU on GCP</span>
+    <span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
+    <span class="c1"># Cheapest VM on GCP, with GPU attachable</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span>
+    <span class="c1"># Ubuntu-20.4, can be seen from "gcloud compute images list"</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span>
+    <span class="c1"># preemptible instances seems quite less reliable.</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/build-gpu.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 3 because testing on Python 3.7, 3.8, 3.9</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+    <span class="c1"># Adding the GPU label, this matches the runs-on param from .github/workflows/build-gpu.yml</span>
+    <span class="c1"># So that this runner is selected for running .github/workflows/build-gpu.yml</span>
+    <span class="nt">labels</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gpu</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="digitalocean">
 <h2>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on DigitalOcean via Cirun.io</span><span class="w"></span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
-<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">do-runner</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cloud Provider: DigitalOcean</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digitalocean</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cheapest VM on DigitalOcean</span><span class="w"></span>
-<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s-1vcpu-1gb</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Ubuntu-20.4  image"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
-<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on DigitalOcean via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">do-runner</span>
+    <span class="c1"># Cloud Provider: DigitalOcean</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digitalocean</span>
+    <span class="c1"># Cheapest VM on DigitalOcean</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">s-1vcpu-1gb</span>
+    <span class="c1"># Ubuntu-20.4  image"</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="aws">
 <h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span><span class="w"></span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
-<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu-runner</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cloud Provider: AWS</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cheapest VM on AWS</span><span class="w"></span>
-<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t2.nano</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Ubuntu-20.4, ami image</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
-<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
+    <span class="c1"># Cloud Provider: AWS</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
+    <span class="c1"># Cheapest VM on AWS</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">t2.nano</span>
+    <span class="c1"># Ubuntu-20.4, ami image</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span>
+    <span class="c1"># preemptible instances seems quite less reliable.</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="azure">
 <h2>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Azure via Cirun.io</span><span class="w"></span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
-<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-runner</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cloud Provider: Azure</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span><span class="w"></span>
-<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># For custom images takes 1 parameter(id)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">publisher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Canonical</span><span class="w"></span>
-<span class="w">      </span><span class="nt">offer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span><span class="w"></span>
-<span class="w">      </span><span class="nt">sku</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span><span class="w"></span>
-<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
-<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Azure via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure-runner</span>
+    <span class="c1"># Cloud Provider: Azure</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>
+    <span class="c1"># Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure</span>
+    <span class="c1"># For custom images takes 1 parameter(id)</span>
+    <span class="nt">machine_image</span><span class="p">:</span>
+      <span class="nt">publisher</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Canonical</span>
+      <span class="nt">offer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span>
+      <span class="nt">sku</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span>
+      <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+    <span class="c1"># preemptible instances seems quite less reliable.</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="openstack">
 <h2>Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Openstack via Cirun.io</span><span class="w"></span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
-<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openstack-runner</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Cloud Provider: Openstack</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openstack</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Instance type refers to flavors in openstack</span><span class="w"></span>
-<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m1.small</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># By default openstack provides cirros image</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># To build custom image check the custom image docs</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances not supported</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
-<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Openstack via Cirun.io</span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
+<span class="nt">runners</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack-runner</span>
+    <span class="c1"># Cloud Provider: Openstack</span>
+    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack</span>
+    <span class="c1"># Instance type refers to flavors in openstack</span>
+    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">m1.small</span>
+    <span class="c1"># By default openstack provides cirros image</span>
+    <span class="c1"># To build custom image check the custom image docs</span>
+    <span class="c1"># This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first</span>
+    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span>
+    <span class="c1"># preemptible instances not supported</span>
+    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># Path of the relevant workflow file</span>
+    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
+    <span class="c1"># 2 because testing on Python 3.7, 3.8</span>
+    <span class="c1"># See .github/workflows/build-gpu.yml</span>
+    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 </div>
