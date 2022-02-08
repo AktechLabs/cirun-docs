@@ -328,8 +328,12 @@ by a member of the team and will cancel the workflow otherwise.</p>
 </pre></div>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Organization wide settings priority</p>
 <p>For organizations, this setting can be controlled organization wide as well.</p>
+<p>This setting can be overriden by the <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> config in the organization. In
+other words the configuration value for <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> (in the repository named <code class="docutils literal notranslate"><span class="pre">.cirun</span></code>: <code class="docutils literal notranslate"><span class="pre">&lt;org_name&gt;/.cirun/.cirun.global.yml</span></code>) will take
+priority over repository setting (in <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code>).</p>
 </div>
 </div>
 </div>
