@@ -184,3 +184,16 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 ```yaml
 count: 2
 ```
+
+### Run workflow when triggered by a team member: `run_only_when_trigger_by`
+
+Run the workflow job only when the workflow was triggered (or committed) by a user of the
+mentioned team. In other words Cirun will spin up machine only when the workflow is requested
+by a member of the team and will cancel the workflow otherwise.
+
+The team is a group of users in an organization, read more about it here:
+[https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams)
+
+```yaml
+run_only_when_trigger_by: my-awesome-github-organisation-team
+```
