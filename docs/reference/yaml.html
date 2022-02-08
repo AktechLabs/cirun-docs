@@ -315,6 +315,17 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 </pre></div>
 </div>
 </div>
+<div class="section" id="run-workflow-when-triggered-by-a-team-member-run-only-when-trigger-by">
+<h3>Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_trigger_by</span></code><a class="headerlink" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-trigger-by" title="Permalink to this headline">¶</a></h3>
+<p>Run the workflow job only when the workflow was triggered (or committed) by a user of the
+mentioned team. In other words Cirun will spin up machine only when the workflow is requested
+by a member of the team and will cancel the workflow otherwise.</p>
+<p>The team is a group of users in an organization, read more about it here:
+<a class="reference external" href="https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams">https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams</a></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run_only_when_trigger_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-awesome-github-organisation-team</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -390,6 +401,7 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 <li><a class="reference internal" href="#region-region">Region: <code class="docutils literal notranslate"><span class="pre">region</span></code></a></li>
 <li><a class="reference internal" href="#workflow-workflow">Workflow: <code class="docutils literal notranslate"><span class="pre">workflow</span></code></a></li>
 <li><a class="reference internal" href="#count-count">Count: <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li><a class="reference internal" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-trigger-by">Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_trigger_by</span></code></a></li>
 </ul>
 </li>
 </ul>
