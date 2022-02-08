@@ -1,4 +1,6 @@
-# Cirun.yml
+# Cirun configuration
+
+File: `.cirun.yml`
 
 API documentation for Cirun.yml file.
 
@@ -185,7 +187,7 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 count: 2
 ```
 
-### Run workflow when triggered by a team member: `run_only_when_trigger_by`
+### Run workflow when triggered by a team member: `run_only_when_triggered_by`
 
 Run the workflow job only when the workflow was triggered (or committed) by a user of the
 mentioned team. In other words Cirun will spin up machine only when the workflow is requested
@@ -194,6 +196,42 @@ by a member of the team and will cancel the workflow otherwise.
 The team is a group of users in an organization, read more about it here:
 [https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams)
 
+
 ```yaml
-run_only_when_trigger_by: my-awesome-github-organisation-team
+run_only_when_triggered_by: my-awesome-github-organisation-team
+```
+
+```{admonition} Note
+:class: note
+
+For organizations, this setting can be controlled organization wide as well.
+```
+
+
+# Cirun Global Configuration
+
+File: `.cirun.global.yml`
+
+API documentation for `.cirun.global.yml` file. This is for organization wide settings/configuration.
+
+To create global organization wide settings:
+
+- create a repo named `.cirun` in the organization and then create
+- a file named `.cirun.global.yml` in that repo.
+
+Below is the API documentation for available global settings/configurations.
+
+## Global configuration: `.cirun.global.yml`
+
+### Run workflow when triggered by a team member: `run_only_when_triggered_by`
+
+Run any workflow job only when the workflow was triggered (or committed) by a user of the
+mentioned team. In other words Cirun will spin up machine only when the workflow is requested
+by a member of the team and will cancel the workflow otherwise.
+
+The team is a group of users in an organization, read more about it here:
+[https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams)
+
+```yaml
+run_only_when_triggered_by: my-awesome-github-organisation-team
 ```
