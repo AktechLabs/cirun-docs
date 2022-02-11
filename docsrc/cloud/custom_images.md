@@ -78,9 +78,6 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    # See .github/workflows/build-gpu.yml
-    count: 1
 ```
 
 ## Azure Custom Images
@@ -126,8 +123,6 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    count: 1
 ```
 
 ## Openstack Custom Images

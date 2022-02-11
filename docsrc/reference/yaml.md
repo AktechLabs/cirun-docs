@@ -17,8 +17,6 @@ runners:
     machine_image: ubuntu-minimal-2004-lts
     preemptible: true
     workflow: .github/workflows/test.yml
-    count: 2
-
 ```
 
 ### Name: `name`
@@ -178,14 +176,6 @@ Path of the relevant workflow for this runner.
 workflow: .github/workflows/test.yml
 ```
 
-### Count: `count`
-
-Number of instance to spin up on every commit for the given runner spec, default is `1`.
-This is useful when you have a matrix in a workflow to run multiple jobs at once.
-
-```yaml
-count: 2
-```
 
 ### Run workflow when triggered by a team member: `run_only_when_triggered_by`
 
