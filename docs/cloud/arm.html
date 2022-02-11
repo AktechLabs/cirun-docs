@@ -152,15 +152,15 @@
 <h1>Arm based machines<a class="headerlink" href="#arm-based-machines" title="Permalink to this headline">¶</a></h1>
 <p>Cirun also supports arm based machines.</p>
 <p>Here is an example of an arm based machine on AWS:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">runners</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws-cpu-arm-runner</span>
-    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
-    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">a1.medium</span>
-    <span class="c1"># AMI for ubuntu/images/hvm-ssd/ubuntu-focal-20.04-arm64-server</span>
-    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-0229f8cfc24033d05</span>
-    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/aws-cpu-arm.yml</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">runners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-cpu-arm-runner</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span><span class="w"></span>
+<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a1.medium</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># AMI for ubuntu/images/hvm-ssd/ubuntu-focal-20.04-arm64-server</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-0229f8cfc24033d05</span><span class="w"></span>
+<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/aws-cpu-arm.yml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

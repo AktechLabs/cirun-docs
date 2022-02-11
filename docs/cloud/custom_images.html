@@ -184,8 +184,8 @@ after subscribing.
 <li><p>Click on “<strong>Continue to configuration</strong>” button on the top right.
 <img alt="Cirun cloud page" src="../_images/nvidia-aws-ami-config.png"/></p></li>
 <li><p>Here you can see the Ami Id of the image, which now you can use in your <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code> as following:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span>
-    <span class="nt">region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">eu-west-1</span>  <span class="c1"># this is default region anyways (only required if using an AMI ID from different region)</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span><span class="w"></span>
+<span class="w">    </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-west-1</span><span class="w">  </span><span class="c1"># this is default region anyways (only required if using an AMI ID from different region)</span><span class="w"></span>
 </pre></div>
 </div>
 <p><img alt="Cirun cloud page" src="../_images/nvidia-aws-ami-id.png"/></p>
@@ -206,23 +206,23 @@ not for the AMI.</p>
 the process described above, otherwise you’ll not be able to provision the
 runner.</p>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
-<span class="nt">runners</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
-    <span class="c1"># Cloud Provider: AWS</span>
-    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
-    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">g4dn.xlarge</span>
-    <span class="c1"># NVIDIA Deep Learning AMI from AWS Marketplace</span>
-    <span class="c1"># https://aws.amazon.com/marketplace/pp/prodview-e7zxdqduz4cbs</span>
-    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span>
-    <span class="c1"># preemptible instances seems quite less reliable.</span>
-    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="c1"># Path of the relevant workflow file</span>
-    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
-    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
-    <span class="c1"># See .github/workflows/build-gpu.yml</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span><span class="w"></span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
+<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu-runner</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Cloud Provider: AWS</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span><span class="w"></span>
+<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g4dn.xlarge</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># NVIDIA Deep Learning AMI from AWS Marketplace</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># https://aws.amazon.com/marketplace/pp/prodview-e7zxdqduz4cbs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-00ac0c28c01352e53</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
+<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -255,23 +255,23 @@ runner.</p>
 <div class="section" id="azure-custom-image-vm-cirun-yml">
 <h3>Azure custom image vm <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code><a class="headerlink" href="#azure-custom-image-vm-cirun-yml" title="Permalink to this headline">¶</a></h3>
 <p>The .cirun.yml for above custom image will look like</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Azure via Cirun.io</span>
-<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span>
-<span class="nt">runners</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure-runner</span>
-    <span class="c1"># Cloud Provider: Azure</span>
-    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
-    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>
-    <span class="nt">machine_image</span><span class="p">:</span>
-      <span class="c1"># myResourceGroup is the name of the resource group in which the image is present, myCustomImage is the name of the image</span>
-      <span class="c1"># use az image list in Azure CLI to know your image id </span>
-      <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage</span>
-    <span class="c1"># preemptible instances seems quite less reliable.</span>
-    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="c1"># Path of the relevant workflow file</span>
-    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
-    <span class="c1"># Number of runners to provision on every trigger on Actions job</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Azure via Cirun.io</span><span class="w"></span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
+<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-runner</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Cloud Provider: Azure</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span><span class="w"></span>
+<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># myResourceGroup is the name of the resource group in which the image is present, myCustomImage is the name of the image</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># use az image list in Azure CLI to know your image id </span><span class="w"></span>
+<span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
+<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

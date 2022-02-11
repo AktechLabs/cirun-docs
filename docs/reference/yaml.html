@@ -155,15 +155,15 @@
 <div class="section" id="runners-runners">
 <h2>Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code><a class="headerlink" href="#runners-runners" title="Permalink to this headline">¶</a></h2>
 <p>It containers the spec for the runners that will be spun on each commit.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">runners</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gpu-runner</span>
-    <span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp</span>
-    <span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
-    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span>
-    <span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span>
-    <span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">runners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu-runner</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span><span class="w"></span>
+<span class="w">    </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span><span class="w"></span>
+<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="name-name">
@@ -176,31 +176,31 @@
 <ul class="simple">
 <li><p>Google Cloud Platform</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Amazon Web Services</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>DigitalOcean</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">do</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">do</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Azure</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">azure</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Openstack</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openstack</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openstack</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -208,7 +208,7 @@
 <h3>GPU: <code class="docutils literal notranslate"><span class="pre">gpu</span></code><a class="headerlink" href="#gpu-gpu" title="Permalink to this headline">¶</a></h3>
 <p>Name of the GPU if runner is required with a GPU. See Cloud provider’s
 documentation for <code class="docutils literal notranslate"><span class="pre">gpu</span></code> names.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia-tesla-t4</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -226,19 +226,19 @@ on AWS.</p>
 <div class="section" id="instance-type-instance-type">
 <h3>Instance Type: <code class="docutils literal notranslate"><span class="pre">instance_type</span></code><a class="headerlink" href="#instance-type-instance-type" title="Permalink to this headline">¶</a></h3>
 <p>Name of the instance depending on the cloud provider.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span>  <span class="c1"># For GCP</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span><span class="w">  </span><span class="c1"># For GCP</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">t3.nano</span>  <span class="c1"># For AWS</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t3.nano</span><span class="w">  </span><span class="c1"># For AWS</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">s-1vcpu-1gb</span>  <span class="c1"># For DigitalOcean</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s-1vcpu-1gb</span><span class="w">  </span><span class="c1"># For DigitalOcean</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span>  <span class="c1"># For Azure</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span><span class="w">  </span><span class="c1"># For Azure</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">m1.small</span>  <span class="c1"># For Openstack</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m1.small</span><span class="w">  </span><span class="c1"># For Openstack</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -248,14 +248,14 @@ on AWS.</p>
 <div class="section" id="gcp">
 <h4>GCP<a class="headerlink" href="#gcp" title="Permalink to this headline">¶</a></h4>
 <p>It can be seen from “gcloud compute images list”</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="aws">
 <h4>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h4>
 <p>Amazon Machine image ID</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -263,7 +263,7 @@ on AWS.</p>
 <h4>DigitalOcean<a class="headerlink" href="#digitalocean" title="Permalink to this headline">¶</a></h4>
 <p>Slug of the machine image, can be obtained from DigitalOcean CLI via:
 <code class="docutils literal notranslate"><span class="pre">doctl</span> <span class="pre">compute</span> <span class="pre">image</span> <span class="pre">list</span> <span class="pre">--public</span></code></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -271,18 +271,18 @@ on AWS.</p>
 <h4>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h4>
 <p>Machine image takes 4 parameters(publisher, offer, sku, version) for available images on Azure. For custom images, it takes only one parameter(id). Images can be obtained from Azure CLI via:
 <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">vm</span> <span class="pre">image</span> <span class="pre">list</span> <span class="pre">--output</span> <span class="pre">table</span></code></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span>
-  <span class="nt">publisher</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Canonical</span>
-  <span class="nt">offer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span>
-  <span class="nt">sku</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span>
-  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">publisher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Canonical</span><span class="w"></span>
+<span class="w">  </span><span class="nt">offer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sku</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span><span class="w"></span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="openstack">
 <h4>Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h4>
 <p>In OpenStack cloud by default you are provided with cirros image, you can also build your custom image and use them. You can see all your images in the dashboard or can also use the OpenStack CLI command <code class="docutils literal notranslate"><span class="pre">openstack</span> <span class="pre">image</span> <span class="pre">list</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -291,21 +291,21 @@ on AWS.</p>
 <h3>Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code><a class="headerlink" href="#preemptible-preemptible" title="Permalink to this headline">¶</a></h3>
 <p>Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.
 This is not applicable for DigitalOcean and Openstack as they don’t support preemptible instances.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preemptible</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="region-region">
 <h3>Region: <code class="docutils literal notranslate"><span class="pre">region</span></code><a class="headerlink" href="#region-region" title="Permalink to this headline">¶</a></h3>
 <p>Region to spin up runners in your cloud account.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">us-central1-b</span>  <span class="c1"># Example for GCP</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-central1-b</span><span class="w">  </span><span class="c1"># Example for GCP</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="workflow-workflow">
 <h3>Workflow: <code class="docutils literal notranslate"><span class="pre">workflow</span></code><a class="headerlink" href="#workflow-workflow" title="Permalink to this headline">¶</a></h3>
 <p>Path of the relevant workflow for this runner.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">workflow</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -313,7 +313,7 @@ This is not applicable for DigitalOcean and Openstack as they don’t support pr
 <h3>Count: <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#count-count" title="Permalink to this headline">¶</a></h3>
 <p>Number of instance to spin up on every commit for the given runner spec, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 This is useful when you have a matrix in a workflow to run multiple jobs at once.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
