@@ -19,10 +19,6 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/build-gpu.yml
-    # Number of runners to provision on every trigger on Actions job
-    # 3 because testing on Python 3.7, 3.8, 3.9
-    # See .github/workflows/build-gpu.yml
-    count: 3
     # Adding the GPU label, this matches the runs-on param from .github/workflows/build-gpu.yml
     # So that this runner is selected for running .github/workflows/build-gpu.yml
     labels:
@@ -44,10 +40,6 @@ runners:
     machine_image: ubuntu-20-04-x64
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    # 2 because testing on Python 3.7, 3.8
-    # See .github/workflows/build-gpu.yml
-    count: 2
 ```
 
 ## AWS
@@ -67,10 +59,6 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    # 2 because testing on Python 3.7, 3.8
-    # See .github/workflows/build-gpu.yml
-    count: 2
 ```
 
 ## Azure
@@ -94,10 +82,6 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    # 2 because testing on Python 3.7, 3.8
-    # See .github/workflows/build-gpu.yml
-    count: 2
 ```
 
 ## Openstack
@@ -119,8 +103,4 @@ runners:
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
-    # Number of runners to provision on every trigger on Actions job
-    # 2 because testing on Python 3.7, 3.8
-    # See .github/workflows/build-gpu.yml
-    count: 2
 ```
