@@ -153,9 +153,14 @@
 <div class="section" id="google-cloud-platform">
 <h2>Google Cloud Platform<a class="headerlink" href="#google-cloud-platform" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Create a Service Account with Compute Engine Admin Permissions</p></li>
-<li><p>Make to enabled Compute Engine API: <a class="reference external" href="https://cloud.google.com/apis/docs/getting-started#enabling_apis">https://cloud.google.com/apis/docs/getting-started#enabling_apis</a></p></li>
-<li><p>Paste you Service Account JSON in the “Cloud” Tab of Cirun Dashboard under GCP section.</p></li>
+<li><p>Create a Service Account with Compute Engine Admin Permissions
+<img alt="App registration" src="../_images/gcp1.png"/>
+<img alt="App registration" src="../_images/gcp3.png"/></p></li>
+<li><p>Add a new key pair to your created service account, download JSON file, and paste the JSON content on the Cirun dashboard
+<img alt="App registration" src="../_images/gcp2.png"/>
+<img alt="App registration" src="../_images/gcp4.png"/></p></li>
+<li><p>Visit <a class="reference external" href="https://console.cloud.google.com/apis/library?project">https://console.cloud.google.com/apis/library?project</a> and search compute engine and enable the API.<br/>
+<img alt="App registration" src="../_images/gcp5.png"/></p></li>
 </ul>
 <div class="section" id="gpu">
 <h3>GPU<a class="headerlink" href="#gpu" title="Permalink to this headline">¶</a></h3>
@@ -300,12 +305,12 @@ the Domain ID of the Domain you would like to use.</p></li>
 <ul class="simple">
 <li><p>Example Values for OpenStack Credentials</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">User Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w"></span>
-<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supersecretpassword1234</span><span class="w"></span>
-<span class="nt">Authentication URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://159.223.166.1/identity</span><span class="w"></span>
-<span class="nt">Project ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c4c175d2801237c198153545db21e6ef</span><span class="w"></span>
-<span class="nt">Domain ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">63a9cbe8cd3d12e112786c990f93ecd0</span><span class="w"></span>
-<span class="nt">Network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">User Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">supersecretpassword1234</span>
+<span class="nt">Authentication URL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http://159.223.166.1/identity</span>
+<span class="nt">Project ID</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">c4c175d2801237c198153545db21e6ef</span>
+<span class="nt">Domain ID</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">63a9cbe8cd3d12e112786c990f93ecd0</span>
+<span class="nt">Network</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared</span>
 </pre></div>
 </div>
 </div>
