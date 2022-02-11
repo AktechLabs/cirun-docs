@@ -168,10 +168,6 @@
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 3 because testing on Python 3.7, 3.8, 3.9</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Adding the GPU label, this matches the runs-on param from .github/workflows/build-gpu.yml</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># So that this runner is selected for running .github/workflows/build-gpu.yml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
@@ -193,10 +189,6 @@
 <span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-20-04-x64</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -216,10 +208,6 @@
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -243,10 +231,6 @@
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -268,10 +252,6 @@
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Number of runners to provision on every trigger on Actions job</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># 2 because testing on Python 3.7, 3.8</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># See .github/workflows/build-gpu.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

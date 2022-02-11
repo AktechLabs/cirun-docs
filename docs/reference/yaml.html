@@ -163,7 +163,6 @@
 <span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span><span class="w"></span>
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="name-name">
@@ -309,14 +308,6 @@ This is not applicable for DigitalOcean and Openstack as they don’t support pr
 </pre></div>
 </div>
 </div>
-<div class="section" id="count-count">
-<h3>Count: <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#count-count" title="Permalink to this headline">¶</a></h3>
-<p>Number of instance to spin up on every commit for the given runner spec, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.
-This is useful when you have a matrix in a workflow to run multiple jobs at once.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by">
 <h3>Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code><a class="headerlink" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by" title="Permalink to this headline">¶</a></h3>
 <p>Run the workflow job only when the workflow was triggered (or committed) by a user of the
@@ -435,7 +426,6 @@ by a member of the team and will cancel the workflow otherwise.</p>
 <li><a class="reference internal" href="#preemptible-preemptible">Preemptible: <code class="docutils literal notranslate"><span class="pre">preemptible</span></code></a></li>
 <li><a class="reference internal" href="#region-region">Region: <code class="docutils literal notranslate"><span class="pre">region</span></code></a></li>
 <li><a class="reference internal" href="#workflow-workflow">Workflow: <code class="docutils literal notranslate"><span class="pre">workflow</span></code></a></li>
-<li><a class="reference internal" href="#count-count">Count: <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li><a class="reference internal" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by">Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code></a></li>
 </ul>
 </li>
