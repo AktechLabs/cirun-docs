@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Cirun.yml Examples" href="examples.html" /><link rel="prev" title="Reference" href="index.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Cirun.yml - Cirun.io</title>
+        <title>Cirun configuration - Cirun.io</title>
       <link rel="stylesheet" href="../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css">
@@ -112,7 +112,8 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cirun.yml</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cirun configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cirun-global-configuration">Cirun Global Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Cirun.yml Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gotchas.html">Gotchas</a></li>
 </ul>
@@ -147,8 +148,9 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="cirun-yml">
-<h1>Cirun.yml<a class="headerlink" href="#cirun-yml" title="Permalink to this headline">¶</a></h1>
+        <div class="section" id="cirun-configuration">
+<h1>Cirun configuration<a class="headerlink" href="#cirun-configuration" title="Permalink to this headline">¶</a></h1>
+<p>File: <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code></p>
 <p>API documentation for Cirun.yml file.</p>
 <div class="section" id="runners-runners">
 <h2>Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code><a class="headerlink" href="#runners-runners" title="Permalink to this headline">¶</a></h2>
@@ -315,6 +317,50 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 </pre></div>
 </div>
 </div>
+<div class="section" id="run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by">
+<h3>Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code><a class="headerlink" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by" title="Permalink to this headline">¶</a></h3>
+<p>Run the workflow job only when the workflow was triggered (or committed) by a user of the
+mentioned team. In other words Cirun will spin up machine only when the workflow is requested
+by a member of the team and will cancel the workflow otherwise.</p>
+<p>The team is a group of users in an organization, read more about it here:
+<a class="reference external" href="https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams">https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams</a></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run_only_when_triggered_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-awesome-github-organisation-team</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Organization wide settings priority</p>
+<p>For organizations, this setting can be controlled organization wide as well.</p>
+<p>This setting can be overriden by the <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> config in the organization. In
+other words the configuration value for <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> (in the repository named <code class="docutils literal notranslate"><span class="pre">.cirun</span></code>: <code class="docutils literal notranslate"><span class="pre">&lt;org_name&gt;/.cirun/.cirun.global.yml</span></code>) will take
+priority over repository setting (in <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cirun-global-configuration">
+<h1>Cirun Global Configuration<a class="headerlink" href="#cirun-global-configuration" title="Permalink to this headline">¶</a></h1>
+<p>File: <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code></p>
+<p>API documentation for <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> file. This is for organization wide settings/configuration.</p>
+<p>To create global organization wide settings:</p>
+<ul class="simple">
+<li><p>create a repo named <code class="docutils literal notranslate"><span class="pre">.cirun</span></code> in the organization and then create</p></li>
+<li><p>a file named <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code> in that repo.</p></li>
+</ul>
+<p>Below is the API documentation for available global settings/configurations.</p>
+<div class="section" id="global-configuration-cirun-global-yml">
+<h2>Global configuration: <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code><a class="headerlink" href="#global-configuration-cirun-global-yml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Run any workflow job only when the workflow was triggered (or committed) by a user of the
+mentioned team. In other words Cirun will spin up machine only when the workflow is requested
+by a member of the team and will cancel the workflow otherwise.</p>
+<p>The team is a group of users in an organization, read more about it here:
+<a class="reference external" href="https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams">https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams</a></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run_only_when_triggered_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-awesome-github-organisation-team</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -372,7 +418,7 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Cirun.yml</a><ul>
+<li><a class="reference internal" href="#">Cirun configuration</a><ul>
 <li><a class="reference internal" href="#runners-runners">Runners: <code class="docutils literal notranslate"><span class="pre">runners</span></code></a><ul>
 <li><a class="reference internal" href="#name-name">Name: <code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
 <li><a class="reference internal" href="#cloud-cloud">Cloud: <code class="docutils literal notranslate"><span class="pre">cloud</span></code></a></li>
@@ -390,6 +436,14 @@ This is useful when you have a matrix in a workflow to run multiple jobs at once
 <li><a class="reference internal" href="#region-region">Region: <code class="docutils literal notranslate"><span class="pre">region</span></code></a></li>
 <li><a class="reference internal" href="#workflow-workflow">Workflow: <code class="docutils literal notranslate"><span class="pre">workflow</span></code></a></li>
 <li><a class="reference internal" href="#count-count">Count: <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li><a class="reference internal" href="#run-workflow-when-triggered-by-a-team-member-run-only-when-triggered-by">Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cirun-global-configuration">Cirun Global Configuration</a><ul>
+<li><a class="reference internal" href="#global-configuration-cirun-global-yml">Global configuration: <code class="docutils literal notranslate"><span class="pre">.cirun.global.yml</span></code></a><ul>
+<li><a class="reference internal" href="#id1">Run workflow when triggered by a team member: <code class="docutils literal notranslate"><span class="pre">run_only_when_triggered_by</span></code></a></li>
 </ul>
 </li>
 </ul>
