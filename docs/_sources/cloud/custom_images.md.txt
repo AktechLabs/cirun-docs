@@ -13,7 +13,7 @@ drivers pre-installed.
 AWS Marketplace has many such useful images, which can  help make your
 CI faster.
 
-### NVIDIA Deep Learning AMI
+### Using Prebuilt Images: NVIDIA Deep Learning AMI
 
 Let's take an example of using an NVIDIA Deep Learning AMI for GPU enabled
 runners.
@@ -79,6 +79,53 @@ runners:
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
 ```
+
+### AWS: Building Custom Images
+
+You can also build custom images on AWS on top of already existing images and use that
+as a runner for Cirun on GitHub Actions. Here are the steps for same:
+
+Launch an instance on AWS (following the steps mentioned below):
+
+1. Set Name for new instance and select and OS Image:
+
+   ![Launch instance wizard](../images/aws-custom/1-launch-instance.png)
+
+2. Select Instance type (the size which is good enough for your CI job):
+
+   ![instance type](../images/aws-custom/2-instance-type.png)
+
+3. Select a keypair if you have one already or create a new one and make sure to save the private key generated, this will help you login to the created machine:
+
+   ![aws keypair](../images/aws-custom/3-aws-keypair.png)
+
+4. Select allow SSH traffic in the network section and add
+storage in the Configure storage (this storage will be available to your CI job, make sure to put enough space here, the default it quite low)
+
+   ![network](../images/aws-custom/4-network.png)
+   ![storage](../images/aws-custom/5-storage.png)
+
+5. Now click on "launch instance" to launch the instance
+   
+   ![launch](../images/aws-custom/6-launch.png)
+
+6. After the instance has been created now click on the created instance (in the instances section of the EC2 Dashboard) and copy the "Public IPv4 address".
+
+   ![created instance](../images/aws-custom/7-created-instance.png)
+
+7. SSH into the machine (using the private key created using step 3) and install any packages tools you would like it to be available to the CI job.
+
+8. Now click on the Actions > Image and templates > Create Imge to create image of the instance we just created.
+
+   ![create-image](../images/aws-custom/8-create-image.png)
+
+   ![create-image-wizard](../images/aws-custom/9-create-image-step.png)
+
+   Fill in image name, description and volume size and hit "Create Image"
+
+9. Copy AMI ID for using with Cirun: Now go to EC2 Dashboard > Images > AMIs and copy the "AMI ID" and use it in your `.cirun.yml` file, so that the instances created will be based in this image.
+
+   ![image-ami-id](../images/aws-custom/10-image-AMI.png)
 
 ## Azure Custom Images
 
