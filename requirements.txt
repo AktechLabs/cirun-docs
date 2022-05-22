@@ -1,5 +1,4 @@
-furo==2021.4.11b34
-Sphinx==3.5.4
-myst-parser==0.14.0
-sphinx-copybutton==0.3.1
-sphinx-inline-tabs==2021.4.11b9
+furo==2022.04.07
+myst-parser==0.17.2
+sphinx-copybutton==0.5.0
+sphinx-inline-tabs==2022.1.2b11
