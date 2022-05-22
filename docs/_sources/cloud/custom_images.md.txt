@@ -7,8 +7,8 @@ is you want pre installed packages.
 ## AWS Custom AMI
 
 One of the most common applications of Cirun is the ability to run CI on
-a GPU enabled machine and for running GPU tests it's good to have nvidia
-drivers pre-installed.
+custom VM images on cloud. One common applcation for the same is using GPU
+enabled machine with NVIDIA VM image for running GPU related things in the CI
 
 AWS Marketplace has many such useful images, which can  help make your
 CI faster.
@@ -80,14 +80,15 @@ runners:
     workflow: .github/workflows/test.yml
 ```
 
-### AWS: Building Custom Images
+### AWS: Building Custom Images with user modification
 
-You can also build custom images on AWS on top of already existing images and use that
-as a runner for Cirun on GitHub Actions. Here are the steps for same:
+You can also build custom images on AWS on top of already existing images and
+install packages and custom configuration and use that image for Cirun runner
+on GitHub Actions. Here are the steps for same:
 
 Launch an instance on AWS (following the steps mentioned below):
 
-1. Set Name for new instance and select and OS Image:
+1. Set the name for new instance and select the image for operating system:
 
    ![Launch instance wizard](../images/aws-custom/1-launch-instance.png)
 
@@ -99,8 +100,9 @@ Launch an instance on AWS (following the steps mentioned below):
 
    ![aws keypair](../images/aws-custom/3-aws-keypair.png)
 
-4. Select allow SSH traffic in the network section and add
-storage in the Configure storage (this storage will be available to your CI job, make sure to put enough space here, the default it quite low)
+4. Select allow SSH traffic in the "Network" section and add storage in the
+"Configure storage" section (this storage will be available to your CI job,
+make sure to put enough space here, **the default storage is quite low**)
 
    ![network](../images/aws-custom/4-network.png)
    ![storage](../images/aws-custom/5-storage.png)
