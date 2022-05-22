@@ -11,7 +11,7 @@ On Demand scalable GitHub Actions runners on Cloud.
 quickstart
 reference/index
 cloud/index
-privacy
+privacy.html
 toc
 ```
 
