@@ -1,35 +1,65 @@
-# Terms & Conditions
+# Terms of Service
 
-By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages or make derivative versions. The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to Aktech Labs.
+These Terms of Service govern your use of the website located at [Cirun.io](https://cirun.io) and any related services provided by Aktech Labs.
 
-Aktech Labs is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.
+By accessing [Cirun.io](https://cirun.io), you agree to abide by these Terms of Service and to comply with all applicable laws and regulations. If you do not agree with these Terms of Service, you are prohibited from using or accessing this website or using any other services provided by Aktech Labs.
 
-The Cirun app stores and processes personal data that you have provided to us, to provide our Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the Cirun app won’t work properly or at all.
+We, Aktech Labs, reserve the right to review and amend any of these Terms of Service at our sole discretion. Upon doing so, we will update this page. Any changes to these Terms of Service will take effect immediately from the date of publication.
 
-The app does use third-party services that declare their Terms and Conditions.
 
-Link to Terms and Conditions of third-party service providers used by the app
+These Terms of Service were last updated on 28 May 2022.
 
-*   [Google Play Services](https://policies.google.com/terms)
+## Limitations of Use
 
-You should be aware that there are certain things that Aktech Labs will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi or provided by your mobile network provider, but Aktech Labs cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.
+By using this website, you warrant on behalf of yourself, your users, and other parties you represent that you will not:
 
-If you’re using the app outside of an area with Wi-Fi, you should remember that the terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third-party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.
+modify, copy, prepare derivative works of, decompile, or reverse engineer any materials and software contained on this website;
+remove any copyright or other proprietary notations from any materials and software on this website;
+transfer the materials to another person or “mirror” the materials on any other server;
+knowingly or negligently use this website or any of its associated services in a way that abuses or disrupts our networks or any other service Aktech Labs provides;
+use this website or its associated services to transmit or publish any harassing, indecent, obscene, fraudulent, or unlawful material;
+use this website or its associated services in violation of any applicable laws or regulations;
+use this website in conjunction with sending unauthorised advertising or spam;
+harvest, collect or gather user data without the user’s consent; or
+use this website or its associated services in such a way that may infringe the privacy, intellectual property rights, or other rights of third parties.
 
-Along the same lines, Aktech Labs cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, Aktech Labs cannot accept responsibility.
+## Intellectual Property
 
-With respect to Aktech Labs’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavor to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. Aktech Labs accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.
+The intellectual property in the materials contained in this website are owned by or licensed to Aktech Labs and are protected by applicable copyright and trademark law. We grant our users permission to download one copy of the materials for personal, non-commercial transitory use.
 
-At some point, we may wish to update the app. The app is currently available on iOS – the requirements for the system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. Aktech Labs does not promise that it will always update the app so that it is relevant to you and/or works with the iOS version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.
 
-**Changes to This Terms and Conditions**
+This constitutes the grant of a license, not a transfer of title. This license shall automatically terminate if you violate any of these restrictions or the Terms of Service, and may be terminated by Aktech Labs at any time.
 
-We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.
+## Liability
 
-These terms and conditions are effective as of 2022-05-28
+Our website and the materials on our website are provided on an 'as is' basis. To the extent permitted by law, Aktech Labs makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property, or other violation of rights.
 
-**Contact Us**
 
-If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at hello@aktechlabs.com.
+In no event shall Aktech Labs or its suppliers be liable for any consequential loss suffered or incurred by you or any third party arising from the use or inability to use this website or the materials on this website, even if Aktech Labs or an authorised representative has been notified, orally or in writing, of the possibility of such damage.
 
-This Terms and Conditions page was generated by [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+
+In the context of this agreement, “consequential loss” includes any consequential loss, indirect loss, real or anticipated loss of profit, loss of benefit, loss of revenue, loss of business, loss of goodwill, loss of opportunity, loss of savings, loss of reputation, loss of use and/or loss or corruption of data, whether under statute, contract, equity, tort (including negligence), indemnity or otherwise.
+
+
+Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+
+## Accuracy of Materials
+
+The materials appearing on our website are not comprehensive and are for general information purposes only. Aktech Labs does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on this website, or otherwise relating to such materials or on any resources linked to this website.
+
+## Links
+
+Aktech Labs has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement, approval or control by Aktech Labs of the site. Use of any such linked site is at your own risk and we strongly advise you make your own investigations with respect to the suitability of those sites.
+
+## Right to Terminate
+
+We may suspend or terminate your right to use our website and terminate these Terms of Service immediately upon written notice to you for any breach of these Terms of Service.
+
+## Severance
+
+Any term of these Terms of Service which is wholly or partially void or unenforceable is severed to the extent that it is void or unenforceable. The validity of the remainder of these Terms of Service is not affected.
+
+## Governing Law
+
+These Terms of Service are governed by and construed in accordance with the laws of London. You irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
+

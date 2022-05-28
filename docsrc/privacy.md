@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Your privacy is important to us. It is Aktech Labs' policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, https://cirun.io, and other sites we own and operate.
+Your privacy is important to us. It is Aktech Labs' policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, [Cirun.io](https://cirun.io), and other sites we own and operate.
 
 
 Personal information is any information about you which can be used to identify you. This includes information about you as a person (such as name, address, and date of birth), your devices, payment details, and even information about how you use a website or online service.
@@ -291,6 +291,5 @@ To receive this information, send us a request using the contact details provide
 For any questions or concerns regarding your privacy, you may contact us using the following details:
 
 
-Amit Kumar
+**Amit Kumar** <br />
 hello@aktechlabs.com
-
