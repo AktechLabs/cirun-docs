@@ -219,8 +219,8 @@ is you want pre installed packages.</p>
 <section id="aws-custom-ami">
 <h2>AWS Custom AMI<a class="headerlink" href="#aws-custom-ami" title="Permalink to this headline">#</a></h2>
 <p>One of the most common applications of Cirun is the ability to run CI on
-a GPU enabled machine and for running GPU tests it’s good to have nvidia
-drivers pre-installed.</p>
+custom VM images on cloud. One common applcation for the same is using GPU
+enabled machine with NVIDIA VM image for running GPU related things in the CI</p>
 <p>AWS Marketplace has many such useful images, which can  help make your
 CI faster.</p>
 <section id="using-prebuilt-images-nvidia-deep-learning-ami">
@@ -287,13 +287,14 @@ runner.</p>
 </pre></div>
 </div>
 </section>
-<section id="aws-building-custom-images">
-<h3>AWS: Building Custom Images<a class="headerlink" href="#aws-building-custom-images" title="Permalink to this headline">#</a></h3>
-<p>You can also build custom images on AWS on top of already existing images and use that
-as a runner for Cirun on GitHub Actions. Here are the steps for same:</p>
+<section id="aws-building-custom-images-with-user-modification">
+<h3>AWS: Building Custom Images with user modification<a class="headerlink" href="#aws-building-custom-images-with-user-modification" title="Permalink to this headline">#</a></h3>
+<p>You can also build custom images on AWS on top of already existing images and
+install packages and custom configuration and use that image for Cirun runner
+on GitHub Actions. Here are the steps for same:</p>
 <p>Launch an instance on AWS (following the steps mentioned below):</p>
 <ol class="arabic">
-<li><p>Set Name for new instance and select and OS Image:</p>
+<li><p>Set the name for new instance and select the image for operating system:</p>
 <p><img alt="Launch instance wizard" src="../_images/1-launch-instance.png"/></p>
 </li>
 <li><p>Select Instance type (the size which is good enough for your CI job):</p>
@@ -302,8 +303,9 @@ as a runner for Cirun on GitHub Actions. Here are the steps for same:</p>
 <li><p>Select a keypair if you have one already or create a new one and make sure to save the private key generated, this will help you login to the created machine:</p>
 <p><img alt="aws keypair" src="../_images/3-aws-keypair.png"/></p>
 </li>
-<li><p>Select allow SSH traffic in the network section and add
-storage in the Configure storage (this storage will be available to your CI job, make sure to put enough space here, the default it quite low)</p>
+<li><p>Select allow SSH traffic in the “Network” section and add storage in the
+“Configure storage” section (this storage will be available to your CI job,
+make sure to put enough space here, <strong>the default storage is quite low</strong>)</p>
 <p><img alt="network" src="../_images/4-network.png"/>
 <img alt="storage" src="../_images/5-storage.png"/></p>
 </li>
@@ -471,7 +473,7 @@ storage in the Configure storage (this storage will be available to your CI job,
 <li><a class="reference internal" href="#aws-custom-ami">AWS Custom AMI</a><ul>
 <li><a class="reference internal" href="#using-prebuilt-images-nvidia-deep-learning-ami">Using Prebuilt Images: NVIDIA Deep Learning AMI</a></li>
 <li><a class="reference internal" href="#aws-marketplace-nvidia-deep-learning-ami-cirun-yml">AWS Marketplace NVIDIA Deep Learning AMI <code class="docutils literal notranslate"><span class="pre">.cirun.yml</span></code></a></li>
-<li><a class="reference internal" href="#aws-building-custom-images">AWS: Building Custom Images</a></li>
+<li><a class="reference internal" href="#aws-building-custom-images-with-user-modification">AWS: Building Custom Images with user modification</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#azure-custom-images">Azure Custom Images</a><ul>
