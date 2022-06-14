@@ -13,5 +13,4 @@ runners:
     machine_image: ami-0229f8cfc24033d05
     preemptible: false
     workflow: .github/workflows/aws-cpu-arm.yml
-    count: 1
 ```
