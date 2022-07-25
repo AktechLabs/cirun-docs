@@ -15,7 +15,6 @@ runners:
     instance_type: n1-standard-1
     # Ubuntu-20.4, can be seen from "gcloud compute images list"
     machine_image: ubuntu-minimal-2004-lts
-    # preemptible instances seems quite less reliable.
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/build-gpu.yml
@@ -55,7 +54,6 @@ runners:
     instance_type: t2.nano
     # Ubuntu-20.4, ami image
     machine_image: ami-06fd8a495a537da8b
-    # preemptible instances seems quite less reliable.
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
@@ -71,14 +69,8 @@ runners:
     # Cloud Provider: Azure
     cloud: azure
     instance_type: Standard_DS1_v2
-    # Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure
-    # For custom images takes 1 parameter(id)
-    machine_image:
-      publisher: Canonical
-      offer: UbuntuServer
-      sku: 18.04-LTS
-      version: latest
-    # preemptible instances seems quite less reliable.
+    # Takes 4 parameters (publisher:offer:sku:version)
+    machine_image: Canonical:UbuntuServer:18.04-LTS:latest
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
@@ -100,7 +92,6 @@ runners:
     # This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first
     machine_image: cirros-0.5.2-x86_64-disk
     # preemptible instances not supported
-    preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
 ```
