@@ -229,7 +229,6 @@
 <span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n1-standard-1</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Ubuntu-20.4, can be seen from "gcloud compute images list"</span><span class="w"></span>
 <span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-minimal-2004-lts</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/build-gpu.yml</span><span class="w"></span>
@@ -269,7 +268,6 @@
 <span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t2.nano</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Ubuntu-20.4, ami image</span><span class="w"></span>
 <span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-06fd8a495a537da8b</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
@@ -285,14 +283,8 @@
 <span class="w">    </span><span class="c1"># Cloud Provider: Azure</span><span class="w"></span>
 <span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span><span class="w"></span>
 <span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard_DS1_v2</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Takes 4 parameters(publisher, offer, sku, version) for already available images provided by Azure</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># For custom images takes 1 parameter(id)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">publisher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Canonical</span><span class="w"></span>
-<span class="w">      </span><span class="nt">offer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UbuntuServer</span><span class="w"></span>
-<span class="w">      </span><span class="nt">sku</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18.04-LTS</span><span class="w"></span>
-<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># preemptible instances seems quite less reliable.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Takes 4 parameters (publisher:offer:sku:version)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Canonical:UbuntuServer:18.04-LTS:latest</span><span class="w"></span>
 <span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
@@ -314,7 +306,6 @@
 <span class="w">    </span><span class="c1"># This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first</span><span class="w"></span>
 <span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cirros-0.5.2-x86_64-disk</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># preemptible instances not supported</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preemptible</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Path of the relevant workflow file</span><span class="w"></span>
 <span class="w">    </span><span class="nt">workflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/workflows/test.yml</span><span class="w"></span>
 </pre></div>

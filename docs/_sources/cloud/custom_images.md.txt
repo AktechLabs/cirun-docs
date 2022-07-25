@@ -74,7 +74,6 @@ runners:
     # NVIDIA Deep Learning AMI from AWS Marketplace
     # https://aws.amazon.com/marketplace/pp/prodview-e7zxdqduz4cbs
     machine_image: ami-00ac0c28c01352e53
-    # preemptible instances seems quite less reliable.
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
@@ -164,11 +163,7 @@ runners:
     # Cloud Provider: Azure
     cloud: azure
     instance_type: Standard_DS1_v2
-    machine_image:
-      # myResourceGroup is the name of the resource group in which the image is present, myCustomImage is the name of the image
-      # use az image list in Azure CLI to know your image id 
-      id: /subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage
-    # preemptible instances seems quite less reliable.
+    machine_image: /subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage
     preemptible: false
     # Path of the relevant workflow file
     workflow: .github/workflows/test.yml
