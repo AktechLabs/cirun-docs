@@ -16,12 +16,10 @@ runners:
     # Ubuntu-20.4, can be seen from "gcloud compute images list"
     machine_image: ubuntu-minimal-2004-lts
     preemptible: false
-    # Path of the relevant workflow file
-    workflow: .github/workflows/build-gpu.yml
-    # Adding the GPU label, this matches the runs-on param from .github/workflows/build-gpu.yml
-    # So that this runner is selected for running .github/workflows/build-gpu.yml
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
     labels:
-      - gpu
+      - cirun-gpu-runner
 ```
 
 ## DigitalOcean
@@ -37,8 +35,10 @@ runners:
     instance_type: s-1vcpu-1gb
     # Ubuntu-20.4  image"
     machine_image: ubuntu-20-04-x64
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
+    labels:
+      - cirun-do-runner
 ```
 
 ## AWS
@@ -47,7 +47,7 @@ runners:
 # Self-Hosted Github Action Runners on AWS via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml.html
 runners:
-  - name: gpu-runner
+  - name: aws-runner
     # Cloud Provider: AWS
     cloud: aws
     # Cheapest VM on AWS
@@ -55,8 +55,10 @@ runners:
     # Ubuntu-20.4, ami image
     machine_image: ami-06fd8a495a537da8b
     preemptible: false
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
+    labels:
+      - cirun-aws-runner
 ```
 
 ## Azure
@@ -72,8 +74,10 @@ runners:
     # Takes 4 parameters (publisher:offer:sku:version)
     machine_image: Canonical:UbuntuServer:18.04-LTS:latest
     preemptible: false
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
+    labels:
+      - cirun-azure-runner
 ```
 
 ## Openstack
@@ -92,6 +96,8 @@ runners:
     # This image is not suitable for jobs to be performed by runner, refer to custom image docs and create a new image first
     machine_image: cirros-0.5.2-x86_64-disk
     # preemptible instances not supported
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
+    labels:
+      - cirun-openstack-runner
 ```

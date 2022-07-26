@@ -16,7 +16,8 @@ runners:
     instance_type: n1-standard-1
     machine_image: ubuntu-minimal-2004-lts
     preemptible: true
-    workflow: .github/workflows/test.yml
+    labels:
+      - cirun-gpu-runner
 ```
 
 ### Name: `name`
@@ -168,7 +169,23 @@ Region to spin up runners in your cloud account.
 region: us-central1-b  # Example for GCP
 ```
 
-### Workflow: `workflow`
+### Labels: `labels`
+
+Add label(s) to your runner definition, so that you can add the same or subset of
+these labels in the "runs-on" param in .github/workflows/<workflow-name>.yml
+So that this runner is created for running the workflow.
+
+
+```yaml
+labels:
+  - cirun-runner
+  - gpu
+```
+
+### Workflow: `workflow` (DEPRECATED)
+
+This param is deprecated and not recommended for use. Please use `labels` parameter
+to match workflow with a runner configuration.
 
 Path of the relevant workflow for this runner.
 
