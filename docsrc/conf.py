@@ -1,3 +1,4 @@
+from datetime import datetime
 # Configuration file for the Sphinx documentation builder.
 #
 # Full list of options can be found in the Sphinx documentation:
@@ -8,7 +9,7 @@
 #
 
 project = "Cirun.io"
-copyright = "2021, Cirun.io"
+copyright = f"{datetime.now().year}, Cirun.io"
 author = "Cirun Labs"
 
 #

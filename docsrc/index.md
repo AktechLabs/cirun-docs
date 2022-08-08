@@ -21,6 +21,6 @@ toc
 
 GitHub Repository <https://github.com/aktechlabs/cirun-docs>
 Cirun.io <https://cirun.io>
-Slack <https://join.slack.com/t/aktechlabs/shared_invite/zt-uf2ubq2q-0i9wygTGOMCvZaWYDRr0ng>
+Slack <https://slack.cirun.io/>
 Twitter <https://twitter.com/aktechlabs>
 ```
