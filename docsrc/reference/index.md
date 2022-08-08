@@ -6,6 +6,7 @@ Reference Documentation.
 :maxdepth: 2
 
 yaml
+fallback_runners
 examples
 gotchas
 ```
