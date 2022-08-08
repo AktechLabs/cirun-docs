@@ -75,8 +75,8 @@ runners:
     # https://aws.amazon.com/marketplace/pp/prodview-e7zxdqduz4cbs
     machine_image: ami-00ac0c28c01352e53
     preemptible: false
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    labels:
+       - cirun-gpu-runner
 ```
 
 ### AWS: Building Custom Images with user modification
@@ -165,8 +165,8 @@ runners:
     instance_type: Standard_DS1_v2
     machine_image: /subscriptions/d74a1d71-99ffab4a5/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myCustomImage
     preemptible: false
-    # Path of the relevant workflow file
-    workflow: .github/workflows/test.yml
+    labels:
+       - cirun-gpu-runner
 ```
 
 ## Openstack Custom Images
