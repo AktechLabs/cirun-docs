@@ -12,5 +12,6 @@ runners:
     # AMI for ubuntu/images/hvm-ssd/ubuntu-focal-20.04-arm64-server
     machine_image: ami-0229f8cfc24033d05
     preemptible: false
-    workflow: .github/workflows/aws-cpu-arm.yml
+    labels:
+      - cirun-arm-runner
 ```
