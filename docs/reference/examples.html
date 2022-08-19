@@ -216,8 +216,8 @@
         <article role="main">
           <section id="cirun-yml-examples">
 <h1>Cirun.yml Examples<a class="headerlink" href="#cirun-yml-examples" title="Permalink to this headline">#</a></h1>
-<section id="gcp">
-<h2>GCP<a class="headerlink" href="#gcp" title="Permalink to this headline">#</a></h2>
+<section id="google-cloud-platform">
+<h2>Google Cloud Platform<a class="headerlink" href="#google-cloud-platform" title="Permalink to this headline">#</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on GCP via Cirun.io</span><span class="w"></span>
 <span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
 <span class="nt">runners</span><span class="p">:</span><span class="w"></span>
@@ -257,8 +257,8 @@
 </pre></div>
 </div>
 </section>
-<section id="aws">
-<h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">#</a></h2>
+<section id="amazon-web-services">
+<h2>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permalink to this headline">#</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on AWS via Cirun.io</span><span class="w"></span>
 <span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
 <span class="nt">runners</span><span class="p">:</span><span class="w"></span>
@@ -315,6 +315,25 @@
 <span class="w">    </span><span class="c1"># So that this runner is created for running the workflow</span><span class="w"></span>
 <span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cirun-openstack-runner</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="oracle-cloud">
+<h2>Oracle Cloud<a class="headerlink" href="#oracle-cloud" title="Permalink to this headline">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-Hosted Github Action Runners on Oracle Cloud via Cirun.io</span><span class="w"></span>
+<span class="c1"># Reference: https://docs.cirun.io/reference/yaml.html</span><span class="w"></span>
+<span class="nt">runners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oracle-runner</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Cloud Provider: Oracle</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oracle</span><span class="w"></span>
+<span class="w">    </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VM.Standard.E2.1.Micro</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># OCID of the Machine image</span><span class="w"></span>
+<span class="w">    </span><span class="nt">machine_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocid1.image.oc1.uk-london-1.aaaaaaaavy5v3inu2ho2h57vwvvsclukdh4jvhg45um2nrejyxa7s46zcwoq</span><span class="w"></span>
+<span class="w">    </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uk-london-1</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Add this label in the "runs-on" param in .github/workflows/&lt;workflow-name&gt;.yml</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># So that this runner is created for running the workflow</span><span class="w"></span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oracle-runner</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -378,11 +397,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Cirun.yml Examples</a><ul>
-<li><a class="reference internal" href="#gcp">GCP</a></li>
+<li><a class="reference internal" href="#google-cloud-platform">Google Cloud Platform</a></li>
 <li><a class="reference internal" href="#digitalocean">DigitalOcean</a></li>
-<li><a class="reference internal" href="#aws">AWS</a></li>
+<li><a class="reference internal" href="#amazon-web-services">Amazon Web Services</a></li>
 <li><a class="reference internal" href="#azure">Azure</a></li>
 <li><a class="reference internal" href="#openstack">Openstack</a></li>
+<li><a class="reference internal" href="#oracle-cloud">Oracle Cloud</a></li>
 </ul>
 </li>
 </ul>

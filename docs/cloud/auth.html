@@ -381,6 +381,46 @@ the Domain ID of the Domain you would like to use.</p></li>
 </div>
 </section>
 </section>
+<section id="oracle-cloud">
+<h2>Oracle Cloud<a class="headerlink" href="#oracle-cloud" title="Permalink to this headline">#</a></h2>
+<p>The documentation for creating the credentials for Oracle Cloud
+can be found <a class="reference external" href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.html">here</a>.</p>
+<p>The values for credentials that you need to add in the Cloud section of
+Cirun Dashboard would look something like this:</p>
+<section id="config-auth">
+<h3>Config Auth<a class="headerlink" href="#config-auth" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>DEFAULT<span class="o">]</span>
+<span class="nv">user</span><span class="o">=</span>ocid1.user.oc1..aaaaaaaaj2poftoscirunfororaclecmpcbrmvvescirunfororacle4mtq
+<span class="nv">fingerprint</span><span class="o">=</span><span class="m">78</span>:4c:99:1t:3d:1b:a8:ea:f2:dd:cr:01:5r:86:a2:84
+<span class="nv">tenancy</span><span class="o">=</span>ocid1.tenancy.oc1..aaaaaaaaydlj6wd4ldaamhmhcirunfororaclemocirunfororacle
+<span class="nv">compartment_id</span><span class="o">=</span>ocid1.tenancy.oc1..aaaaaaaaycirunfororaclemhmhfhcirunfororacleljaij5xvuen7a
+</pre></div>
+</div>
+</section>
+<section id="private-key">
+<h3>Private Key<a class="headerlink" href="#private-key" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-----BEGIN PRIVATE KEY-----
+JDApSaTTzXGtOr+Xwh8Ng7BBNJr/6tILwxK+C/rCFpVoJGPEIsoi1BynfwbOR8nR
+qVFX3uYDPYA3/JmrHFaR4HXawDiPfzR04+7iUWvj/mQxMSzpn5BEE6qF6GnQ9+Bg
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+aF13OCzk6DitxxCirunRocksItReallyDoesXXetbb/dcJigz8sf2EiI3EE9mXgc
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+aF13OCzk6DitCDZkqscCkWFfVHLoetbb/dcJigz8sf2EiI3EE9mXgchjnT+xz0iQ
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+6vdVbYSuv/SdVCt7huYCy7n1Yj040DBxUYp8aokCgYEAi3480JrgBfRMkNYFkD6s
+-----END PRIVATE KEY-----
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="cloud-login-page">
 <h1>Cloud Login Page<a class="headerlink" href="#cloud-login-page" title="Permalink to this headline">#</a></h1>
@@ -466,6 +506,11 @@ the Domain ID of the Domain you would like to use.</p></li>
 </li>
 <li><a class="reference internal" href="#router-setup-for-internet-access-in-the-vm">Router setup (For internet access in the VM)</a></li>
 <li><a class="reference internal" href="#authentication">Authentication</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oracle-cloud">Oracle Cloud</a><ul>
+<li><a class="reference internal" href="#config-auth">Config Auth</a></li>
+<li><a class="reference internal" href="#private-key">Private Key</a></li>
 </ul>
 </li>
 </ul>
