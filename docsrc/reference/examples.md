@@ -1,6 +1,6 @@
 # Cirun.yml Examples
 
-## GCP
+## Google Cloud Platform
 
 ```yaml
 # Self-Hosted Github Action Runners on GCP via Cirun.io
@@ -41,7 +41,7 @@ runners:
       - cirun-do-runner
 ```
 
-## AWS
+## Amazon Web Services
 
 ```yaml
 # Self-Hosted Github Action Runners on AWS via Cirun.io
@@ -100,4 +100,23 @@ runners:
     # So that this runner is created for running the workflow
     labels:
       - cirun-openstack-runner
+```
+
+## Oracle Cloud
+
+```yaml
+# Self-Hosted Github Action Runners on Oracle Cloud via Cirun.io
+# Reference: https://docs.cirun.io/reference/yaml.html
+runners:
+  - name: oracle-runner
+    # Cloud Provider: Oracle
+    cloud: oracle
+    instance_type: VM.Standard.E2.1.Micro
+    # OCID of the Machine image
+    machine_image: ocid1.image.oc1.uk-london-1.aaaaaaaavy5v3inu2ho2h57vwvvsclukdh4jvhg45um2nrejyxa7s46zcwoq
+    region: uk-london-1
+    # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
+    # So that this runner is created for running the workflow
+    labels:
+      - oracle-runner
 ```
