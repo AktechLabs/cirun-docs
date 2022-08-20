@@ -156,7 +156,7 @@ Network: shared
 ## Oracle Cloud
 
 The documentation for creating the credentials for Oracle Cloud
-can be found [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.html).
+can be found [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
 
 The values for credentials that you need to add in the Cloud section of
 Cirun Dashboard would look something like this:
