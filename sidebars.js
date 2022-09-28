@@ -32,7 +32,7 @@ module.exports = {
       link: { type: "doc", id: "reference/index" },
       items: [
         "reference/cirun-config",
-        "reference/fallback-runner",
+        "reference/fallback-runners",
         "reference/cirun.yml-examples",
         "reference/gotchas",
       ],
@@ -50,7 +50,7 @@ module.exports = {
     {
       type: "doc",
       label: "Privacy",
-      id: "privacy/privacy-policy",
+      id: "privacy-policy",
     },
     {
       type: "doc",
