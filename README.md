@@ -3,27 +3,22 @@
 ## Installation
 
 ```
-pip install -r requirements.txt
+npm install
 ```
 
 ## Build Documentation
 
-```bas
-cd docsrc
-make html
+```
+npm run build
 ```
 
 To build and preview docs:
 
-```bash
-cd docsrc && make html && open _build/html/index.html && cd ..
+```
+npm run serve
 ```
 
 ## Update `docs/`
-
-```bash
-cp -r docsrc/_build/html/* docs/
-```
 
 and now commit and push
 

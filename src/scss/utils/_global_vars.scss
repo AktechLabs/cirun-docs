@@ -1,0 +1,251 @@
+// Default variables are defined in this stylesheet
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@400;700&family=Red+Hat+Mono:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  // cirun colours definition - the base colour is denoted by the `5` number i.e. --cirun-teal-5
+  --cirun-teal-0: #c052f7;
+  --cirun-teal-1: #c052f7;
+  --cirun-teal-2: #c052f7;
+  --cirun-teal-3: #c052f7;
+  --cirun-teal-4: #c052f7;
+  --cirun-teal-5: #c052f7;
+  --cirun-teal-6: #c052f7;
+  --cirun-teal-7: #c052f7;
+  --cirun-teal-8: #c052f7;
+  --cirun-teal-9: #c052f7;
+  --cirun-teal-10: #c052f7;
+  --cirun-teal-11: #c052f7;
+
+  --cirun-lilac-0: #150b17;
+  --cirun-lilac-1: #2f1839;
+  --cirun-lilac-2: #4a215f;
+  --cirun-lilac-3: #682a87;
+  --cirun-lilac-4: #8732b2;
+  --cirun-lilac-5: #a739df;
+  --cirun-lilac-6: #c052f7;
+  --cirun-lilac-7: #ce75fa;
+  --cirun-lilac-8: #db95fc;
+  --cirun-lilac-9: #e7b4fd;
+  --cirun-lilac-10: #f2d2fe;
+  --cirun-lilac-11: #fbf0ff;
+
+  --cirun-blue-gray-0: #0e0e11;
+  --cirun-blue-gray-1: #21222a;
+  --cirun-blue-gray-2: #343544;
+  --cirun-blue-gray-3: #484a5e;
+  --cirun-blue-gray-4: #5c5f78;
+  --cirun-blue-gray-5: #717490;
+  --cirun-blue-gray-6: #8789a6;
+  --cirun-blue-gray-7: #9c9eba;
+  --cirun-blue-gray-8: #b1b3cb;
+  --cirun-blue-gray-9: #c6c8db;
+  --cirun-blue-gray-10: #dcdce9;
+  --cirun-blue-gray-11: #f1f1f6;
+
+  --cirun-magenta-0: #180b18;
+  --cirun-magenta-1: #37163b;
+  --cirun-magenta-2: #5a1d62;
+  --cirun-magenta-3: #7f218c;
+  --cirun-magenta-4: #a621b9;
+  --cirun-magenta-5: #cf1ee7;
+  --cirun-magenta-6: #e841ff;
+  --cirun-magenta-7: #f06fff;
+  --cirun-magenta-8: #f693ff;
+  --cirun-magenta-9: #fbb3ff;
+  --cirun-magenta-10: #fed2ff;
+  --cirun-magenta-11: #fff1ff;
+
+  --cirun-coral-0: #1a0b0d;
+  --cirun-coral-1: #3d151f;
+  --cirun-coral-2: #631b2f;
+  --cirun-coral-3: #8d1d41;
+  --cirun-coral-4: #b81a53;
+  --cirun-coral-5: #e60f66;
+  --cirun-coral-6: #ff3a7b;
+  --cirun-coral-7: #ff6b91;
+  --cirun-coral-8: #ff90a9;
+  --cirun-coral-9: #ffb1c1;
+  --cirun-coral-10: #ffd1d9;
+  --cirun-coral-11: #fff0f3;
+
+  --cirun-purple-0: #110917;
+  --cirun-purple-1: #251538;
+  --cirun-purple-2: #391d5c;
+  --cirun-purple-3: #4d2582;
+  --cirun-purple-4: #622cab;
+  --cirun-purple-5: #d2adf9; // main - primary
+  --cirun-purple-6: #904aee;
+  --cirun-purple-7: #a86cf2;
+  --cirun-purple-8: #be8df6;
+  --cirun-purple-9: #d2adf9;
+  --cirun-purple-10: #e5cefc;
+  --cirun-purple-11: #f7effe;
+  --cirun-purple-12: #6723bc;
+  // --cirun-purple-5: #E9A6A6;
+
+  // ==============================================================================
+  // Primitive Colors - default from infima replaced with cirun's colours
+  // ==============================================================================
+
+  --ifm-color-black: var(--cirun-blue-gray-0);
+  --ifm-color-black-light: var(--cirun-blue-gray-1);
+  --ifm-color-black-lighter: var(--cirun-blue-gray-2);
+
+  --ifm-color-purple-lightest: var(--cirun-purple-9);
+  --ifm-color-purple-lighter: var(--cirun-purple-8);
+  --ifm-color-purple-light: var(--cirun-purple-7);
+  --ifm-color-purple: var(--cirun-purple-5);
+  --ifm-color-purple-dark: var(--cirun-purple-4);
+  --ifm-color-purple-darker: var(--cirun-purple-3);
+  --ifm-color-purple-darkest: var(--cirun-purple-2);
+
+  --ifm-color-white: var(--cirun-blue-gray-11);
+  --ifm-color-white-dark: var(--cirun-blue-gray-10);
+  --ifm-color-white-darker: var(--cirun-blue-gray-9);
+  --ifm-color-white-darkest: var(--cirun-blue-gray-8);
+
+  --ifm-color-gray-darkest: var(--cirun-blue-gray-4);
+  --ifm-color-gray-dark: var(--cirun-blue-gray-5);
+
+  // Colours to define state
+  --ifm-color-green: var(--cirun-teal-5);
+  --ifm-color-green-dark: var(--cirun-teal-6);
+  --ifm-color-red: var(--cirun-coral-5);
+  --ifm-color-red-dark: var(--cirun-coral-6);
+
+  // Non-solid colours - made off the main colours
+  --ifm-color-purple-opacity-50: rgba(120, 52, 214, 0.5);
+  --ifm-color-green-opacity-50: rgba(29, 187, 199, 0.5);
+  --ifm-color-red-opacity-50: rgba(230, 15, 102, 0.5);
+  --ifm-hover-overlay: rgba(113, 116, 144, 0.13); // made from gray-5
+
+  // ==============================================================================
+  // Typography
+  // ==============================================================================
+  --global-font-family: "Atkinson Hyperlegible", sans-serif, Europa, Avenir, system, -apple-system, ".SFNSText-Regular",
+    "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  --global-heading-family: "Poppins", sans-serif, Europa, Avenir, system, -apple-system, ".SFNSText-Regular",
+    "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  --global-block-family-code: 'Fira Code', monospace;
+
+  --ifm-code-font-size: 100%;
+  --ifm-h4-font-size: 1.3rem;
+
+  /* Base. */
+  --heading-color: var(--cirun-blue-gray-3);
+  --ifm-color-content: var(--cirun-blue-gray-0);
+  --ifm-color-content-inverse: var(--ifm-color-white);
+  --ifm-color-content-secondary: var(--cirun-blue-gray-4);
+  --ifm-menu-color: var(--cirun-blue-gray-4);
+
+  // inline code colours
+  --cirun-code-color: var(--cirun-teal-4);
+  --cirun-code-color-dark: var(--secondary-cirun);
+
+  // ==============================================================================
+  // General Docusaurus
+  // ==============================================================================
+
+  // Primary color - currently using cirun-purple
+  --ifm-color-primary: var(--ifm-color-purple);
+  --ifm-color-primary-dark: var(--ifm-color-purple-dark);
+  --ifm-color-primary-darker: var(--ifm-color-purple-darker);
+  --ifm-color-primary-darkest: var(--ifm-color-purple-darkest);
+  --ifm-color-primary-light: var(--ifm-color-purple-light);
+  --ifm-color-primary-lighter: var(--ifm-color-purple-lighter);
+  --ifm-color-primary-lightest: var(--ifm-color-purple-lightest);
+
+  // Secondary and accent
+  --secondary-cirun: var(--cirun-purple-5);
+  --accent-cirun: var(--cirun-magenta-5);
+
+  // Background
+  --ifm-color-background: var(--ifm-color-white);
+  --ifm-color-background-2: var(--ifm-color-white-dark);
+  --ifm-color-background-3: var(--ifm-color-white-darker);
+  --ifm-color-on-background: var(--ifm-color-black);
+  --ifm-color-on-background-2: var(--ifm-color-black-light);
+  --ifm-color-on-background-3: var(--ifm-color-black-lighter);
+
+  // Admonition
+  --ifm-admonition-background-color: var(--cirun-purple-11);
+  --ifm-admonition-color: var(--cirun-purple-5);
+
+  --ifm-admonition-background-color-success: var(--cirun-teal-11);
+  --ifm-admonition-color-success: var(--cirun-teal-5);
+
+  --ifm-admonition-background-color-warning: var(--cirun-coral-11);
+  --ifm-admonition-color-warning: var(--cirun-coral-5);
+
+  --ifm-admonition-background-color-error: var(--cirun-coral-11);
+  --ifm-admonition-color-error: var(--cirun-coral-5);
+
+  // Navbar
+  --ifm-navbar-background-color: var(--ifm-color-black);
+  --ifm-navbar-height: 80px;
+  --ifm-navbar-item-padding-horizontal: 20px;
+  --ifm-navbar-padding-horizontal: 30px;
+  --ifm-dropdown-background-color: var(--ifm-color-on-background-2);
+  --ifm-dropdown-hover-background-color: var(--ifm-color-on-background-3);
+
+  --ifm-global-radius: 3px;
+
+  // links
+  --cirun-links: var(--ifm-color-content);
+  --cirun-links-dark: var(--cirun-purple-9);
+}
+
+html[data-theme="dark"] {
+  --ifm-color-on-primary: var(--ifm-color-black);
+
+  /* Base */
+  --ifm-color-content: var(--ifm-color-white);
+  --ifm-color-content-secondary: var(--ifm-color-white-dark);
+
+  // Background
+  --ifm-color-background: var(--ifm-color-black);
+  --ifm-color-background-2: var(--ifm-color-black-light);
+  --ifm-color-background-3: var(--ifm-color-black-lighter);
+  // --ifm-color-on-background: var(--ifm-color-white);
+  // --ifm-color-on-background-2: var(--ifm-color-purple-lighter);
+  // --ifm-color-on-background-3: var(--ifm-color-purple-light);
+  --ifm-hover-overlay: rgba(241, 241, 246, 0.06);
+
+  // Surface
+  --ifm-color-surface: var(--ifm-color-gray-darkest);
+  --ifm-color-surface-transparent: rgba(38,
+      38,
+      48,
+      0);
+  /* https://stackoverflow.com/questions/15597167/css3-opacity-gradient */
+  --ifm-color-surface-2: var(--ifm-color-gray-dark);
+  --ifm-color-on-surface: var(--ifm-color-white);
+  --ifm-color-on-surface-2: var(--ifm-color-purple-lightest);
+  --ifm-color-on-surface-3: var(--ifm-color-purple-lighter);
+
+  // Success
+  --ifm-color-success: var(--ifm-color-green);
+  --ifm-color-on-success: var(--ifm-color-black);
+
+  // Error
+  --ifm-color-error: var(--ifm-color-red);
+  --ifm-color-on-error: var(--ifm-color-black);
+
+  // menu
+  --ifm-menu-color: var(--cirun-blue-gray-9);
+
+  // Admonition
+  --ifm-admonition-background-color: var(--cirun-purple-9);
+  --ifm-admonition-color: var(--cirun-purple-4);
+
+  --ifm-admonition-background-color-success: var(--cirun-teal-9);
+  --ifm-admonition-color-success: var(--cirun-teal-4);
+
+  --ifm-admonition-background-color-warning: var(--cirun-coral-8);
+  --ifm-admonition-color-warning: var(--cirun-coral-4);
+
+  --ifm-admonition-background-color-error: var(--cirun-coral-9);
+  --ifm-admonition-color-error: var(--cirun-coral-4);
+}
