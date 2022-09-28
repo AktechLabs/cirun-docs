@@ -7,7 +7,7 @@ keywords: [Cirun, Github Actions, Cirun cloud, Cloud Authentication]
 
 <head>
   <body className="other-extra-body-class" />
-  <title>Cirun Docs</title>
+  <title>Cirun Documentation</title>
   <meta data-rh="true" name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="https://cirun-docs-test.netlify.app" />
   <meta name="twitter:title" content="Cirun Docs" />
