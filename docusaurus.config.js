@@ -97,7 +97,7 @@ const config = {
       navbar: {
         // title: customFields.meta.title,
         logo: {
-          alt: "Cirun Docs",
+          alt: "Cirun Documentation",
           src: "img/cirun-logo.png",
         },
         style: "dark",
@@ -139,7 +139,7 @@ const config = {
               },
               {
                 label: "Slack",
-                href: "https://app.slack.com/client/T01QANJ1SJF/D03PWAMAMNJ/rimeto_profile/U01R0BF6K08",
+                href: "https://slack.cirun.io",
               },
             ],
           },
