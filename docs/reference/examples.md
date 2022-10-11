@@ -60,7 +60,7 @@ runners:
 
 ## Amazon Web Services
 
-````yml
+```yml
 # Self-Hosted Github Action Runners on AWS via Cirun.io
 # Reference: https://docs.cirun.io/Reference/yml.html
 runners:
@@ -95,7 +95,7 @@ runners:
     # So that this runner is created for running the workflow
     labels:
       - "cirun-azure-runner"
-````
+```
 
 ## Openstack
 
