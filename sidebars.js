@@ -33,6 +33,7 @@ module.exports = {
       items: [
         "reference/cirun-config",
         "reference/fallback-runners",
+        "reference/unique-runner-labels",
         "reference/cirun.yml-examples",
         "reference/gotchas",
       ],
