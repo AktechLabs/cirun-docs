@@ -135,5 +135,5 @@ runners:
     # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
     # So that this runner is created for running the workflow
     labels:
-      - "oracle-runner"
+      - "cirun-oracle-runner"
 ```
