@@ -31,7 +31,7 @@ runners:
     # Cheapest VM on GCP, with GPU attachable
     instance_type: "n1-standard-1"
     # Ubuntu-20.4, can be seen from "gcloud compute images list"
-    machine_image: "ubuntu-minimal-2004-lts"
+    machine_image: "ubuntu-2004-focal-v20221018"
     preemptible: false
     # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
     # So that this runner is created for running the workflow
