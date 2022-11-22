@@ -31,10 +31,10 @@ module.exports = {
       // },
       link: { type: "doc", id: "reference/index" },
       items: [
-        "reference/cirun-config",
+        "reference/yaml",
         "reference/fallback-runners",
         "reference/unique-runner-labels",
-        "reference/cirun.yml-examples",
+        "reference/examples",
         "reference/gotchas",
       ],
     },

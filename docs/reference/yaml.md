@@ -1,5 +1,5 @@
 ---
-id: cirun-config
+id: yaml
 description: API documentation for Cirun.yml file.
 image: "https://cirun.io/cirun-summary-image-v4.png"
 keywords: [Cirun, Runners, Fallback_runners, Yaml runners]

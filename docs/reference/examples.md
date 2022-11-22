@@ -1,5 +1,5 @@
 ---
-id: cirun.yml-examples
+id: examples
 description: Cirun.yml Examples
 image: "https://cirun.io/cirun-summary-image-v4.png"
 keywords: [Cirun, Examples, Cloud Platform, Runners]
