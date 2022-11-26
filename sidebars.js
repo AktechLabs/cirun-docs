@@ -35,7 +35,8 @@ module.exports = {
         "reference/fallback-runners",
         "reference/unique-runner-labels",
         "reference/examples",
-        "reference/gotchas",
+        "reference/developer-api",
+        // "reference/gotchas",
       ],
     },
     {
