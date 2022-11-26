@@ -55,10 +55,10 @@ module.exports = {
     {
       type: "category",
       label: "Custom Images",
-      link: { type: "doc", id: "custom_images/index" },
+      link: { type: "doc", id: "custom-images/index" },
       items: [
-        "custom_images/custom-images",
-        "custom_images/arm-based-machines",
+        "custom-images/cloud-custom-images",
+        "custom-images/arm-based-machines",
       ],
     },
     {
