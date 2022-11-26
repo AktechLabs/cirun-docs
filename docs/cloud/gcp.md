@@ -18,6 +18,9 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
   <meta name="twitter:image" content="https://docs.cirun.io/img/cirun-summary-image-v4.png" />
 </head>
 
+If you're using GCP as a cloud provider for Cirun, this is how you would give
+Cirun access to your GCP, for it to be able to create runners.
+
 
 - Create a Service Account with Compute Engine Admin Permissions
   ![App registration](../../static/cloud/gcp1.png)

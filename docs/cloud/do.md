@@ -8,4 +8,8 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
 
 # DigitalOcean
 
+If you're using DigitalOcean as a cloud provider for Cirun, this is how you would give
+Cirun access to your DigitalOcean, for it to be able to create runners.
+
+
 Just click on Connect DigitalOcean button in the Cloud in the Cirun Dashboard.

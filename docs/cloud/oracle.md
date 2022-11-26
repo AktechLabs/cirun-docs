@@ -8,6 +8,10 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
 
 # Oracle Cloud
 
+If you're using Oracle as a cloud provider for Cirun, this is how you would give
+Cirun access to your Oracle, for it to be able to create runners.
+
+
 The documentation for creating the credentials for Oracle Cloud
 can be found [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
 

@@ -8,6 +8,9 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
 
 # Azure
 
+If you're using Azure as a cloud provider for Cirun, this is how you would give
+Cirun access to your Azure, for it to be able to create runners.
+
 Authentication using Azure is divided into two parts
 
 ### Register Application

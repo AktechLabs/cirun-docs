@@ -8,6 +8,9 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
 
 # OpenStack
 
+If you're using OpenStack as a cloud provider for Cirun, this is how you would give
+Cirun access to your OpenStack, for it to be able to create runners.
+
 For authentication in OpenStack first, we need to build OpenStack.
 
 (Skip this step if you already have an OpenStack installation up and running.)
