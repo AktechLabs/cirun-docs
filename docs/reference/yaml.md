@@ -195,8 +195,13 @@ So that this runner is created for running the workflow.
 ```yml
 labels:
   - "cirun-runner"
-  - "gpu"
+  - "cirun-gpu-runner"
 ```
+
+:::note Labels
+Labels must start with prefix `cirun-`
+
+:::
 
 ### Workflow: `workflow` (DEPRECATED)
 

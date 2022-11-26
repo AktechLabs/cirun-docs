@@ -156,7 +156,7 @@ runners:
     - "gcp-region-4"
     - "gcp-region-5"
   labels:
-    - "multiple-runner-options"
+    - "cirun-multiple-runner-options"
 ```
 
 This would try for the following instance configuration in the given order:
