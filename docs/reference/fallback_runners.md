@@ -1,6 +1,6 @@
 ---
 id: fallback-runners
-description: No Runner matching labels.
+description: Spinup alternate runners in case of unavailability
 image: "https://cirun.io/cirun-summary-image-v4.png"
 keywords: [Cirun, Fallback, Runners, labels, No runners]
 ---

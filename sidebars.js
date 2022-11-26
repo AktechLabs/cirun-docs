@@ -44,9 +44,21 @@ module.exports = {
       label: "Cloud",
       link: { type: "doc", id: "cloud/index" },
       items: [
-        "cloud/cloud-auth",
-        "cloud/custom-images",
-        "cloud/arm-based-machines",
+        "cloud/aws",
+        "cloud/azure",
+        "cloud/do",
+        "cloud/gcp",
+        "cloud/openstack",
+        "cloud/oracle",
+      ],
+    },
+    {
+      type: "category",
+      label: "Custom Images",
+      link: { type: "doc", id: "custom_images/index" },
+      items: [
+        "custom_images/custom-images",
+        "custom_images/arm-based-machines",
       ],
     },
     {
