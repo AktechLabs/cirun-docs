@@ -146,6 +146,45 @@ Launch an instance on AWS (following the steps mentioned below):
 
    ![image-ami-id](../../static/aws-custom/10-image-AMI.png)
 
+## GCP Custom Images
+
+1. Create a new instance from GCP Cloud Compute:
+   ![image-ami-id](../../static/gcp-custom/1-create-instance.png)
+
+:::note
+The harware configuration (CPU, memory, location, etc.) does not matter. The instance is only used to configure a boot device.
+:::
+
+2. Once the instance starts, SSH into the VM and install any libraries or packages the custom image should have.
+
+3. Navigate to "Machine images"
+
+![image-ami-id](../../static/gcp-custom/2-machine-images.png)
+
+4. Create a new Machine Image from the VM instance:
+
+![image-ami-id](../../static/gcp-custom/3-create-machine-image.png)
+:::note
+Once the machine image is successfully created, you can safely terminate the VM instance.
+:::
+
+5. Navigate to "IAM & Admin"
+
+6. Edit permissions for the Cirun user (the same user which is used to set up Cirun in GCP [here](../cloud/gcp.md)) to include "Service Account User":
+
+![image-ami-id](../../static/gcp-custom/4-add-permission.png)
+
+7. Configure the `.cirun.yml` file with the custom machine image:
+
+```yml
+runners:
+  - name: "custom-image-runner"
+    ...
+    cloud: "gcp"
+    machine_image: "cirun-runners:example-machine-image"  # YOUR-PROJECT-NAME:MACHINE-IMAGE-NAME
+    ...
+```
+
 ## Azure Custom Images
 
 For making custom images in Azure user needs to just capture an existing VM and create the image in a resource group.
