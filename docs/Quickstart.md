@@ -36,7 +36,7 @@ Get Started with Cirun by going to [Cirun.io](https://cirun.io)
 
 - Click on the Cloud section on the left and add credentials for the cloud you want to run GitHub Action runners on.
 
-- Create a `.cirun.yml` in the repository, see [Reference docs](https://docs.cirun.io/reference/).
+- Create a `.cirun.yml` in the repository, see [Reference docs](reference/).
 :::note
 It's `.cirun.yml` NOT `cirun.yml`
 :::
