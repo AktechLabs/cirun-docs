@@ -34,9 +34,21 @@ module.exports = {
         "reference/yaml",
         "reference/fallback-runners",
         "reference/unique-runner-labels",
-        "reference/examples",
         "reference/developer-api",
         // "reference/gotchas",
+      ],
+    },
+    {
+      type: "category",
+      label: "Cirun.yml Examples",
+      link: { type: "doc", id: "examples/index" },
+      items: [
+        "examples/aws",
+        "examples/azure",
+        "examples/do",
+        "examples/gcp",
+        "examples/openstack",
+        "examples/oracle",
       ],
     },
     {

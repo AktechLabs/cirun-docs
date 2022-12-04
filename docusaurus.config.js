@@ -22,7 +22,7 @@ const customFields = {
       "Cirun",
       "Github Actions",
       "Cirun cloud",
-      "Cloud Authentication",
+      "Cloud Authentication"
     ],
     url: "https://cirun.io/cirun-summary-image-v4.png",
   },

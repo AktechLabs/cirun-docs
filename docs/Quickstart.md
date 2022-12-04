@@ -15,7 +15,7 @@ keywords: [Cirun, Github Actions, Cirun cloud, Cloud Authentication]
   <meta name="twitter:image" content="https://cirun-docs-test.netlify.app/img/cirun-summary-image-v4.png" />
 </head>
 
-Get Started with Cirun by going to Cirun.io <https://cirun.io>
+Get Started with Cirun by going to [Cirun.io](https://cirun.io)
 
 - Login to <https://cirun.io>
 - Click on Repositories Section on the left.
@@ -36,6 +36,9 @@ Get Started with Cirun by going to Cirun.io <https://cirun.io>
 
 - Click on the Cloud section on the left and add credentials for the cloud you want to run GitHub Action runners on.
 
-- Create a `.cirun.yml` (please note it's `.cirun.yml` NOT `cirun.yml`) in the repository, see Reference docs.
+- Create a `.cirun.yml` in the repository, see [Reference docs](https://docs.cirun.io/reference/).
+:::note
+It's `.cirun.yml` NOT `cirun.yml`
+:::
 
 - Now push anything to the repository, your actions should be running on your Cloud.
