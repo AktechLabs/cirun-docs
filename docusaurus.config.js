@@ -104,11 +104,11 @@ const config = {
         hideOnScroll: false,
         items: [
           // right navbar items
-          {
-            label: "Blog",
-            position: "right",
-            to: "/Blog",
-          },
+          // {
+          //   label: "Blog",
+          //   position: "right",
+          //   to: "/Blog",
+          // },
 
           {
             href: customFields.githubUrl,
@@ -146,10 +146,10 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/Blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/Blog",
+              // },
               {
                 label: "GitHub",
                 href: "https://github.com/aktechlabs/cirun-docs",
