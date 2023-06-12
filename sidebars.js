@@ -22,19 +22,24 @@ module.exports = {
     {
       type: "category",
       label: "Reference",
-      // link: {
-      //   type: "generated-index",
-      //   title: "Reference",
-      //   slug: "category/Reference",
-
-      //   keywords: ["Reference"],
-      // },
       link: { type: "doc", id: "reference/index" },
       items: [
         "reference/yaml",
         "reference/fallback-runners",
         "reference/unique-runner-labels",
-        "reference/examples",
+        {
+        type: "category",
+        label: "Cirun.yml Examples",
+        link: { type: "doc", id: "reference/examples/index" },
+        items: [
+        "reference/examples/aws",
+        "reference/examples/azure",
+        "reference/examples/do",
+        "reference/examples/gcp",
+        "reference/examples/openstack",
+        "reference/examples/oracle",
+         ],
+         },
         "reference/developer-api",
         // "reference/gotchas",
       ],
