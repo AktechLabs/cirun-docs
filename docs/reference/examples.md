@@ -21,7 +21,7 @@ keywords: [Cirun, Examples, Cloud Platform, Runners]
 
 ```yml
 # Self-Hosted Github Action Runners on GCP via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "gpu-runner"
     # Cloud Provider: GCP
@@ -43,7 +43,7 @@ runners:
 
 ```yml
 # Self-Hosted Github Action Runners on DigitalOcean via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "do-runner"
     # Cloud Provider: DigitalOcean
@@ -62,7 +62,7 @@ runners:
 
 ```yml
 # Self-Hosted Github Action Runners on AWS via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "aws-runner"
     # Cloud Provider: AWS
@@ -82,7 +82,7 @@ runners:
 
 ```yml
 # Self-Hosted Github Action Runners on Azure via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "azure-runner"
     # Cloud Provider: Azure
@@ -101,7 +101,7 @@ runners:
 
 ```yml
 # Self-Hosted Github Action Runners on Openstack via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "openstack-runner"
     # Cloud Provider: Openstack
@@ -123,7 +123,7 @@ runners:
 
 ```yml
 # Self-Hosted Github Action Runners on Oracle Cloud via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "oracle-runner"
     # Cloud Provider: Oracle
