@@ -31,11 +31,13 @@ same:
 ## Configuration
 
 To create fallback/retry/failsafe runners, you can provide the following
-parameters in the `.cirun.yml` as list:
+parameters in the `.cirun.yml` as list, and then we'll create a matrix of
+configurations to try creating a runner for:
 
 - `instance_type`
 - `machine_image`
 - `region`
+- `preemptible`
 
 Below are some examples are corresponding runners that will be tried
 to be created for a job one by one if the previous one failed.
@@ -66,7 +68,7 @@ runners:
     - "eu-west-1"
     - "eu-north-1"
   labels:
-    - "multiple-runner-options"
+    - "cirun-multiple-runner-options"
 ```
 
 This would try for the following instance configuration in the given order:
@@ -132,7 +134,7 @@ runners:
     - "eu-west-1"
     - "eu-north-1"
   labels:
-    - "multiple-runner-options"
+    - "cirun-multiple-runner-options"
 
 
 - name: "gcp-multiple-runner"
@@ -221,4 +223,52 @@ region: "gcp-region-4"
 instance_type: "instance-type-5"
 machine_image: "image-for-gcp-region-5"
 region: "gcp-region-5"
+```
+
+## Example #3 (Preemptible/Non-Preemptible Instances)
+
+- Single Cloud
+- Multiple Instance Type
+- Single Regions and Machine Image
+- Preemptible and non-preemptible
+
+```yml
+runners:
+- name: "aws-multiple-runner"
+  cloud: "aws"
+  instance_type:
+    - "t2.small"
+    - "t2.medium"
+    - "t2.large"
+  machine_image: "ami-for-eu-west-1"
+  region: "eu-west-1"
+  preemptible:
+    - true
+    - true
+    - false
+  labels:
+    - "cirun-multiple-runner-options"
+```
+
+This would try for the following instance configuration in the given order:
+
+```yml
+  instance_type: "t2.small"
+  machine_image: "ami-for-eu-west-1"
+  region: "eu-west-1"
+  preemptible: true
+```
+
+```yml
+  instance_type: "t2.medium"
+  machine_image: "ami-for-eu-west-1"
+  region: "eu-west-1"
+  preemptible: true
+```
+
+```yml
+  instance_type: "t2.large"
+  machine_image: "ami-for-eu-west-1"
+  region: "eu-west-1"
+  preemptible: false
 ```
