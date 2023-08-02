@@ -38,4 +38,9 @@ Get Started with Cirun by going to Cirun.io <https://cirun.io>
 
 - Create a `.cirun.yml` (please note it's `.cirun.yml` NOT `cirun.yml`) in the repository, see Reference docs.
 
+- Change the `runs-on:` param in your GitHub Actions workflow file to:
+```yml
+  runs-on: "cirun-label-defined-in-your-.cirun.yml-file--${{ github.run_id }}"
+```
+
 - Now push anything to the repository, your actions should be running on your Cloud.
