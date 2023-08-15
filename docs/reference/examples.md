@@ -39,7 +39,7 @@ runners:
       - "cirun-gpu-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-gpu-runner--${{ github.run_id }}"
@@ -64,7 +64,7 @@ runners:
       - "cirun-do-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-do-runner--${{ github.run_id }}"
@@ -90,7 +90,7 @@ runners:
       - "cirun-aws-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-aws-runner--${{ github.run_id }}"
@@ -115,7 +115,7 @@ runners:
       - "cirun-azure-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-azure-runner--${{ github.run_id }}"
@@ -143,7 +143,7 @@ runners:
       - "cirun-openstack-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-openstack-runner--${{ github.run_id }}"
@@ -168,7 +168,7 @@ runners:
       - "cirun-oracle-runner"
 ```
 
-- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+- In your GitHub Workflow (e.g. `.github/workflows/<workflow-name>.yml`)
 
 ```yml
   runs-on: "cirun-oracle-runner--${{ github.run_id }}"
