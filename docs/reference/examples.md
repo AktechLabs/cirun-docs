@@ -39,6 +39,12 @@ runners:
       - "cirun-gpu-runner"
 ```
 
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-gpu-runner--${{ github.run_id }}"
+```
+
 ## DigitalOcean
 
 ```yml
@@ -56,6 +62,12 @@ runners:
     # So that this runner is created for running the workflow
     labels:
       - "cirun-do-runner"
+```
+
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-do-runner--${{ github.run_id }}"
 ```
 
 ## Amazon Web Services
@@ -78,6 +90,12 @@ runners:
       - "cirun-aws-runner"
 ```
 
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-aws-runner--${{ github.run_id }}"
+```
+
 ## Azure
 
 ```yml
@@ -95,6 +113,12 @@ runners:
     # So that this runner is created for running the workflow
     labels:
       - "cirun-azure-runner"
+```
+
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-azure-runner--${{ github.run_id }}"
 ```
 
 ## Openstack
@@ -119,6 +143,12 @@ runners:
       - "cirun-openstack-runner"
 ```
 
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-openstack-runner--${{ github.run_id }}"
+```
+
 ## Oracle Cloud
 
 ```yml
@@ -136,4 +166,10 @@ runners:
     # So that this runner is created for running the workflow
     labels:
       - "cirun-oracle-runner"
+```
+
+- In your GitHub Workflow (e.g. `.github/workflows/<YOUR_WORKFLOW.yml>`)
+
+```yml
+  runs-on: "cirun-oracle-runner--${{ github.run_id }}"
 ```
