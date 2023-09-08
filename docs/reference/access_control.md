@@ -20,7 +20,7 @@ This is the file where you'd define all the runner configurations you'd
 want to use in the organization. The format of this file is same as `.cirun.yml`, for example:
 
 
-```yaml=
+```yaml
 runners:
   - name: gpu-runner
     cloud: openstack
@@ -53,7 +53,7 @@ runners:
 
 This is the file, where you'd define the rules for access control. Let's take an example to understand how it works:
 
-```yaml=
+```yaml
 version: 1
 
 policies:

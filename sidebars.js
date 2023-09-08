@@ -36,7 +36,7 @@ module.exports = {
         "reference/unique-runner-labels",
         "reference/examples",
         "reference/developer-api",
-        "reference/access_control",
+        "reference/access-control",
       ],
     },
     {
