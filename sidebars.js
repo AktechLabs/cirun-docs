@@ -32,6 +32,7 @@ module.exports = {
       link: { type: "doc", id: "reference/index" },
       items: [
         "reference/yaml",
+        "reference/one-line",
         "reference/fallback-runners",
         "reference/unique-runner-labels",
         "reference/examples",
