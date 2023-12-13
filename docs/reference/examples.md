@@ -107,7 +107,7 @@ runners:
     cloud: "azure"
     instance_type: "Standard_DS1_v2"
     # Takes 4 parameters (publisher:offer:sku:version)
-    machine_image: "Canonical:UbuntuServer:18.04-LTS:latest"
+    machine_image: "canonical:0001-com-ubuntu-server-focal:20_04-lts-gen2:latest"
     preemptible: false
     # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
     # So that this runner is created for running the workflow
