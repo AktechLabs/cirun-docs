@@ -72,5 +72,10 @@ module.exports = {
       label: "Terms of Service",
       id: "terms-of-service",
     },
+    {
+      type: "doc",
+      label: "Security",
+      id: "security",
+    },
   ],
 };
