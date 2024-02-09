@@ -8,6 +8,26 @@ meticulously isolated virtual machines that are created on demand. This approach
 any potential persistent compromise of the environment or unauthorized access beyond the
 information initially placed during the bootstrap process.
 
+You can read more about self-hosted runner security on Github docs [here](
+https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners#self-hosted-runner-security).
+
+As per GitHub docs on runners with public repositories.
+
+*"We recommend that you only use self-hosted runners with private repositories. This is because
+forks of your public repository can potentially run dangerous code on your self-hosted runner
+machine by creating a pull request that executes the code in a workflow."*
+
+
+*"This is not an issue with GitHub-hosted runners because each GitHub-hosted runner is always a
+clean isolated virtual machine, and it is destroyed at the end of the job execution."*
+
+:::info
+
+This is true for VMs created by cirun as well as they are always a clean isolated virtual machine,
+which makes them as secure as GitHub hosted runners.
+
+:::
+
 ## Access to code
 
 We do not store any code or secrets on our servers. The runners are ephemeral in nature and are
