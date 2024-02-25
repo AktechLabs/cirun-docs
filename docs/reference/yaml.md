@@ -154,11 +154,8 @@ Machine image takes 4 parameters(publisher, offer, sku, version) for available i
 `az vm image list --output table`
 
 ```yml
-machine_image:
-  publisher: "Canonical"
-  offer: "UbuntuServer"
-  sku: "18.04-LTS"
-  version: "latest"
+# publisher:offer:sku:version
+machine_image: Canonical:UbuntuServer:18.04-LTS:latest
 ```
 
 #### Openstack
