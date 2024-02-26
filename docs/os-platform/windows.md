@@ -20,6 +20,13 @@ keywords: [Cirun, Windows, ]
 You can use windows operating system for your runners as well. Here are a couple of examples
 of creating windows runner on Azure and AWS:
 
+:::note
+
+To spin up Windows runners using cirun.io, ensure you have an eligible Windows license with
+multi-tenant license rights.
+
+:::
+
 ## Azure
 
 :::note
@@ -43,6 +50,24 @@ runners:
       - "cirun-azure-windows-runner"
 ```
 
+### Arm
+
+Below is an example of arm based windows runner on Azure:
+
+```yaml
+runners:
+  - name: azure-windows-arm
+    cloud: azure
+    instance_type: Standard_D2pls_v5
+    region: uksouth
+    machine_image:
+      publisher: "microsoftwindowsdesktop"
+      offer: "windows11preview-arm64"
+      sku: "win11-23h2-pro"
+      version: "latest"
+    labels:
+      - cirun-azure-windows-arm-runner
+```
 
 ## AWS
 
