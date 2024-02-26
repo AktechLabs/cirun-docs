@@ -37,6 +37,7 @@ module.exports = {
         "reference/unique-runner-labels",
         "reference/examples",
         "reference/developer-api",
+        "reference/organization-runner-configuration",
         "reference/access-control",
       ],
     },
