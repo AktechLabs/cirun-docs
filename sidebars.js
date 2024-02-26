@@ -63,6 +63,14 @@ module.exports = {
       ],
     },
     {
+      type: "category",
+      label: "OS Platform",
+      link: { type: "doc", id: "os-platform/index" },
+      items: [
+        "os-platform/windows",
+      ],
+    },
+    {
       type: "doc",
       label: "Privacy",
       id: "privacy-policy",
