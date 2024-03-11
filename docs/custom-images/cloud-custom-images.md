@@ -228,7 +228,7 @@ runners:
 
 ### Azure custom specialized image VM `.cirun.yml`
 
-We also support specialized custom image on Azure, here is an example for runner configuration
+We also support specialized custom images on Azure, here is an example for runner configuration
 for a specialized image Windows runner:
 
 ```yml
