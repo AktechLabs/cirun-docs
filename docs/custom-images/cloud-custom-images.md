@@ -187,7 +187,7 @@ runners:
 
 ## Azure Custom Images
 
-For making custom images in Azure user needs to just capture an existing VM and create the image in a resource group.
+For making custom images in Azure you need to just capture an existing VM and create the image in a resource group.
 
 ### Nginx Ubuntu custom image
 
@@ -208,13 +208,13 @@ Let's take an example of how to create a custom image on Azure. We will make a u
    ```
 8. The above command shows all the custom images available on your Azure. It also shows "id" for all custom images. This is the parameter we use to make VM with a custom image.
 
-### Azure custom image vm `.cirun.yml`
+### Azure custom image VM `.cirun.yml`
 
 The .cirun.yml for above custom image will look like
 
 ```yml
 # Self-Hosted Github Action Runners on Azure via Cirun.io
-# Reference: https://docs.cirun.io/Reference/yml.html
+# Reference: https://docs.cirun.io/reference/yaml
 runners:
   - name: "azure-runner"
     # Cloud Provider: Azure
@@ -224,6 +224,24 @@ runners:
     preemptible: false
     labels:
        - "cirun-gpu-runner"
+```
+
+### Azure custom specialized image VM `.cirun.yml`
+
+We also support specialized custom image on Azure, here is an example for runner configuration
+for a specialized image Windows runner:
+
+```yml
+# Self-Hosted Github Action Runners on Azure via Cirun.io
+# Reference: https://docs.cirun.io/reference/yaml
+runners:
+   - name: azure-windows-runner
+     cloud: azure
+     region: uksouth
+     instance_type: Standard_D2s_v3
+     machine_image: "/subscriptions/7b9d1535-2655-4887-a82c-accb37d605a8/resourceGroups/specialized-vm_group/providers/Microsoft.Compute/galleries/base_images/images/win11-23h2-pro-x64/versions/2024.02.27"
+     labels:
+        - cirun-runner
 ```
 
 ## Openstack Custom Images
