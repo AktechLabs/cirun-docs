@@ -39,6 +39,7 @@ module.exports = {
         "reference/developer-api",
         "reference/organization-runner-configuration",
         "reference/access-control",
+        "reference/idle-runners",
       ],
     },
     {
