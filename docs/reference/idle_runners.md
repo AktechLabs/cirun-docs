@@ -14,15 +14,20 @@ the ability to keep "x" number of runners always (or at some specified times) ru
 This will help you run workflows almost instantly.
 
 :::info
-Idle runners does not mean that the same machine will be re-used for jobs.
+- Idle runners does not mean that the same machine will be re-used for jobs.
 Runners are destroyed after the job completes. Idle runner configuration
 makes sure that given number of runners are always available, as in a runner
 is created if one of the runners picks up a job.
 :::
 
+Specifying idle runners in the `.cirun.yml`, does not prevent spinning up of on-demand runners, but
+cirun will try to re-use existing runners where possible.
+
 ## Examples
 
-### Make 4 runners always available from 9 AM - 5 PM on Monday to Friday and 1 on weekend:
+Here are some example of specifying configuration for idle runners in `.cirun.yml`
+
+### Make `4` runners always available from 9 AM - 5 PM on Monday to Friday and `1` on the weekend:
 
 ```yaml
 runners:
@@ -46,7 +51,7 @@ runners:
 ```
 
 
-### Make 4 runners always available from 9 AM - 5 PM on Monday to Friday and none on weekend:
+### Make `4` runners always available from 9 AM - 5 PM on Monday to Friday and `0` on weekend:
 
 ```yaml
 runners:
