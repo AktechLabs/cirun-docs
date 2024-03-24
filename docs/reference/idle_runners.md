@@ -91,3 +91,48 @@ runners:
           timezone: UTC
           replicas: 4
 ```
+
+## Schedule Reference
+
+The `schedule` key expects a list of objects, below is the reference for the same:
+
+### `day`
+
+Day(s) of the week, e.g.
+
+- `mon`
+- `tue`
+- `wed`
+- `thu`
+- `fri`
+- `sat`
+- `sun`
+
+It could be a single day or a range of days, e.g.
+
+- `mon-wed`
+- `mon-fri`
+- `thu-fri`
+- `sat-sun`
+
+### `time`
+
+Time range of the day in 24-hour format, e.g.
+
+- `8-17` (8 AM - 5 PM)
+- `0-8` (12 AM - 8 AM)
+- `20-23` (8 PM - 11 PM)
+
+
+### `timezone`
+
+Timezone of the schedule. This the TZ identifier from the [TZ Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g.
+
+- `UTC`
+- `Asia/Calcutta`
+- `US/Eastern`
+- `US/Central`
+
+### `replicas`
+
+Number of runners to keep idle, expects an integer.
