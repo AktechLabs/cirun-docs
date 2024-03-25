@@ -41,11 +41,11 @@ runners:
     idle:
       schedule:
         - day: mon-fri
-          time: 5-7
+          time: 9-17
           timezone: UTC
           replicas: 4
         - day: sat-sun
-          time: 8-17
+          time: 9-17
           timezone: UTC
           replicas: 1
 ```
@@ -65,7 +65,7 @@ runners:
     idle:
       schedule:
         - day: mon-fri
-          time: 5-7
+          time: 9-17
           timezone: UTC
           replicas: 4
 ```
@@ -84,15 +84,15 @@ runners:
     idle:
       schedule:
         - day: mon
-          time: 5-7
+          time: 9-17
           timezone: UTC
           replicas: 2
         - day: wed
-          time: 5-7
+          time: 9-17
           timezone: UTC
           replicas: 3
         - day: fri
-          time: 5-7
+          time: 9-17
           timezone: UTC
           replicas: 4
 ```
