@@ -12,7 +12,7 @@ const domain = "https://docs.cirun.io";
 // -----------------------------------------------------------------------------
 // custom Fields for the project
 const customFields = {
-  copyright: `Copyright © ${new Date().getFullYear()} Cirun.io`,
+  copyright: `Copyright © 2021-${new Date().getFullYear()} Cirun.io`,
   // indexBaseUrl: true,
   meta: {
     title: "Cirun.io",
