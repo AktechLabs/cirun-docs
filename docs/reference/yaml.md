@@ -75,6 +75,12 @@ cloud: "azure"
 cloud: "openstack"
 ```
 
+- Oracle
+
+```yml
+cloud: "oracle"
+```
+
 ### GPU: `gpu`
 
 Name of the GPU if runner is required with a GPU. See Cloud provider's
