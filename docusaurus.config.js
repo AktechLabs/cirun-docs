@@ -190,4 +190,19 @@ module.exports = {
   },
 };
 
+module.exports = {
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_x2uy37fA6ConsPdNndl4JF0CoqyIpu1999jQsOfRaT9",
+        appUrl: "https://eu.i.posthog.com",
+        enableInDevelopment: false, // optional
+        // other options are passed to posthog-js init as is
+        // NOTE: options are passed through JSON.stringify(), so functions (such as `sanitize_properties`) are not supported.
+      },
+    ],
+  ],
+};
+
 module.exports = config;
