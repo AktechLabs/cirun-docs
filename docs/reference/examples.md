@@ -1,11 +1,11 @@
 ---
 id: examples
-description: Cirun.yml Examples
+description: .cirun.yml Examples
 image: "https://cirun.io/cirun-summary-image-v4.png"
 keywords: [Cirun, Examples, Cloud Platform, Runners]
 ---
 
-# Cirun.yml Examples
+# .cirun.yml Examples
 
 <head>
   <body className="other-extra-body-class" />
