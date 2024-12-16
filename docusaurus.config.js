@@ -151,6 +151,10 @@ const config = {
               //   to: "/Blog",
               // },
               {
+                label: "Home",
+                href: "https://cirun.io",
+              },
+              {
                 label: "GitHub",
                 href: "https://github.com/aktechlabs/cirun-docs",
               },
