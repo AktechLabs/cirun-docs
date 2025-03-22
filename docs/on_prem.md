@@ -19,7 +19,7 @@ and windows for on-prem is coming soon.
 2. Install the [cirun-agent](https://github.com/cirunlabs/cirun-agent) by running the following command:
 
     ```bash
-    curl --proto '=https' --tlsv1.2 -LsSf https://github.com/aktechlabs/cirun-agent/releases/download/v0.2.4/cirun-agent-installer.sh | sh
+    curl --proto '=https' --tlsv1.2 -LsSf https://github.com/aktechlabs/cirun-agent/releases/download/v0.2.6/cirun-agent-installer.sh | sh
     ```
 3. Start the agent by running the following command:
 
