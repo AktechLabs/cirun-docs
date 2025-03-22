@@ -56,6 +56,11 @@ module.exports = {
       ],
     },
     {
+        type: "doc",
+        label: "On-Prem",
+        id: "on-prem"
+    },
+    {
       type: "category",
       label: "Custom Images",
       link: { type: "doc", id: "custom-images/index" },
