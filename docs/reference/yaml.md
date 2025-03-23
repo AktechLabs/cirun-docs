@@ -289,7 +289,7 @@ making it suitable for tools that require a GUI.
 
 ```yml
     extra_config:
-      run_as: interactive
+      run_as: "interactive"
 ```
 
 ### Custom Runner User on Windows
@@ -298,7 +298,7 @@ Specifies the Windows user account to run the GitHub Actions runner under.
 
 ```yml
     extra_config:
-      runner_user: runner
+      runner_user: "runner"
 ```
 
 ### Custom Runner Path on Windows
@@ -307,5 +307,5 @@ Overrides the default runner installation path on Windows.
 
 ```yml
     extra_config:
-      runner_path: C:\\r
+      runner_path: "C:\\r"
 ```
