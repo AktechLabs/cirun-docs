@@ -10,8 +10,10 @@ keywords: [Cirun, on-premise, Apple Silicon, Mac Mini, Mac Pro, Cirun-agent]
 
 Cirun also supports spinning up runners on your own infrastructure. At the moment only
 Apple Silicon Macs are supported. If you have a Mac Mini or a Mac Pro with Apple Silicon
-then you can use Cirun to run your GitHub Actions on your own infrastructure. Support for linux
-and windows for on-prem is coming soon.
+then you can use Cirun to spin up runners on your own machine. Support for linux
+and windows for on-prem is coming soon. The setup is fairly simple and can be done in a few minutes.
+You need to install cirun-agent on your machine, which will then connect to cirun's API to
+spin up on-demand ephemeral VMs on your machine for GitHub actions.
 
 ## Setting up cirun-agent on Apple Silicon Mac
 
