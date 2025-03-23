@@ -15,7 +15,7 @@ and windows for on-prem is coming soon. The setup is fairly simple and can be do
 You need to install cirun-agent on your machine, which will then connect to cirun's API to
 spin up on-demand ephemeral VMs on your machine for GitHub actions.
 
-## Setting up cirun-agent on Apple Silicon Mac
+## Setting up `cirun-agent` on Apple Silicon Mac
 
 1. Create an API token on the [Cirun Dashboard](https://cirun.io/admin/api)
 2. Install the [cirun-agent](https://github.com/cirunlabs/cirun-agent) by running the following command:
