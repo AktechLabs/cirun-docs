@@ -42,4 +42,6 @@ spin up on-demand ephemeral VMs on your machine for GitHub actions.
           - cirun-macos-runner
     ```
 
-Now you can push to your repository and your actions will run on your Apple Silicon Mac, assuming you have a workflow file with `runs-on: cirun-macos-runner-${{ github.run_id }}`.
+Now you can push to your repository and your actions will run on your Apple Silicon Mac, assuming you have a workflow file with
+`runs-on: cirun-macos-runner-${{ github.run_id }}` and you have cirun configured in your repository by installing the GitHub App
+and marking the repository as active on the Cirun Dashboard https://cirun.io/admin/repositories.
