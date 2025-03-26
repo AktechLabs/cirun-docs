@@ -18,6 +18,7 @@ keywords: [Cirun, Github Actions, Cirun cloud, Cloud Authentication]
 Get Started with Cirun by going to Cirun.io <https://cirun.io>
 
 - Login to <https://cirun.io>
+- Click on Dashboard on the landing page
 - Click on Repositories Section on the left.
 
   ![Repo Section](./../static/quickstart/1-repo-section.png)
