@@ -257,6 +257,17 @@ To customize the root volume size for runners spun up on GCP:
         interface: SCSI
 ```
 
+### Project for GCP
+
+To customize the project to deploy the runner in GCP, you can set the project id in the `extra_config` section.
+The default `project_id` is the project id of the service account you have provided in the credentials on cirun
+dashboard.
+
+```yml
+    extra_config:
+      project_id: "my-project-id"
+```
+
 ### Custom Provisioning
 
 This is used to control how the runner is provisioned, for example, you can create a custom image that runs
