@@ -23,7 +23,7 @@ API documentation for Cirun.yml file.
 
 ## Runners: `runners`
 
-It containers the spec for the runners that will be spun on each commit.
+It contains the spec for the runners that will be spun on each commit.
 
 ```yml
 runners:
