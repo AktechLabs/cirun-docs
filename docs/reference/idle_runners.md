@@ -14,10 +14,17 @@ the ability to keep "x" number of runners always (or at some specified times) ru
 This will help you run workflows almost instantly.
 
 :::info
-- Idle runners does not mean that the same machine will be re-used for jobs.
+Idle runners does not mean that the same machine will be re-used for jobs.
 Runners are destroyed after the job completes. Idle runner configuration
 makes sure that given number of runners are always available, as in a runner
 is created if one of the runners picks up a job.
+:::
+
+:::danger
+When using idle runners, do not add the suffix `--${{ github.run_id }}` in the `runs-on` parameter
+of your workflow file. That suffix is intended for creating a unique, on-demand runner per job,
+which defeats the purpose of idle runners. Idle runners need to match by exact label to pick up
+jobs, and adding a dynamic suffix prevents that match.
 :::
 
 Specifying idle runners in the `.cirun.yml`, does not prevent spinning up of on-demand runners, but
