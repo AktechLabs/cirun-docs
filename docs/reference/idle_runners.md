@@ -166,3 +166,11 @@ To configure organization-level idle runners:
 
 Now all the repositories within your organization will have access to the specified idle runners based on the labels
 provided in the `runs-on` configuration of your workflows.
+
+Note: You must install the cirun application on all repositories that you want to use the idle runners on.
+
+:::danger
+If you don't install the cirun application on a repository that you're using with idle runners, then cirun
+will not have access to the repository's webhook events and cirun will not be able to terminated used
+runners, which would also block the creation of new runners as the `replicas` count will not decrease.
+:::
