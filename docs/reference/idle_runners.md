@@ -148,3 +148,21 @@ Timezone of the schedule. This the TZ identifier from the [TZ Database](https://
 ### `replicas`
 
 Number of runners to keep idle, expects an integer.
+
+## Organization level configuration
+
+Idle runner configurations can be applied at the organization level, allowing you to maintain a pool of available
+runners for all repositories within your organization. This centralized approach simplifies management and ensures
+consistent CI/CD performance across your entire organization.
+
+### Setting Up Organization-wide Idle Runners
+
+To configure organization-level idle runners:
+
+1. Create a new repository named `.cirun` within your organization
+2. Install the Cirun application for this repository through the Cirun dashboard
+3. Create a file named `.cirun.global.yml` in the root of the `.cirun` repository
+4. Add your idle runner configuration using the same format shown in the examples above
+
+Now all the repositories within your organization will have access to the specified idle runners based on the labels
+provided in the `runs-on` configuration of your workflows.
