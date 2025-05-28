@@ -320,3 +320,12 @@ Overrides the default runner installation path on Windows.
     extra_config:
       runner_path: "C:\\r"
 ```
+
+### Enable public IP address for Azure
+
+This will enable provisioning of public ip address on VMs created on Azure.
+
+```yml
+    extra_config:
+      enable_public_ip: true
+```
