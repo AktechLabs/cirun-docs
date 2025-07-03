@@ -1,0 +1,136 @@
+// ==============================================================================
+// Code Block Styling
+// ==============================================================================
+
+// Improve code block appearance
+.prism-code {
+  font-family: var(--global-block-family-code) !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 6px;
+}
+
+// Better YAML syntax highlighting
+.token.key,
+.token.atrule {
+  color: #e06c75 !important; // Red for keys and YAML keys
+  font-weight: 600;
+}
+
+.token.string,
+.token.attr-value {
+  color: #98c379 !important; // Green for strings and values
+}
+
+.token.number {
+  color: #d19a66 !important; // Orange for numbers
+  font-weight: 500;
+}
+
+.token.boolean,
+.token.null {
+  color: #56b6c2 !important; // Cyan for booleans and null
+  font-weight: 500;
+}
+
+.token.comment {
+  color: #5c6370 !important; // Gray for comments
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #abb2bf !important; // Light gray for punctuation
+}
+
+.token.tag {
+  color: #e06c75 !important; // Red for tags
+}
+
+.token.attr-name {
+  color: #e06c75 !important; // Red for attribute names
+}
+
+// YAML specific tokens
+.language-yaml .token.key {
+  color: #e06c75 !important;
+  font-weight: 600;
+}
+
+.language-yaml .token.scalar {
+  color: #98c379 !important;
+}
+
+.language-yaml .token.important {
+  color: #d19a66 !important;
+  font-weight: 600;
+}
+
+// Bash/shell highlighting
+.language-bash .token.function {
+  color: #61afef !important;
+}
+
+.language-bash .token.parameter {
+  color: #e06c75 !important;
+}
+
+// Dark theme overrides
+[data-theme="dark"] {
+  .token.key {
+    color: #e06c75 !important;
+  }
+
+  .token.string {
+    color: #98c379 !important;
+  }
+
+  .token.number {
+    color: #d19a66 !important;
+  }
+
+  .token.boolean {
+    color: #56b6c2 !important;
+  }
+
+  .token.comment {
+    color: #7f848e !important;
+  }
+
+  .token.punctuation {
+    color: #abb2bf !important;
+  }
+
+  .token.tag {
+    color: #e06c75 !important;
+  }
+
+  .token.attr-name {
+    color: #e06c75 !important;
+  }
+
+  .token.attr-value {
+    color: #98c379 !important;
+  }
+}
+
+// Improve inline code
+code:not(.prism-code code) {
+  font-family: var(--global-block-family-code) !important;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+// Better code block container
+.theme-code-block {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+// Improve copy button
+.clean-btn {
+  font-family: var(--global-font-family) !important;
+}

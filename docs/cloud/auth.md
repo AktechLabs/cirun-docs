@@ -26,7 +26,7 @@ keywords: [Cirun, Gcp, digitalocean, azure, Amazon web services, open stack, Aut
 - Add a new key pair to your created service account, download JSON file, and paste the JSON content on the Cirun dashboard
   ![App registration](../../static/cloud/gcp2.png)
   ![App registration](../../static/cloud/gcp4.png)
-- Visit <https://console.cloud.google.com/apis/library?project> and search compute engine and enable the API.  
+- Visit <https://console.cloud.google.com/apis/library?project> and search compute engine and enable the API.
   ![App registration](../../static/cloud/gcp5.png)
 
 ### GPU
