@@ -421,3 +421,22 @@ Overrides the default runner installation path on Windows.
     extra_config:
       runner_path: "C:\\r"
 ```
+
+#### Environment Variables
+
+Configure custom environment variables to be automatically set on all runners. This is useful for setting non-sensitive configuration values that your workflows need.
+
+```yml
+    extra_config:
+      env_vars:
+        NODE_ENV: production
+        API_ENDPOINT: https://api.example.com
+```
+
+:::caution
+**Do not use this for secrets or sensitive information.** Environment variables set via `env_vars` may be visible in logs and process lists. For secrets, use GitHub's encrypted secrets or other secure secret management solutions.
+:::
+
+:::note
+These environment variables are set at the system level and will be available to all processes running on the runner, including your GitHub Actions workflows.
+:::
