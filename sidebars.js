@@ -56,9 +56,15 @@ module.exports = {
       ],
     },
     {
-        type: "doc",
-        label: "On-Prem",
-        id: "on-prem"
+      type: "category",
+      label: "Caching",
+      link: { type: "doc", id: "caching/index" },
+      items: ["caching/aws"]
+    },
+    {
+      type: "doc",
+      label: "On-Prem",
+      id: "on-prem",
     },
     {
       type: "category",
@@ -73,9 +79,7 @@ module.exports = {
       type: "category",
       label: "OS Platform",
       link: { type: "doc", id: "os-platform/index" },
-      items: [
-        "os-platform/windows",
-      ],
+      items: ["os-platform/windows"],
     },
     {
       type: "doc",
