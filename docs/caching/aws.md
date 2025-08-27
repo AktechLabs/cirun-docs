@@ -20,6 +20,14 @@ In order to manage buckets and objects, the IAM user that is used by Cirun needs
     ],
     "Resource": "arn:aws:s3:::cirun-caching-*"
 },
+{   
+    "Sid": "S3LifecycleManagement",
+    "Effect": "Allow",
+    "Action": [
+    "s3:PutLifecycleConfiguration"
+    ],
+    "Resource": "arn:aws:s3:::cirun-caching-*"
+},
 {
     "Sid": "S3ObjectManagement",
     "Effect": "Allow",
