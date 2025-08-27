@@ -65,7 +65,7 @@ In order to manage buckets and objects, the IAM user that is used by Cirun needs
     "Action": [
         "sts:AssumeRole"
     ],
-    "Resource": "arn:aws:iam::904233099746:role/CirunCache*"
+    "Resource": "arn:aws:iam::<ACCOUNT_ID>:role/CirunCache*"
 },
 {
     "Sid": "AllowPolicySimulation",
@@ -84,7 +84,7 @@ In order to manage buckets and objects, the IAM user that is used by Cirun needs
 
 ## Increasing throughput of the cache service
 
-By default, most ec2 instances have a default limit of 125 MBPS on gp3 EBS volumes. This limits the speed at which cache files can be uploaded and downloaded from the S3 bucket. This can be increased by modifying the `Throughput` parameter of the EBS volume.
+By default, most EC2 instances have a default limit of 125 MBPS on gp3 EBS volumes. This limits the speed at which cache files can be uploaded and downloaded from the S3 bucket. This can be increased by modifying the `Throughput` parameter of the EBS volume.
 
 To increase the throughput, you need to modify the `extra_config` section in your `.cirun.yml` file like so:
 
@@ -98,4 +98,4 @@ extra_config:
       Throughput: 400 # Increase throughput to 400 MBPS
 ```
 
-This will increase the throughput of the EBS volume to 400 MBPS, which should be sufficient for most use cases. You can increase this value further if needed, but keep in mind that higher throughput values will incur additional costs.
+This will increase the throughput of the EBS volume to 400 MBPS, which should be sufficient for most use cases. You can increase this value further according to your needs.
