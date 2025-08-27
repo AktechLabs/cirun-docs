@@ -104,6 +104,57 @@ runners:
           replicas: 4
 ```
 
+## Usage-based Idle Runners
+
+In addition to schedule-based idle runners, Cirun also supports usage-based idle runners. These runners are automatically created and maintained based on actual usage patterns, making them ideal for iterative development workflows where you need fresh runners available immediately after the first job completes.
+
+### How It Works
+
+Usage-based idle runners are triggered when a runner gets allocated to a job. Once triggered, Cirun maintains the specified number of idle runners for the configured duration, then automatically scales them down when the development session ends.
+
+### Key Features
+
+- **Fresh runners**: Each job gets a clean, fresh runner (not reused)
+- **Automatic scaling**: Runners are created only when needed and scaled down automatically
+- **Perfect for development**: Ideal for iterative workflows where you push multiple commits in succession
+- **Cost-effective**: Only runs idle runners during active development periods
+
+### Example Configuration
+
+```yaml
+runners:
+  - name: aws-cpu-runner
+    cloud: aws
+    instance_type: t3.medium
+    machine_image: ami-06fd8a495a537da8b
+    preemptible: true
+    labels:
+      - cirun-runner
+    idle:
+      usage_based:
+        trigger: runner_allocated
+        replicas: 2
+        duration: 180  # 3 hours in minutes
+```
+
+:::danger
+Do not mix schedule-based and usage-based idle runners in the same runner configuration. Choose either `schedule` OR `usage_based`, but not both. If you need both types of idle runners, create separate runner configurations with different names.
+:::
+
+## Usage-based Configuration Reference
+
+### `trigger`
+
+Currently supports only `runner_allocated`, which triggers the creation of idle runners when any runner matching the configuration gets allocated to a job.
+
+### `replicas`
+
+Number of idle runners to maintain during the active period. Expects a positive integer.
+
+### `duration`
+
+Duration in minutes to keep idle runners active after the trigger event. After this period, idle runners will be automatically scaled down. Expects a positive integer.
+
 ## Schedule Reference
 
 The `schedule` key expects a list of objects, below is the reference for the same:
