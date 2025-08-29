@@ -55,12 +55,12 @@ module.exports = {
         "cloud/oracle",
       ],
     },
-    {
-      type: "category",
-      label: "Caching",
-      link: { type: "doc", id: "caching/index" },
-      items: ["caching/aws"]
-    },
+    // {
+    //   type: "category",
+    //   label: "Caching",
+    //   link: { type: "doc", id: "caching/index" },
+    //   items: ["caching/aws"]
+    // },
     {
       type: "doc",
       label: "On-Prem",
