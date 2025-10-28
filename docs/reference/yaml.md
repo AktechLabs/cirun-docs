@@ -179,16 +179,136 @@ machine_image: ubuntu-20-04-x64
 
 #### Azure
 
-Machine image takes 4 parameters(publisher, offer, sku, version) for available images on Azure. For custom images, it takes only one parameter(id). Images can be obtained from Azure CLI via:
-`az vm image list --output table`
+Azure supports three distinct formats for specifying machine images:
+
+**1. URN String Format (Marketplace/Platform Images)**
+
+Colon-separated string format for Azure Marketplace and platform images.
+
+**Syntax:** `"publisher:offer:sku:version"`
 
 ```yml
-machine_image:
-  publisher: Canonical
-  offer: UbuntuServer
-  sku: "18.04-LTS"
-  version: latest
+# Ubuntu 22.04 LTS
+machine_image: "Canonical:0001-com-ubuntu-server-jammy:22_04-lts:latest"
+
+# Ubuntu 20.04 LTS
+machine_image: "Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest"
+
+# Windows 11 Pro
+machine_image: "MicrosoftWindowsDesktop:windows-11:win11-23h2-pro:latest"
 ```
+
+**Complete example:**
+```yml
+runners:
+  - name: azure-ubuntu-runner
+    cloud: azure
+    region: eastus
+    instance_type: Standard_D2pls_v5
+    machine_image: "Canonical:0001-com-ubuntu-server-jammy:22_04-lts:latest"
+    labels:
+      - cirun-runner
+```
+
+**2. YAML Object Format (Marketplace/Platform Images)**
+
+Explicit structure with four separate fields. Equivalent to URN format but more readable.
+
+**Syntax:**
+```yml
+machine_image:
+  publisher: <publisher>
+  offer: <offer>
+  sku: <sku>
+  version: <version>
+```
+
+**Complete example:**
+```yml
+runners:
+  - name: azure-windows-runner
+    cloud: azure
+    region: uksouth
+    instance_type: Standard_B8als_v2
+    machine_image:
+      publisher: MicrosoftWindowsDesktop
+      offer: windows-11
+      sku: win11-23h2-pro
+      version: latest
+    labels:
+      - cirun-runner
+```
+
+**3. Custom Image Resource ID (Custom Images)**
+
+Full Azure resource path for custom images you've created.
+
+**3a. Regular Managed Images**
+
+For custom disk images created from VMs or uploaded.
+
+**Syntax:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/images/{imageName}`
+
+```yml
+runners:
+  - name: azure-custom-image-runner
+    cloud: azure
+    region: uksouth
+    instance_type: Standard_D2s_v3
+    machine_image: "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/Microsoft.Compute/images/your-custom-image"
+    labels:
+      - cirun-runner
+```
+
+**3b. Shared Image Gallery Images**
+
+For images stored in Azure Shared Image Galleries, including specialized images.
+
+**Syntax:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/images/{imageName}/versions/{version}`
+
+```yml
+runners:
+  - name: azure-gallery-image-runner
+    cloud: azure
+    region: uksouth
+    instance_type: Standard_D2s_v3
+    machine_image: "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/Microsoft.Compute/galleries/your-gallery/images/your-image/versions/1.0.0"
+    labels:
+      - cirun-runner
+    extra_config:
+      run_as: interactive  # Optional: for specialized Windows images
+      runner_user: runner
+      runner_path: "C:\\r"
+      storageProfile:
+        osDisk:
+          diskSizeGB: 512
+```
+
+**Discovering Images with Azure CLI**
+
+```bash
+# List popular marketplace images
+az vm image list --output table
+
+# Search for specific Ubuntu images
+az vm image list --publisher Canonical --offer 0001-com-ubuntu-server-jammy --all --output table
+
+# Search for Windows images
+az vm image list --publisher MicrosoftWindowsDesktop --offer windows-11 --all --output table
+
+# List your custom images
+az image list --output table
+
+# List shared image gallery images
+az sig image-definition list --gallery-name <gallery-name> --resource-group <resource-group> --output table
+```
+
+**Special Considerations:**
+
+- **Version Resolution:** When using `version: "latest"`, Cirun automatically resolves to the most recent version available.
+- **Specialized Images:** Images with `os_state: Specialized` (pre-configured with user accounts) automatically skip OS profile configuration during VM creation.
+- **Case Sensitivity:** Resource paths are case-insensitive for `resourceGroups` (both `resourceGroups` and `resourcegroups` work).
+- **Extra Config:** Custom images can be combined with `extra_config` options like custom disk sizes, interactive runners, and network configurations.
 
 #### Openstack
 

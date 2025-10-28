@@ -161,7 +161,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Cirun.io`,
+        copyright: `Copyright © 2021-${new Date().getFullYear()} Cirun.io`,
       },
       prism: {
         theme: lightCodeTheme,
