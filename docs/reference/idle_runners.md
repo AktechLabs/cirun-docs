@@ -13,12 +13,26 @@ to run CI jobs almost instantly like GitHub hosted runners. This is why we intro
 the ability to keep "x" number of runners always (or at some specified times) running.
 This will help you run workflows almost instantly.
 
-:::info
-Idle runners does not mean that the same machine will be re-used for jobs.
-Runners are destroyed after the job completes. Idle runner configuration
-makes sure that given number of runners are always available, as in a runner
-is created if one of the runners picks up a job.
-:::
+## How Idle Runners Work
+
+The idle runner count represents the number of runners that are **always kept idle and ready** to pick up jobs immediately.
+
+For example, if you configure `replicas: 4`:
+- Cirun maintains **4 runners that are idle** at all times
+- When one of these idle runners picks up a job, it is **no longer considered idle**
+- A new runner is **automatically spun up** to replace it and maintain the count of 4 idle runners
+- This means you could have 4 idle runners + any number of busy runners running jobs simultaneously
+
+**Important:** Runners are **not reused** between jobs - each runner is destroyed after completing a job. The idle count is maintained continuously - as soon as an idle runner becomes busy, a replacement is created. This ensures you always have N fresh runners ready to start jobs instantly.
+
+### Capacity Planning
+
+Since Cirun maintains N runners that are always idle (not N total runners), calculating your needs depends on:
+- **Job duration**: How long your typical jobs take to complete
+- **Startup time**: How long it takes to provision a new runner on your cloud provider
+- **Concurrency**: How many jobs you typically run simultaneously
+
+If jobs complete faster than new runners can be provisioned, you may need more idle runners to handle concurrent workloads effectively.
 
 :::danger
 When using idle runners, do not add the suffix `--${{ github.run_id }}` in the `runs-on` parameter
