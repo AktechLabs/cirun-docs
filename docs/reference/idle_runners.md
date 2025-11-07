@@ -27,6 +27,18 @@ which defeats the purpose of idle runners. Idle runners need to match by exact l
 jobs, and adding a dynamic suffix prevents that match.
 :::
 
+:::caution
+Idle runner configuration is read from the `.cirun.yml` file on your repository's **default branch only**.
+If you add or update idle runner configuration in a feature branch, it will not take effect until the changes
+are merged to the default branch (usually `main` or `master`).
+
+**Why default branch only?**
+
+Idle runners are created periodically, independent of any specific workflow run or pull request. Since there's
+no branch context when creating idle runners, Cirun reads the configuration from the default branch to ensure
+consistent and stable idle runner behavior.
+:::
+
 Specifying idle runners in the `.cirun.yml`, does not prevent spinning up of on-demand runners, but
 cirun will try to re-use existing runners where possible.
 
