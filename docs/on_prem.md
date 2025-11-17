@@ -10,7 +10,7 @@ keywords: [Cirun, on-premise, Apple Silicon, Mac Mini, Mac Pro, Linux, KVM, Ciru
 
 Cirun supports spinning up runners on your own infrastructure. Currently supported platforms:
 - **macOS**: Apple Silicon Macs (Mac Mini, Mac Pro, MacBook)
-- **Linux**: x86_64 Linux with KVM support
+- **Linux**: Linux with KVM support
 
 The setup is simple and can be done in a few minutes. You need to install cirun-agent on your machine,
 which will connect to Cirun's API to spin up on-demand ephemeral VMs for GitHub Actions.
