@@ -59,7 +59,7 @@ module.exports = {
       type: "category",
       label: "Caching",
       link: { type: "doc", id: "caching/index" },
-      items: ["caching/aws"]
+      items: ["caching/aws", "caching/azure"],
     },
     {
       type: "doc",
