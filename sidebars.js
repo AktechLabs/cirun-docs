@@ -59,12 +59,17 @@ module.exports = {
       type: "category",
       label: "Caching",
       link: { type: "doc", id: "caching/index" },
-      items: ["caching/aws"]
+      items: ["caching/aws"],
     },
     {
       type: "doc",
       label: "On-Prem",
       id: "on-prem",
+    },
+    {
+      type: "doc",
+      label: "Teams",
+      id: "teams",
     },
     {
       type: "category",
