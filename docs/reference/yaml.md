@@ -81,6 +81,12 @@ cloud: openstack
 cloud: oracle
 ```
 
+- Vast.ai
+
+```yml
+cloud: vast_ai
+```
+
 ### GPU: `gpu`
 
 Name of the GPU if runner is required with a GPU. See Cloud provider's
@@ -123,6 +129,10 @@ instance_type: Standard_DS1_v2  # For Azure
 
 ```yml
 instance_type: m1.small  # For Openstack
+```
+
+```yml
+instance_type: 1xRTX_4090  # For Vast.ai (format: {count}x{gpu_model})
 ```
 
 ### Machine Image: `machine_image`
@@ -318,6 +328,18 @@ In OpenStack cloud by default you are provided with cirros image, you can also b
 machine_image: cirros-0.5.2-x86_64-disk
 ```
 
+#### Vast.ai
+
+For container mode, use a Docker image URI. For VM mode, use a Vast.ai VM image.
+
+```yml
+# Container mode (default)
+machine_image: nvidia/cuda:12.0.0-base-ubuntu22.04
+
+# VM mode (requires extra_config.vm: true)
+machine_image: vastai/kvm:ubuntu_cli_22.04-2025-11-21
+```
+
 ### Preemptible: `preemptible`
 
 Option to chose low cost instances, also knows as preemptible in GCP and Spot in AWS, default is `false`.
@@ -485,6 +507,35 @@ This will enable provisioning of public ip address on VMs created on Azure.
 ```yml
     extra_config:
       enable_public_ip: true
+```
+
+### Vast.ai Extra Configuration
+
+#### Disk Space
+
+Minimum disk space in GB for the Vast.ai instance:
+
+```yml
+    extra_config:
+      disk_space: 30
+```
+
+#### Minimum RAM
+
+Minimum RAM in GB for the Vast.ai instance:
+
+```yml
+    extra_config:
+      min_ram: 8
+```
+
+#### VM Mode
+
+Run the runner in a full VM instead of a Docker container:
+
+```yml
+    extra_config:
+      vm: true
 ```
 
 ### General Extra Configuration

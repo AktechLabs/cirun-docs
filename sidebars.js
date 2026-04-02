@@ -53,6 +53,7 @@ module.exports = {
         "cloud/gcp",
         "cloud/openstack",
         "cloud/oracle",
+        "cloud/vastai",
       ],
     },
     {
