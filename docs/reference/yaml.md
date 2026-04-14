@@ -392,6 +392,33 @@ To customize the root volume size for runners spun up on AWS:
           VolumeType: gp2
 ```
 
+Supported `BlockDeviceMappings` fields and their defaults:
+
+| Field        | Applies to          | Default     |
+|--------------|---------------------|-------------|
+| `DeviceName` | all                 | `/dev/sdc`  |
+| `VolumeSize` | all                 | `75` (GiB)  |
+| `VolumeType` | all                 | `gp2`       |
+| `Throughput` | `gp3` only          | `125` MiB/s |
+| `Iops`       | `gp3`, `io1`, `io2` | AWS default (gp3: 3000) |
+
+#### High-throughput gp3 volume
+
+`gp3` enforces a maximum ratio of **0.25 MiB/s per provisioned IOPS**
+([AWS EBS gp3 docs](https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html)).
+If you raise `Throughput`, raise `Iops` proportionally — the default
+3000 IOPS only supports up to 750 MiB/s.
+
+```yml
+    extra_config:
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          VolumeSize: 60
+          VolumeType: gp3
+          Iops: 16000
+          Throughput: 1000
+```
+
 ### GCP Extra Configuration
 
 #### Custom Disk Size for GCP
