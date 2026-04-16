@@ -394,13 +394,14 @@ To customize the root volume size for runners spun up on AWS:
 
 Supported `BlockDeviceMappings` fields and their defaults:
 
-| Field        | Applies to          | Default     |
-|--------------|---------------------|-------------|
-| `DeviceName` | all                 | `/dev/sdc`  |
-| `VolumeSize` | all                 | `75` (GiB)  |
-| `VolumeType` | all                 | `gp2`       |
-| `Throughput` | `gp3` only          | `125` MiB/s |
-| `Iops`       | `gp3`, `io1`, `io2` | AWS default (gp3: 3000) |
+| Field                       | Applies to          | Default     |
+|-----------------------------|---------------------|-------------|
+| `DeviceName`                | all                 | `/dev/sdc`  |
+| `VolumeSize`                | all                 | `75` (GiB)  |
+| `VolumeType`                | all                 | `gp2`       |
+| `Throughput`                | `gp3` only          | `125` MiB/s |
+| `Iops`                      | `gp3`, `io1`, `io2` | AWS default (gp3: 3000) |
+| `VolumeInitializationRate`  | all (snapshot-backed) | not set (AWS default) |
 
 #### High-throughput gp3 volume
 
@@ -418,6 +419,26 @@ If you raise `Throughput`, raise `Iops` proportionally — the default
           Iops: 16000
           Throughput: 1000
 ```
+
+#### Faster volume initialization from snapshots
+
+When a volume is created from a snapshot-backed AMI (the common case),
+EBS downloads snapshot blocks from S3 in the background. By default this
+happens at a variable rate. `VolumeInitializationRate` lets you set a
+fixed rate (100–300 MiB/s) so the volume is fully initialized faster —
+useful for CI runners that hit cold blocks early in a job.
+
+```yml
+    extra_config:
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          VolumeSize: 100
+          VolumeType: gp3
+          VolumeInitializationRate: 300
+```
+
+See [AWS docs — Initialize Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html)
+for details and pricing.
 
 ### GCP Extra Configuration
 
