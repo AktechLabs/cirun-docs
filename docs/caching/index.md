@@ -3,7 +3,7 @@
 Cirun supports caching of dependencies and build outputs to speed up subsequent runs of workflows. It is compatible with `actions/cache`, `docker/build-push-action`, `actions/setup-*` and other actions that support github actions caching.
 
 :::caution
-This feature is currently only supported on linux runners on AWS.
+This feature is currently only supported on linux runners on AWS & Azure.
 :::
 
 ## How it works
@@ -44,6 +44,7 @@ If you are having issues with throughput, you should increase the volume through
 Update IAM permission for the cirun user to include the correct permission:
 
 - [AWS Permissions](/caching/aws#permissions)
+- [Azure Permissions](/caching/azure#setup)
 
 ### 3. Update your workflow to use caching
 
