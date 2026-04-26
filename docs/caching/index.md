@@ -140,32 +140,15 @@ Numbers are per-job, per-instance, single-cache-key. Parallel cache jobs against
 
 ## Common questions
 
-**Where is the cache stored?**
-In an S3 bucket inside *your* AWS account, in the same region as the runner. Bucket name: `cirun-caching-<region>-<user_uuid_prefix>-<account_id_hash>`. You can inspect, audit, and lifecycle-rule it yourself.
-
-**Does my cache leave AWS?**
-No. Bytes flow runner ↔ S3 over the AWS internal network in your region. Cirun infrastructure only handles the small metadata calls (key/version registry + STS credential issuance).
-
-**What credentials live on the runner?**
-Only short-lived STS session tokens (1 h validity, auto-refreshed by the local cache proxy). Your long-lived AWS access keys never leave Cirun's backend.
-
-**How do cache keys / restore-keys work?**
-Same as upstream `actions/cache` — keys + version (hash of files) form a deterministic S3 object name. `restore-keys` work identically; partial-prefix matches return the most recent.
-
-**Is there a size limit?**
-No Cirun-imposed limit. AWS S3 bucket and account quotas apply (default S3 account quota is 100 buckets × unbounded objects).
-
-**How long is the cache retained?**
-The bucket has a default S3 lifecycle policy of **7 days** (entries not accessed in 7 days are automatically deleted to control storage costs). You can override this on your bucket if you need longer retention.
-
-**Can I use this with self-hosted runners outside Cirun?**
-Not yet — the cache proxy and STS issuance are provisioned per Cirun-managed runner. Standalone use against your own S3 / R2 / B2 / MinIO is on the roadmap.
-
-**Why is my cache slow on small caches?**
-Caches < 100 MB use only 2 parallel workers with 8 MB blocks (the `actions/cache` defaults, optimised for a fast-start small-payload case). You'll see 50-150 MB/s on a 50 MB cache and 700+ MB/s only on caches > 1 GB. This is the same on every cache provider — TLS handshake + ramp-up dominates for small payloads.
-
-**Why does my first cache run miss?**
-A cache key that has never been saved before is a miss. This is expected. After the first save, subsequent runs with the same key will hit. The "warmup" is one job per cache key.
+- **Where is the cache stored?** In an S3 bucket inside *your* AWS account, in the same region as the runner. Bucket name: `cirun-caching-<region>-<user_uuid_prefix>-<account_id_hash>`. You can inspect, audit, and lifecycle-rule it yourself.
+- **Does my cache leave AWS?** No. Bytes flow runner ↔ S3 over the AWS internal network in your region. Cirun infrastructure only handles the small metadata calls (key/version registry + STS credential issuance).
+- **What credentials live on the runner?** Only short-lived STS session tokens (1 h validity, auto-refreshed by the local cache proxy). Your long-lived AWS access keys never leave Cirun's backend.
+- **How do cache keys / restore-keys work?** Same as upstream `actions/cache` — keys + version (hash of files) form a deterministic S3 object name. `restore-keys` work identically; partial-prefix matches return the most recent.
+- **Is there a size limit?** No Cirun-imposed limit. AWS S3 bucket and account quotas apply (default S3 account quota is 100 buckets × unbounded objects).
+- **How long is the cache retained?** The bucket has a default S3 lifecycle policy of **7 days** (entries not accessed in 7 days are automatically deleted to control storage costs). You can override this on your bucket if you need longer retention.
+- **Can I use this with self-hosted runners outside Cirun?** Not yet — the cache proxy and STS issuance are provisioned per Cirun-managed runner. Standalone use against your own S3 / R2 / B2 / MinIO is on the roadmap.
+- **Why is my cache slow on small caches?** Caches < 100 MB use only 2 parallel workers with 8 MB blocks (the `actions/cache` defaults, optimised for a fast-start small-payload case). You'll see 50-150 MB/s on a 50 MB cache and 700+ MB/s only on caches > 1 GB. This is the same on every cache provider — TLS handshake + ramp-up dominates for small payloads.
+- **Why does my first cache run miss?** A cache key that has never been saved before is a miss. This is expected. After the first save, subsequent runs with the same key will hit. The "warmup" is one job per cache key.
 
 ## Troubleshooting
 
