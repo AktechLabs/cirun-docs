@@ -23,18 +23,6 @@ Caching is currently supported on **Linux runners on AWS**. Other clouds and pla
 
 ## How it works
 
-```
-┌────────────────────────┐    ┌──────────────────────┐    ┌─────────────────────┐
-│ actions/cache (or      │    │ Cirun cache proxy    │    │ S3 bucket in YOUR   │
-│ setup-* / rust-cache / │ ─► │ (runs in-VM, local   │ ─► │ AWS account, same   │
-│ pixi / docker buildx)  │    │  loopback only)      │    │ region as the runner│
-└────────────────────────┘    └──────────────────────┘    └─────────────────────┘
-        │                              │                          │
-        │ HTTP                         │ AWS SDK (multipart        │
-        │ http://127.0.0.1:6420/…      │  + parallel ranged GETs)  │
-        │                              │                          │
-```
-
 When you set `extra_config.cache: true`, Cirun:
 
 1. Boots the runner with a small cache proxy listening on `127.0.0.1:6420` (loopback only — never exposed off the host).
