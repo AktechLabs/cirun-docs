@@ -143,7 +143,7 @@ The runner's region must be one Cirun supports. As of 2026-04, all major AWS reg
 
 **Cause:** STS session credentials issued at runner boot expire after 1 hour. The runner-side proxy refreshes them automatically, but older runner images held them statically.
 
-**Fix:** This is fixed on current Cirun runners. If you're hitting this, [open an issue](https://github.com/cirunlabs/cirun-docs/issues) with the run URL so we can confirm the runner image.
+**Fix:** This is fixed on current Cirun runners. If you're hitting this, [open an issue](https://github.com/AktechLabs/cirun-docs/issues) with the run URL so we can confirm the runner image.
 
 If you're using a self-built or pinned older AMI, refresh to a current Cirun image.
 
@@ -187,7 +187,7 @@ When opening an issue or reaching out for support, include:
 3. Your `.cirun.yml`'s `extra_config` block (redact secrets if any).
 4. The runner's region and instance type.
 
-[Open an issue →](https://github.com/cirunlabs/cirun-docs/issues)
+[Open an issue →](https://github.com/AktechLabs/cirun-docs/issues)
 
 ## See also
 

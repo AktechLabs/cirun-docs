@@ -21,7 +21,7 @@ Numbers below are measured against a 10 GB random-data payload (incompressible �
 | `c6gn.4xlarge`   | ~780 MB/s | ~525 MB/s |
 | `c6gn.8xlarge`   | ~785 MB/s | ~530 MB/s |
 
-We've not benchmarked every instance class. If you need a number for a specific instance type, [open an issue](https://github.com/cirunlabs/cirun-docs/issues).
+We've not benchmarked every instance class. If you need a number for a specific instance type, [open an issue](https://github.com/AktechLabs/cirun-docs/issues).
 
 Save throughput is consistently 60-70% of restore at the same instance class. Save uses S3 multipart upload (64 MB chunk × 8 concurrent uploads); restore uses parallel ranged GETs (32 MB block × 8 workers, fanned into 8 sub-fetches per worker for 64 simultaneous S3 connections at peak).
 
