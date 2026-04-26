@@ -22,10 +22,10 @@ Expected output:
 ```
 HTTPS_PROXY=http://127.0.0.1:6421
 NO_PROXY=127.0.0.1,localhost
-NODE_EXTRA_CA_CERTS=/home/runnerx/.cache-handler/cache-handler.pem
+NODE_EXTRA_CA_CERTS=...
 ```
 
-If any of these are missing, `cache: true` was not picked up. Double-check the `extra_config` indentation in your `.cirun.yml` — YAML errors here often silently disable the flag.
+All three should be set to non-empty values. If any are missing, `cache: true` was not picked up — double-check the `extra_config` indentation in your `.cirun.yml`. YAML errors here often silently disable the flag.
 
 ### Step 2 — check EBS volume throughput
 
@@ -70,19 +70,9 @@ If your cache is < 100 MB, you'll see ~80-150 MB/s and that's expected — `acti
 
 You **cannot** push small caches faster regardless of instance — the parallelism is set by `actions/cache` itself.
 
-### Step 5 — check the proxy log
+### Step 5 — confirm Cirun cache is engaged
 
-If you can't tell whether the cache is going through Cirun or falling back to GitHub's hosted cache, dump the proxy log at the end of the job:
-
-```yaml
-- if: always()
-  run: sudo cat /tmp/cache-handler.log
-```
-
-Look for one of these:
-
-- `Storage backend initialized successfully` — Cirun cache is engaged
-- `Storage backend not available. API server will not start. Running in proxy-only mode.` — Cirun cache failed to start; falling back to GitHub hosted. See "Cache requests fail with 500" below.
+The clearest signal is the throughput itself: a 1+ GB cache restoring at 50-150 MB/s is hitting GitHub's hosted cache. The same restore on Cirun cache, with `Throughput: 1000` set, lands in the 400-780 MB/s range depending on instance class. If you're seeing the slow path despite `extra_config.cache: true` and the env vars from Step 1, [open an issue](https://github.com/AktechLabs/cirun-docs/issues) with the run URL.
 
 ## Cache misses every time
 
@@ -124,16 +114,7 @@ If you see workflow errors like `Failed to save cache: Internal error` or `Cache
 
 Most 500 errors come from the IAM user lacking required permissions for `STS AssumeRole`, `s3:CreateBucket`, or one of the IAM operations on `CirunCacheRole`. Re-check against [AWS permissions](/caching/aws#permissions). The most-common single missing permission is `iam:UpdateAssumeRolePolicy` — needed when Cirun updates an existing role's trust policy.
 
-### Step 2 — check the proxy log
-
-```yaml
-- if: always()
-  run: sudo cat /tmp/cache-handler.log
-```
-
-Look for `failed to fetch storage credentials` — that's the bridge from the runner-side proxy to Cirun's STS issuer. The error message will indicate which AWS API call failed and with what error.
-
-### Step 3 — STS region
+### Step 2 — STS region
 
 The runner's region must be one Cirun supports. As of 2026-04, all major AWS regions are supported.
 
@@ -182,10 +163,10 @@ If you're using a self-built or pinned older AMI, refresh to a current Cirun ima
 
 When opening an issue or reaching out for support, include:
 
-1. The output of the workflow step that's failing (the full `actions/cache` log lines, including the URL being fetched).
-2. The output of `sudo cat /tmp/cache-handler.log` from the same run (add it as an `if: always()` step).
-3. Your `.cirun.yml`'s `extra_config` block (redact secrets if any).
-4. The runner's region and instance type.
+1. The output of the workflow step that's failing (the full `actions/cache` log lines).
+2. Your `.cirun.yml`'s `extra_config` block (redact secrets if any).
+3. The runner's region and instance type.
+4. The run URL.
 
 [Open an issue →](https://github.com/AktechLabs/cirun-docs/issues)
 
