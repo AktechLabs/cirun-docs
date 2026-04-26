@@ -14,7 +14,7 @@ Add a debug step to your workflow:
 
 ```yaml
 - name: Check cache env
-  run: env | grep -E 'HTTPS_PROXY|NO_PROXY|NODE_EXTRA_CA_CERTS'
+  run: env | grep -E 'HTTPS_PROXY|NO_PROXY'
 ```
 
 Expected output:
@@ -22,10 +22,9 @@ Expected output:
 ```
 HTTPS_PROXY=http://127.0.0.1:6421
 NO_PROXY=127.0.0.1,localhost
-NODE_EXTRA_CA_CERTS=...
 ```
 
-All three should be set to non-empty values. If any are missing, `cache: true` was not picked up — double-check the `extra_config` indentation in your `.cirun.yml`. YAML errors here often silently disable the flag.
+If either is missing, `cache: true` was not picked up — double-check the `extra_config` indentation in your `.cirun.yml`. YAML errors here often silently disable the flag.
 
 ### Step 2 — check EBS volume throughput
 
