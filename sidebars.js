@@ -62,6 +62,7 @@ module.exports = {
       link: { type: "doc", id: "caching/index" },
       items: [
         "caching/aws",
+        "caching/s3-compatible",
         "caching/performance",
         "caching/troubleshooting",
       ]
