@@ -29,7 +29,7 @@ R2 has **zero egress** charges, which makes it the cheapest option for runners o
 4. **Add a workflow step**:
 
     ```yaml
-    - uses: cirunlabs/cache/s3@<COMMIT_SHA>  # v5.0.5-cirun.1
+    - uses: cirunlabs/cache/s3@0d5005be5be8cb3f20e624125e3fca0dc68eb384  # v5.0.5-cirun.1
       with:
         path: |
           ~/.cache/go-build
@@ -58,7 +58,7 @@ If you already have an S3 bucket (or want one outside Cirun's auto-managed `ciru
 4. **Add a workflow step**:
 
     ```yaml
-    - uses: cirunlabs/cache/s3@<COMMIT_SHA>  # v5.0.5-cirun.1
+    - uses: cirunlabs/cache/s3@0d5005be5be8cb3f20e624125e3fca0dc68eb384  # v5.0.5-cirun.1
       with:
         path: |
           ~/.cache/go-build
