@@ -1,31 +1,8 @@
 // Default variables are defined in this stylesheet
 
-// Inter Variable (variable axis: weight + slant) — single file, loads instantly
-@import url("https://rsms.me/inter/inter.css");
+// Bricolage Grotesque (variable: weight 200–800, opsz 12–96, width 75–100)
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap");
-
-// Alias "Inter Variable" (with space) → same file rsms.me uses for "InterVariable"
-@font-face {
-  font-family: "Inter Variable";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1") format("woff2");
-}
-@font-face {
-  font-family: "Inter Variable";
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
-}
-
-@supports (font-variation-settings: normal) {
-  :root {
-    --global-font-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
-    --global-heading-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
-  }
-}
 
 :root {
   // cirun colours definition - the base colour is denoted by the `5` number i.e. --cirun-teal-5
@@ -168,10 +145,10 @@
   // ==============================================================================
   // Typography
   // ==============================================================================
-  --global-font-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
-  --global-heading-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+  --global-font-family: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  --global-heading-family: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
   --global-block-family-code: "Fira Code", ui-monospace, "SF Mono", Menlo, monospace;
-  font-feature-settings: "cv11", "ss01", "ss03"; // Inter stylistic sets — single-story 'a', open '4', curved 'l'
+  font-feature-settings: normal;
 
   --ifm-code-font-size: 100%;
   --ifm-h4-font-size: 1.3rem;
