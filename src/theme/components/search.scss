@@ -190,3 +190,53 @@ mark {
   text-align: center;
   padding: 10px !important;
 }
+
+// ==============================================================================
+// Mobile responsive overrides
+// ==============================================================================
+
+@media (max-width: 996px) {
+  [class*="searchBarContainer_"] {
+    width: 160px;
+  }
+
+  .navbar__search-input {
+    padding: 0 0.75rem 0 2.25rem !important;
+  }
+
+  // Hide the ⌘K kbd hint — overflows onto neighbouring CTA
+  [class*="searchHintContainer_"] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  [class*="searchBarContainer_"] {
+    width: 140px;
+  }
+}
+
+// Very narrow phones — collapse search to magnifier icon, expand on focus
+@media (max-width: 360px) {
+  [class*="searchBarContainer_"] {
+    width: 36px;
+    transition: width 0.2s ease;
+  }
+
+  [class*="searchBarContainer_"]:focus-within {
+    width: 200px;
+  }
+
+  .navbar__search-input {
+    width: 100% !important;
+    padding: 0 0 0 2.25rem !important;
+    color: transparent !important;
+
+    &::placeholder { color: transparent !important; }
+
+    &:focus {
+      color: var(--cirun-blue-gray-11) !important;
+      &::placeholder { color: var(--cirun-blue-gray-7) !important; }
+    }
+  }
+}

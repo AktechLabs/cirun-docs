@@ -38,6 +38,12 @@ main.docMainContainer .container {
   padding-inline: 2rem;
 }
 
+@media (max-width: 996px) {
+  main.docMainContainer .container {
+    padding-inline: 1rem;
+  }
+}
+
 // Doc content column — narrow, centered. The ".col.docItemCol" gets
 // max-width: 75% from theme; we replace it with a px cap so the content
 // reads like a column, not a stretched paragraph.
@@ -110,6 +116,50 @@ article p,
 article li {
   font-size: 1rem;
   line-height: 1.7;
+}
+
+// Mobile typography — tighter headings, fits narrow viewports
+@media (max-width: 996px) {
+  article header h1,
+  article > h1:first-child,
+  .markdown > h1:first-child {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+  }
+
+  article h2 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+  }
+
+  article h3 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+
+  article p,
+  article li {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+
+// Tables overflow horizontally on small screens — scroll instead of break layout
+.markdown > table,
+article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Long URLs / inline code shouldn't blow out the layout on mobile
+@media (max-width: 996px) {
+  article a,
+  article code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 }
 
 // Subtle horizontal rule between sections

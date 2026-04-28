@@ -60,6 +60,17 @@
     padding: 20px;
   }
 
+  @media (max-width: 996px) {
+    pre code {
+      padding: 12px;
+      font-size: 0.8rem;
+    }
+
+    img {
+      padding: 4px;
+    }
+  }
+
   div[class^="codeBlock_"] {
     border-radius: 0;
   }

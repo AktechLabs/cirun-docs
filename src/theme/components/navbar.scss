@@ -19,9 +19,10 @@
   }
 }
 
+// Note: avoid backdrop-filter on .navbar — it creates a containing block for
+// fixed-position descendants, which traps the mobile sidebar drawer at navbar
+// height and breaks the burger menu.
 .navbar {
-  backdrop-filter: saturate(180%) blur(12px);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.92);
@@ -223,4 +224,58 @@ div[class^="announcementBar_"] {
 div[class^="announcementBarContent_"] {
   font-size: 1rem;
   padding: 20px 0;
+}
+
+// Announcement bar — let it grow on mobile if text wraps, smaller font
+@media (max-width: 996px) {
+  div[class^="announcementBar_"] {
+    height: auto;
+    min-height: 0;
+  }
+
+  div[class^="announcementBarContent_"] {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    line-height: 1.4;
+  }
+}
+
+// ==============================================================================
+// Mobile responsive overrides — placed last so they win source-order over the
+// unconditional rules above (same specificity).
+// ==============================================================================
+
+@media (max-width: 996px) {
+  .navbar__brand .navbar__logo {
+    height: 2.25rem;
+  }
+
+  .navbar {
+    padding-inline: 0.75rem;
+  }
+
+  .navbar__items--right {
+    gap: 0.25rem;
+  }
+
+}
+
+// Phones — drop the "Get Started" CTA label, keep arrow icon only
+@media (max-width: 768px) {
+  .navbar-cta {
+    font-size: 0 !important;
+    padding: 0.4rem 0.6rem !important;
+    gap: 0;
+
+    &::after {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// Very narrow phones — hide GitHub + CTA, keep burger/logo/search only
+@media (max-width: 380px) {
+  .header-github-link,
+  .navbar-cta { display: none !important; }
 }
