@@ -1,0 +1,35 @@
+---
+slug: /yml-builder
+title: .cirun.yml builder
+description: Generate a working .cirun.yml by picking a cloud, OS, size, and region.
+keywords: [Cirun, .cirun.yml, configuration generator, AWS, Azure, GCP]
+---
+
+import CirunYamlBuilder from '@site/src/components/CirunYamlBuilder';
+
+# `.cirun.yml` builder
+
+:::warning Work in progress
+This builder UI is a work in progress — most combinations are not yet wired
+into the form below. **Cirun itself supports them**; only this generator
+hasn't caught up. If you hit a "not yet wired in this UI" notice, or need
+anything beyond what's exposed here, write the YAML by hand using the
+[YAML reference](./reference/yaml) for the full schema.
+:::
+
+Generate a working `.cirun.yml` for your cloud and workload. The output is a
+starting point — see the [YAML reference](./reference/yaml) for the full schema.
+
+<CirunYamlBuilder />
+
+## How it fits together
+
+Cirun watches your repo for the `.cirun.yml` file at the root. When a workflow
+asks for a self-hosted runner with the label you defined, Cirun spins one up in
+your cloud, runs the job, and tears the runner down when the job finishes.
+
+- One YAML file controls every runner shape your repo can request.
+- Workflows reference runners by label — no manual fleet management.
+- Add cloud credentials in the [Cirun dashboard](https://cirun.io) once.
+- For multi-cloud fallback, custom networking, env injection, etc. see the
+  [YAML reference](./reference/yaml).

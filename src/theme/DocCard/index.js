@@ -2,9 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {
-  findFirstCategoryLink,
+  findFirstSidebarItemLink,
   useDocById,
-} from '@docusaurus/theme-common/internal';
+} from '@docusaurus/plugin-content-docs/client';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -24,7 +24,7 @@ function CardLayout({href, title, description}) {
 }
 
 function CardCategory({item}) {
-  const href = findFirstCategoryLink(item);
+  const href = findFirstSidebarItemLink(item);
   if (!href) return null;
   return (
     <CardLayout

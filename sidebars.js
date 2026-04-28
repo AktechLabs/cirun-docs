@@ -25,6 +25,11 @@ module.exports = {
       id: "Quickstart",
     },
     {
+      label: ".cirun.yml builder",
+      type: "doc",
+      id: "yml-builder",
+    },
+    {
       type: "category",
       label: "Reference",
       collapsed: false,

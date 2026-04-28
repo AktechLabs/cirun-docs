@@ -28,10 +28,10 @@ Cirun access to your GCP, for it to be able to create runners.
 - Add a new key pair to your created service account, download JSON file, and paste the JSON content on the Cirun dashboard
   ![App registration](../../static/cloud/gcp2.png)
   ![App registration](../../static/cloud/gcp4.png)
-- Visit <https://console.cloud.google.com/apis/library?project> and search compute engine and enable the API.
+- Visit [https://console.cloud.google.com/apis/library?project](https://console.cloud.google.com/apis/library?project) and search compute engine and enable the API.
   ![App registration](../../static/cloud/gcp5.png)
 
 ### GPU
 
 If you need to be able to create GPU enabled runners, make sure to request
-Google to increase your quota for GPUs, its 0 by default. See <https://cloud.google.com/compute/quotas#gpu_quota>
+Google to increase your quota for GPUs, its 0 by default. See [https://cloud.google.com/compute/quotas#gpu_quota](https://cloud.google.com/compute/quotas#gpu_quota)

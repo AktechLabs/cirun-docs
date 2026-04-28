@@ -9,7 +9,12 @@ Cirun provides drop-in cache acceleration for GitHub Actions workflows. Enable i
 In benchmarks, a single 10 GB cache restores in **~13 seconds** on a `c6gn.4xlarge` runner. Throughput scales with instance class — bigger NICs and more vCPUs push higher, and parallel cache jobs against distinct keys each saturate their own connection independently.
 
 :::caution
-Caching is currently supported on **Linux runners on AWS**. Other clouds and platforms are on the roadmap.
+Two paths, different coverage:
+
+- **Auto mode** (`extra_config.cache: true`, this page) — drop-in `actions/cache` acceleration with no workflow changes. Currently **Linux runners on AWS** only.
+- **[S3-compatible action](/caching/s3-compatible)** (`cirunlabs/cache/s3`) — explicit step backed by any S3-compatible store (Cloudflare R2, AWS S3, MinIO, Backblaze B2, Wasabi, etc.). Works on **any OS, any cloud, any runner** — same surface as `actions/cache`.
+
+Auto-mode coverage for other clouds and Windows/macOS is on the roadmap.
 :::
 
 ## What you get

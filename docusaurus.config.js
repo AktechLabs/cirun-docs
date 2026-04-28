@@ -1,9 +1,10 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 // @ts-check
 
-// https://github.com/FormidableLabs/prism-react-renderer/tree/master/src/themes
-const lightCodeTheme = require("prism-react-renderer/themes/nightOwlLight");
-const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
+// https://github.com/FormidableLabs/prism-react-renderer
+const { themes: prismThemes } = require("prism-react-renderer");
+const lightCodeTheme = prismThemes.nightOwlLight;
+const darkCodeTheme = prismThemes.nightOwl;
 
 // Adding reusable information
 const githubOrgUrl = "https://github.com/AktechLabs";
@@ -40,8 +41,12 @@ const config = {
   url: customFields.domain,
   baseUrl: "/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   staticDirectories: ["static"],
 
   i18n: {
@@ -63,6 +68,14 @@ const config = {
         explicitSearchResultPath: true,
       },
     ],
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_x2uy37fA6ConsPdNndl4JF0CoqyIpu1999jQsOfRaT9",
+        appUrl: "https://eu.i.posthog.com",
+        enableInDevelopment: false,
+      },
+    ],
   ],
   customFields: { ...customFields },
 
@@ -77,7 +90,6 @@ const config = {
           routeBasePath: "/",
           path: "docs",
           admonitions: {
-            tag: ":::",
             keywords: ["note", "tip", "info", "caution", "danger"],
           },
           sidebarPath: require.resolve("./sidebars.js"),
@@ -95,6 +107,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "https://cirun.io/cirun-summary-image-v4.png",
+      metadata: [
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Cirun.io" },
+      ],
       docs: {
         sidebar: {
           autoCollapseCategories: false,
@@ -161,45 +178,6 @@ const config = {
         additionalLanguages: ['yaml', 'bash', 'json', 'javascript', 'typescript'],
       },
     }),
-};
-module.exports = {
-  themeConfig: {
-    metadata: [
-      {
-        name: "twitter:image",
-        content: "https://cirun.io/cirun-summary-image-v4.png",
-      },
-    ],
-    // This would become <meta name="keywords" content="cooking, blog"> in the generated HTML
-  },
-};
-module.exports = {
-  // ...
-  customFields: {
-    image: "https://cirun.io/cirun-summary-image-v4.png",
-    keywords: ["twitter:image"],
-  },
-  // ...
-};
-module.exports = {
-  themeConfig: {
-    image: "https://cirun.io/cirun-summary-image-v4.png",
-  },
-};
-
-module.exports = {
-  plugins: [
-    [
-      "posthog-docusaurus",
-      {
-        apiKey: "phc_x2uy37fA6ConsPdNndl4JF0CoqyIpu1999jQsOfRaT9",
-        appUrl: "https://eu.i.posthog.com",
-        enableInDevelopment: false, // optional
-        // other options are passed to posthog-js init as is
-        // NOTE: options are passed through JSON.stringify(), so functions (such as `sanitize_properties`) are not supported.
-      },
-    ],
-  ],
 };
 
 module.exports = config;

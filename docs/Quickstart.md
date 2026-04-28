@@ -15,9 +15,9 @@ keywords: [Cirun, Github Actions, Cirun cloud, Cloud Authentication]
   <meta name="twitter:image" content="https://cirun-docs-test.netlify.app/img/cirun-summary-image-v4.png" />
 </head>
 
-Get Started with Cirun by going to Cirun.io <https://cirun.io>
+Get Started with Cirun by going to Cirun.io [https://cirun.io](https://cirun.io)
 
-1. Login to <https://cirun.io>
+1. Login to [https://cirun.io](https://cirun.io)
 2. Click on Dashboard on the landing page
 3. Click on Repositories Section on the left.
 

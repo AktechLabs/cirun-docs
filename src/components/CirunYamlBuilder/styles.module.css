@@ -1,0 +1,441 @@
+/* ============================================================================
+   .cirun.yml builder — dark-first, theme-token driven, restrained motion
+   ========================================================================== */
+
+.builder {
+  --cyb-accent: #3b82f6;
+  --cyb-accent-soft: rgba(59, 130, 246, 0.18);
+  --cyb-accent-faint: rgba(59, 130, 246, 0.10);
+  --cyb-accent-glow: rgba(59, 130, 246, 0.35);
+  --cyb-surface: var(--ifm-background-surface-color);
+  --cyb-surface-2: var(--ifm-color-emphasis-100);
+  --cyb-border: var(--ifm-color-emphasis-300);
+  --cyb-border-strong: var(--ifm-color-emphasis-400);
+  --cyb-fg: var(--ifm-color-content);
+  --cyb-fg-muted: var(--ifm-color-emphasis-700);
+  --cyb-fg-faint: var(--ifm-color-emphasis-600);
+  --cyb-radius: 10px;
+  --cyb-radius-sm: 6px;
+  --cyb-gap: 1rem;
+  --cyb-gap-lg: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--cyb-gap-lg);
+  margin: 1.5rem 0 2rem;
+  font-family: var(--global-font-family);
+  color: var(--cyb-fg);
+}
+
+[data-theme='dark'] .builder {
+  --cyb-accent: #60a5fa;
+  --cyb-accent-soft: rgba(96, 165, 250, 0.18);
+  --cyb-accent-faint: rgba(96, 165, 250, 0.10);
+  --cyb-accent-glow: rgba(96, 165, 250, 0.45);
+}
+
+/* ----- Step header ------------------------------------------------------- */
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.stepHeader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.65rem;
+  height: 1.65rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  background: var(--cyb-accent-soft);
+  color: var(--cyb-accent);
+  font-family: var(--global-block-family-code);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.stepLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyb-fg-muted);
+}
+
+/* ----- Cloud icon-card row ---------------------------------------------- */
+
+.cloudGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.4rem;
+  padding: 0.25rem 0;
+}
+
+.cloudCard {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 0.1rem;
+  background: transparent;
+  border: none;
+  color: var(--cyb-fg-muted);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.cloudCard:hover {
+  color: var(--cyb-fg);
+}
+
+.cloudCard:focus-visible {
+  outline: 2px solid var(--cyb-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.cloudActive {
+  color: var(--cyb-accent);
+  font-weight: 600;
+}
+
+.cloudActive:hover {
+  color: var(--cyb-accent);
+}
+
+.cloudActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--cyb-accent);
+  border-radius: 2px;
+}
+
+/* ----- Form rows -------------------------------------------------------- */
+
+.machineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.placementGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: end;
+}
+
+@media (max-width: 900px) {
+  .machineGrid,
+  .placementGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .machineGrid,
+  .placementGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.field > label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--cyb-fg-muted);
+}
+
+.field select,
+.field input[type='text'],
+.field input[type='number'] {
+  height: 38px;
+  padding: 0 0.7rem;
+  background: var(--cyb-surface);
+  color: var(--cyb-fg);
+  border: 1px solid var(--cyb-border);
+  border-radius: var(--cyb-radius-sm);
+  font-family: inherit;
+  font-size: 0.88rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--cyb-fg-muted) 50%),
+    linear-gradient(135deg, var(--cyb-fg-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+.field select:focus,
+.field input:focus {
+  outline: none;
+  border-color: var(--cyb-accent);
+  box-shadow: 0 0 0 3px var(--cyb-accent-faint);
+}
+
+.field select:disabled,
+.field input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ----- Segmented control ------------------------------------------------ */
+
+.segmented {
+  display: inline-flex;
+  height: 38px;
+  padding: 3px;
+  background: var(--cyb-surface);
+  border: 1px solid var(--cyb-border);
+  border-radius: var(--cyb-radius-sm);
+}
+
+.segItem {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.6rem;
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--cyb-radius-sm) - 2px);
+  color: var(--cyb-fg-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.segItem:hover:not(:disabled):not(.segActive) {
+  color: var(--cyb-fg);
+}
+
+.segItem:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.segActive {
+  background: var(--cyb-accent-soft);
+  color: var(--cyb-accent);
+}
+
+.segItem:focus-visible {
+  outline: 2px solid var(--cyb-accent);
+  outline-offset: 2px;
+}
+
+/* ----- Toggle switch ---------------------------------------------------- */
+
+.toggleHolder {
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  background: var(--cyb-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switchThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 999px;
+  transition: transform 150ms ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.switchOn {
+  background: var(--cyb-accent);
+}
+
+.switchOn .switchThumb {
+  transform: translateX(14px);
+}
+
+/* ----- Output code block ----------------------------------------------- */
+
+.outputBlock {
+  margin-top: 0.5rem;
+  background: var(--cyb-surface);
+  border: 1px solid var(--cyb-border);
+  border-radius: var(--cyb-radius);
+  overflow: hidden;
+}
+
+.outputHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.85rem;
+  background: var(--cyb-surface-2);
+  border-bottom: 1px solid var(--cyb-border);
+  color: var(--cyb-fg-muted);
+}
+
+.outputName {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+}
+
+.outputName code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-family: var(--global-block-family-code);
+  font-size: 0.82rem;
+  color: var(--cyb-fg);
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.6rem;
+  background: transparent;
+  border: 1px solid var(--cyb-border);
+  border-radius: 5px;
+  color: var(--cyb-fg-muted);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+.copyBtn:hover {
+  color: var(--cyb-fg);
+  border-color: var(--cyb-border-strong);
+  background: var(--cyb-surface);
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid var(--cyb-accent);
+  outline-offset: 2px;
+}
+
+.copied,
+.copied:hover {
+  color: var(--ifm-color-success, #2ecc71);
+  border-color: var(--ifm-color-success, #2ecc71);
+  background: rgba(46, 204, 113, 0.08);
+}
+
+.code {
+  margin: 0;
+  padding: 0.95rem 1.1rem;
+  font-family: var(--global-block-family-code);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+  background: var(--cyb-surface);
+  color: var(--cyb-fg);
+}
+
+.line {
+  display: inline;
+}
+
+.tKey   { color: #93c5fd; }
+.tValue { color: #fcd34d; }
+.tComment { color: var(--cyb-fg-faint); font-style: italic; }
+.tPunct { color: var(--cyb-fg-muted); }
+
+[data-theme='light'] .tKey   { color: #1d4ed8; }
+[data-theme='light'] .tValue { color: #b25500; }
+
+.errorBody {
+  padding: 0.9rem 1rem;
+  font-size: 0.86rem;
+  color: var(--cyb-fg-muted);
+  border-left: 3px solid var(--ifm-color-warning, #f0b400);
+  background: rgba(240, 180, 0, 0.06);
+}
+
+/* ----- Footer note ------------------------------------------------------ */
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: var(--cyb-fg-muted);
+}
+
+.note code {
+  background: var(--cyb-surface-2);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-family: var(--global-block-family-code);
+  font-size: 0.78rem;
+  color: var(--cyb-fg);
+}
+
+.note a {
+  color: var(--cyb-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.note a:hover {
+  text-decoration: underline;
+}
