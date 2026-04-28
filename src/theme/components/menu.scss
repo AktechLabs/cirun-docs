@@ -1,52 +1,86 @@
 // ==============================================================================
-// Menu
+// Sidebar Menu
 // ==============================================================================
 
+// Hide chevron carets on category items (Modal-style — section heading style instead)
+.menu__caret,
+.menu__link--sublist-caret::after {
+  display: none !important;
+}
+
+// Section heading (top-level category label like "Reference", "Cloud")
+.menu > .menu__list > .menu__list-item > .menu__link,
+.menu > .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ifm-color-content);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .menu__list {
+  padding-left: 0;
+
+  // Nested list — indent guide on the left edge, NOT a heavy border.
   .menu__list {
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--ifm-color-emphasis-200);
+
     .menu__link {
       color: var(--ifm-menu-color);
-      font-weight: normal;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0.4rem 0.75rem;
     }
   }
 
   .menu__link,
   .menu__caret {
-    border-radius: 0;
+    border-radius: 6px;
     text-decoration: none;
+    padding: 0.45rem 0.75rem;
+    transition: background-color 0.12s ease, color 0.12s ease;
   }
 
-  .menu__link--active {
-    border-left: 2px solid var(--secondary-cirun);
-    background-color: var(--ifm-background-color);
-    color: var(--ifm-color-primary);
-  }
-
+  // Active item — rounded pill bg + accent text + thin left accent bar
+  .menu__link--active,
   .menu__link--active:not(.menu__link--sublist) {
-    border-left: 2px solid var(--secondary-cirun);
-    background-color: var(--ifm-background-color);
+    background-color: var(--ifm-color-emphasis-100);
+    color: var(--ifm-color-primary);
+    font-weight: 600;
+    box-shadow: inset 2px 0 0 var(--ifm-color-primary);
+    border-left: none;
   }
 
   .menu__link:hover {
-    border-left: 2px solid var(--ifm-menu-color);
-    color: var(--ifm-menu-color);
-    background-color: transparent;
+    background-color: var(--ifm-color-emphasis-100);
+    color: var(--ifm-color-content);
+    border-left: none;
   }
 }
 
 [data-theme="dark"] {
-  .menu__link,
-  .menu__caret {
-    color: var(--ifm-menu-color);
+  .menu__list .menu__list {
+    border-left-color: var(--cirun-blue-gray-2);
   }
+
   .menu__link,
   .menu__caret {
-    border-radius: 0;
     color: var(--ifm-menu-color);
   }
 
   .menu__link:hover {
+    background-color: rgba(255, 255, 255, 0.04);
     text-decoration: none;
+    color: var(--cirun-blue-gray-11);
+  }
+
+  .menu__link--active,
+  .menu__link--active:not(.menu__link--sublist) {
+    background-color: rgba(94, 114, 228, 0.14);
+    color: var(--cirun-blue-9);
   }
 }
 
@@ -54,52 +88,53 @@
 // Table of contents
 // ==============================================================================
 
+.table-of-contents {
+  font-size: 0.85rem;
+  border-left: none;
+  padding-left: 0;
+}
+
 .table-of-contents__link {
-  color: var(--ifm-toc-link-color);
+  color: var(--ifm-color-content-secondary);
   display: block;
   text-decoration: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  border-left: none !important;
+  transition: background-color 0.12s ease, color 0.12s ease;
+
   &:hover {
-    color: var(--ifm-menu-color);
-    border-left: 2px solid var(--ifm-menu-color);
-    padding-left: 5px;
+    color: var(--ifm-color-content);
+    background-color: var(--ifm-color-emphasis-100);
+    border-left: none;
+    padding-left: 0.6rem;
     font-weight: 500;
   }
 }
 
-.table-of-contents__link--active {
+.table-of-contents__link--active,
+.table-of-contents__link--active code {
   color: var(--ifm-color-primary);
-  border-left: 2px solid var(--secondary-cirun);
+  background-color: var(--ifm-color-emphasis-100);
+  border-left: none !important;
+  padding-left: 0.6rem;
+  font-weight: 600;
   text-decoration: none;
-  padding-left: 5px;
-  font-weight: 500;
 }
 
 [data-theme="dark"] {
   .table-of-contents__link {
-    color: var(--ifm-toc-link-color);
-    text-decoration: none;
+    color: var(--cirun-blue-gray-8);
+
+    &:hover {
+      color: var(--cirun-blue-gray-11);
+      background-color: rgba(255, 255, 255, 0.04);
+    }
   }
 
-  .table-of-contents__link--active,
-  .table-of-contents__link--active code,
-  .table-of-contents__link:hover,
-  .table-of-contents__link:hover code,
   .table-of-contents__link--active,
   .table-of-contents__link--active code {
-    text-decoration: none;
-    color: var(--ifm-menu-color);
-  }
-  .table-of-contents__link--active {
-    color: var(--cirun-links-dark);
-    border-left: 2px solid var(--secondary-cirun);
-  }
-}
-
-.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-next-theme-TOCCollapsible-index-module a {
-  display: block;
-  color: var(--cirun-blue-gray-2);
-  &:hover {
-    border-left: 2px solid var(--secondary-cirun);
-    text-decoration: none;
+    color: var(--cirun-blue-9);
+    background-color: rgba(94, 114, 228, 0.14);
   }
 }

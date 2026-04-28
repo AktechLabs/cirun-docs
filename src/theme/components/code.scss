@@ -5,9 +5,9 @@
 // Improve code block appearance
 .prism-code {
   font-family: var(--global-block-family-code) !important;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  border-radius: 8px;
 }
 
 // Better YAML syntax highlighting
@@ -122,12 +122,17 @@ code:not(.prism-code code) {
   font-weight: 500;
 }
 
-// Better code block container
+// Better code block container — rounded with thin border, no heavy shadow
 .theme-code-block {
   margin: 1.5rem 0;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .theme-code-block {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 // Improve copy button

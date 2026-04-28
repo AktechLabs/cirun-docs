@@ -1,0 +1,129 @@
+// ==============================================================================
+// Doc page layout — three column (sidebar | content | TOC)
+// Tightens content column, fixes sidebar width, makes right TOC sticky.
+// ==============================================================================
+
+// Hide breadcrumbs (cleaner, matches reference doc style)
+.theme-doc-breadcrumbs {
+  display: none;
+}
+
+// Hide sidebar collapse «»  button (Docusaurus default — clutter)
+button.collapseSidebarButton_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-CollapseButton-styles-module,
+[class*="collapseSidebarButton"],
+[class*="expandButton"] {
+  display: none !important;
+}
+
+// Left sidebar — fixed width (var defined in _global_vars.scss)
+@media (min-width: 997px) {
+  .theme-doc-sidebar-container {
+    width: var(--doc-sidebar-width, 280px) !important;
+    border-right: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  [data-theme="dark"] .theme-doc-sidebar-container {
+    border-right-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+// Sidebar inner padding — match the wider, calmer feel
+.menu {
+  padding: 1.25rem 0.75rem !important;
+}
+
+// Main container width
+main.docMainContainer .container {
+  max-width: 1400px;
+  padding-inline: 2rem;
+}
+
+// Doc content column — narrow, centered. The ".col.docItemCol" gets
+// max-width: 75% from theme; we replace it with a px cap so the content
+// reads like a column, not a stretched paragraph.
+@media (min-width: 997px) {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  [class*="docItemCol"] {
+    max-width: none !important;
+    flex-basis: auto !important;
+  }
+
+  // Inner article container — actual reading width
+  article {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  // Doc page padding
+  .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module,
+  [class*="docMainContainer"] {
+    padding-block: 2rem;
+  }
+}
+
+// Right TOC column — narrower, sticky, no border
+@media (min-width: 997px) {
+  .col.col--3 {
+    flex: 0 0 240px;
+    max-width: 240px;
+    padding-left: 1.5rem;
+  }
+
+  .theme-doc-toc-desktop {
+    border-left: none !important;
+    padding-left: 0 !important;
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1.5rem);
+    max-height: calc(100vh - var(--ifm-navbar-height) - 3rem);
+    overflow-y: auto;
+  }
+
+  // Drop the default left-border line on the TOC list (kept layout, no border)
+  ul.table-of-contents__left-border {
+    border-left: none !important;
+  }
+}
+
+// Page title sizing — Modal-ish: big but tight
+article header h1,
+article > h1:first-child,
+.markdown > h1:first-child {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+article h2 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+article h3 {
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+// Body prose
+article p,
+article li {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+// Subtle horizontal rule between sections
+article hr {
+  border: 0;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 2.5rem 0;
+}
+
+[data-theme="dark"] article hr {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+// Hide doc pagination (Previous / Next page links at bottom of doc)
+.pagination-nav {
+  display: none !important;
+}

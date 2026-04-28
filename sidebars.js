@@ -15,6 +15,11 @@
 module.exports = {
   sidebar: [
     {
+      label: "Introduction",
+      type: "doc",
+      id: "introduction",
+    },
+    {
       label: "Quickstart",
       type: "doc",
       id: "Quickstart",
@@ -22,13 +27,7 @@ module.exports = {
     {
       type: "category",
       label: "Reference",
-      // link: {
-      //   type: "generated-index",
-      //   title: "Reference",
-      //   slug: "category/Reference",
-
-      //   keywords: ["Reference"],
-      // },
+      collapsed: false,
       link: { type: "doc", id: "reference/index" },
       items: [
         "reference/yaml",

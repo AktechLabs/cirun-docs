@@ -1,6 +1,31 @@
 // Default variables are defined in this stylesheet
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+// Inter Variable (variable axis: weight + slant) — single file, loads instantly
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap");
+
+// Alias "Inter Variable" (with space) → same file rsms.me uses for "InterVariable"
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1") format("woff2");
+}
+@font-face {
+  font-family: "Inter Variable";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --global-font-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+    --global-heading-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+  }
+}
 
 :root {
   // cirun colours definition - the base colour is denoted by the `5` number i.e. --cirun-teal-5
@@ -84,6 +109,24 @@
   --cirun-purple-12: #6723bc;
   // --cirun-purple-5: #E9A6A6;
 
+  // Cirun brand blue (Argon #5e72e4) + indigo gradient end (#825ee4)
+  // Scale derived from #5e72e4 (HSL 228 72% 63%)
+  --cirun-blue-0: #0a0d22;
+  --cirun-blue-1: #131838;
+  --cirun-blue-2: #1c2452;
+  --cirun-blue-3: #26326c;
+  --cirun-blue-4: #2f3f87;
+  --cirun-blue-5: #3a4ea1;
+  --cirun-blue-6: #4a5ec3;
+  --cirun-blue-7: #5e72e4; // brand primary
+  --cirun-blue-8: #8090ec;
+  --cirun-blue-9: #a3afef;
+  --cirun-blue-10: #c5cdf5;
+  --cirun-blue-11: #e5e9fb;
+
+  --cirun-indigo-7: #825ee4; // gradient end / accent
+  --cirun-indigo-9: #b59cef;
+
   // ==============================================================================
   // Primitive Colors - default from infima replaced with cirun's colours
   // ==============================================================================
@@ -92,13 +135,15 @@
   --ifm-color-black-light: var(--cirun-blue-gray-1);
   --ifm-color-black-lighter: var(--cirun-blue-gray-2);
 
-  --ifm-color-purple-lightest: var(--cirun-purple-9);
-  --ifm-color-purple-lighter: var(--cirun-purple-8);
-  --ifm-color-purple-light: var(--cirun-purple-7);
-  --ifm-color-purple: var(--cirun-purple-5);
-  --ifm-color-purple-dark: var(--cirun-purple-4);
-  --ifm-color-purple-darker: var(--cirun-purple-3);
-  --ifm-color-purple-darkest: var(--cirun-purple-2);
+  // Primary alias mapping (kept under purple-* names to avoid breaking
+  // existing references; values now point at cirun blue)
+  --ifm-color-purple-lightest: var(--cirun-blue-10);
+  --ifm-color-purple-lighter: var(--cirun-blue-9);
+  --ifm-color-purple-light: var(--cirun-blue-8);
+  --ifm-color-purple: var(--cirun-blue-7);
+  --ifm-color-purple-dark: var(--cirun-blue-6);
+  --ifm-color-purple-darker: var(--cirun-blue-5);
+  --ifm-color-purple-darkest: var(--cirun-blue-4);
 
   --ifm-color-white: var(--cirun-blue-gray-11);
   --ifm-color-white-dark: var(--cirun-blue-gray-10);
@@ -123,9 +168,10 @@
   // ==============================================================================
   // Typography
   // ==============================================================================
-  --global-font-family: "Inter", "Inter Fallback", sans-serif;
-  --global-heading-family: "Inter", "Inter Fallback", sans-serif;
-  --global-block-family-code: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --global-font-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+  --global-heading-family: "Inter Variable", "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+  --global-block-family-code: "Fira Code", ui-monospace, "SF Mono", Menlo, monospace;
+  font-feature-settings: "cv11", "ss01", "ss03"; // Inter stylistic sets — single-story 'a', open '4', curved 'l'
 
   --ifm-code-font-size: 100%;
   --ifm-h4-font-size: 1.3rem;
@@ -138,8 +184,8 @@
   --ifm-menu-color: var(--cirun-blue-gray-4);
 
   // inline code colours
-  --cirun-code-color: var(--cirun-teal-4);
-  --cirun-code-color-dark: var(--secondary-cirun);
+  --cirun-code-color: var(--cirun-blue-7);
+  --cirun-code-color-dark: var(--cirun-indigo-9);
 
   // ==============================================================================
   // General Docusaurus
@@ -154,9 +200,9 @@
   --ifm-color-primary-lighter: var(--ifm-color-purple-lighter);
   --ifm-color-primary-lightest: var(--ifm-color-purple-lightest);
 
-  // Secondary and accent
-  --secondary-cirun: var(--cirun-purple-5);
-  --accent-cirun: var(--cirun-magenta-5);
+  // Secondary and accent — now cirun blue / indigo
+  --secondary-cirun: var(--cirun-blue-7);
+  --accent-cirun: var(--cirun-indigo-7);
 
   // Background
   --ifm-color-background: var(--ifm-color-white);
@@ -167,31 +213,36 @@
   --ifm-color-on-background-3: var(--ifm-color-black-lighter);
 
   // Admonition
-  --ifm-admonition-background-color: var(--cirun-purple-11);
-  --ifm-admonition-color: var(--cirun-purple-5);
+  --ifm-admonition-background-color: var(--cirun-blue-11);
+  --ifm-admonition-color: var(--cirun-blue-7);
 
-  --ifm-admonition-background-color-success: var(--cirun-teal-11);
-  --ifm-admonition-color-success: var(--cirun-teal-5);
+  --ifm-admonition-background-color-success: #e6f8f1;
+  --ifm-admonition-color-success: #1aa884;
 
-  --ifm-admonition-background-color-warning: var(--cirun-coral-11);
-  --ifm-admonition-color-warning: var(--cirun-coral-5);
+  --ifm-admonition-background-color-warning: #fff4e0;
+  --ifm-admonition-color-warning: #d98c14;
 
   --ifm-admonition-background-color-error: var(--cirun-coral-11);
   --ifm-admonition-color-error: var(--cirun-coral-5);
 
   // Navbar
   --ifm-navbar-background-color: var(--ifm-color-black);
-  --ifm-navbar-height: 80px;
-  --ifm-navbar-item-padding-horizontal: 20px;
-  --ifm-navbar-padding-horizontal: 30px;
+  --ifm-navbar-height: 72px;
+  --ifm-navbar-item-padding-horizontal: 16px;
+  --ifm-navbar-padding-horizontal: 24px;
   --ifm-dropdown-background-color: var(--ifm-color-on-background-2);
   --ifm-dropdown-hover-background-color: var(--ifm-color-on-background-3);
 
-  --ifm-global-radius: 3px;
+  --ifm-global-radius: 8px;
+
+  // Layout — wider container, narrower content column
+  --doc-sidebar-width: 280px;
+  --ifm-container-width: 1400px;
+  --ifm-container-width-xl: 1400px;
 
   // links
   --cirun-links: var(--ifm-color-content);
-  --cirun-links-dark: var(--cirun-purple-9);
+  --cirun-links-dark: var(--cirun-blue-9);
 }
 
 html[data-theme="dark"] {
@@ -234,15 +285,15 @@ html[data-theme="dark"] {
   --ifm-menu-color: var(--cirun-blue-gray-9);
 
   // Admonition
-  --ifm-admonition-background-color: var(--cirun-purple-9);
-  --ifm-admonition-color: var(--cirun-purple-4);
+  --ifm-admonition-background-color: rgba(94, 114, 228, 0.12);
+  --ifm-admonition-color: var(--cirun-blue-9);
 
-  --ifm-admonition-background-color-success: var(--cirun-teal-9);
-  --ifm-admonition-color-success: var(--cirun-teal-4);
+  --ifm-admonition-background-color-success: rgba(26, 168, 132, 0.14);
+  --ifm-admonition-color-success: #4cd6a8;
 
-  --ifm-admonition-background-color-warning: var(--cirun-coral-8);
-  --ifm-admonition-color-warning: var(--cirun-coral-4);
+  --ifm-admonition-background-color-warning: rgba(217, 140, 20, 0.16);
+  --ifm-admonition-color-warning: #f0b056;
 
-  --ifm-admonition-background-color-error: var(--cirun-coral-9);
-  --ifm-admonition-color-error: var(--cirun-coral-4);
+  --ifm-admonition-background-color-error: rgba(255, 90, 120, 0.14);
+  --ifm-admonition-color-error: #ff8aa3;
 }

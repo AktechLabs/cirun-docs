@@ -7,32 +7,81 @@
   text-decoration: none;
 
   .navbar__title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #fff !important;
   }
-  .navbar__logo{
-    height: 3rem;
+  .navbar__logo {
+    height: 3.25rem;
+  }
+  .navbar__logo img {
+    height: 100%;
+    width: auto;
   }
 }
 
+.navbar {
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+// In dark mode the navbar matches the dark page bg
+[data-theme="dark"] .navbar,
 .navbar--dark {
-  background-color: var(--ifm-color-black);
-  border-bottom: 1px solid var(--cirun-blue-gray-3);
-  box-shadow: rgba(66, 33, 112, 0.15) 0px 1.5px 3px 0px;
-  box-shadow: 0px 1.5px 3px 0px rgba(72, 74, 94, 0.16);
+  background-color: rgba(11, 11, 20, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+// Light-mode brand title color (was forced #fff in dark navbar default)
+.navbar__brand .navbar__title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme="dark"] .navbar__brand .navbar__title {
+  color: var(--cirun-blue-gray-11) !important;
+}
+
+// Light-mode nav links
+.navbar__link {
+  color: var(--ifm-color-content);
+}
+
+[data-theme="dark"] .navbar__link {
+  color: var(--cirun-blue-gray-11);
 }
 
 .navbar__link {
   text-decoration: none;
-  color: var(--cirun-blue-gray-11);
-  @include link-hover(var(--cirun-links-dark));
+  color: var(--ifm-color-content);
+  font-weight: 500;
+  font-size: 0.92rem;
+
+  &:hover {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
 }
 
-.navbar__link,
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
 [data-theme="dark"] {
   .navbar__link {
-    color: var(--cirun-blue-gray-11);
+    color: var(--cirun-blue-gray-9);
     text-decoration: none;
+
+    &:hover {
+      color: var(--cirun-blue-9);
+    }
+  }
+
+  .navbar__link--active {
+    color: var(--cirun-blue-9);
   }
 
   .navbar__brand {
@@ -91,9 +140,73 @@
   opacity: 0.6;
 }
 
-.header-github-link:before,
+.header-github-link:before {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  content: "";
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23222' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
+
 html[data-theme="dark"] .header-github-link:before {
   @include github-button;
+}
+
+// ==============================================================================
+// Right-side nav order: [GitHub] [Search] [Get Started]
+// ==============================================================================
+.navbar__items--right {
+  align-items: center;
+  gap: 0.4rem;
+}
+
+// Order: [Search] [GitHub] [Get Started]
+.navbar__items--right .navbar__search,
+.navbar__items--right .DocSearch,
+.navbar__items--right [class*="searchBox_"] { order: 0; }
+.navbar__items--right .header-github-link { order: 1; }
+.navbar__items--right .navbar-cta { order: 2; }
+
+// ==============================================================================
+// "Get Started" CTA — outlined pill, fills on hover
+// ==============================================================================
+
+.navbar-cta {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: transparent;
+  color: var(--cirun-blue-gray-11) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.85rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  margin-left: 0.25rem;
+  height: 36px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--cirun-blue-6);
+    border-color: var(--cirun-blue-6);
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  // Replace Docusaurus' external link icon with a clean arrow
+  svg { display: none; }
+  &::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f1f1f6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E");
+  }
 }
 
 // ==============================================================================

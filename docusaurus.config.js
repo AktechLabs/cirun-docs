@@ -52,7 +52,17 @@ const config = {
   // Plugings need installing first then add here
   plugins: [
     "docusaurus-plugin-sass",
-    require.resolve("docusaurus-lunr-search"),
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: "/",
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
   ],
   customFields: { ...customFields },
 
@@ -87,81 +97,63 @@ const config = {
     ({
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
-          hideable: true,
+          autoCollapseCategories: false,
+          hideable: false,
         },
       },
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
       navbar: {
         // title: customFields.meta.title,
         logo: {
           alt: "Cirun Documentation",
-          src: "img/cirun-logo.png",
+          src: "img/cirun-logo-light.svg",
+          srcDark: "img/cirun-logo-dark.svg",
         },
-        style: "dark",
         hideOnScroll: false,
         items: [
-          // right navbar items
-          // {
-          //   label: "Blog",
-          //   position: "right",
-          //   to: "/Blog",
-          // },
-
+          { to: "/", label: "Introduction", position: "left", activeBaseRegex: "^/$" },
+          { to: "/quickstart", label: "Quickstart", position: "left" },
+          { to: "/reference/", label: "Reference", position: "left" },
+          { to: "/cloud/", label: "Cloud", position: "left" },
+          { to: "/caching/", label: "Caching", position: "left" },
           {
             href: customFields.githubUrl,
             position: "right",
             className: "header-github-link",
             "aria-label": "Cirun GitHub repository",
           },
+          {
+            href: "https://cirun.io/login",
+            label: "Get Started",
+            position: "right",
+            className: "navbar-cta",
+          },
         ],
       },
       footer: {
-        style: "dark",
         links: [
           {
-            title: "Docs",
             items: [
-              {
-                label: "Quickstart",
-                to: "/",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Twitter",
-                href: "https://twitter.com/CirunHQ",
-              },
-              {
-                label: "Slack",
-                href: "https://slack.cirun.io",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              // {
-              //   label: "Blog",
-              //   to: "/Blog",
-              // },
-              {
-                label: "Home",
-                href: "https://cirun.io",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/aktechlabs/cirun-docs",
-              },
+              { label: "Home", href: "https://cirun.io" },
+              { label: "Pricing", href: "https://cirun.io/pricing" },
+              { label: "Quickstart", to: "/quickstart" },
+              { label: "Reference", to: "/reference/" },
+              { label: "About", href: "https://aktechlabs.com/about/" },
+              { label: "Blog", href: "https://aktechlabs.com/blog/" },
+              { label: "Status", href: "https://cirun.instatus.com/" },
+              { label: "Terms", href: "https://docs.cirun.io/terms-of-service" },
+              { label: "Privacy", href: "https://docs.cirun.io/privacy-policy" },
+              { label: "GitHub", href: "https://github.com/AktechLabs/cirun-docs", className: "footer-icon footer-icon-github" },
+              { label: "Twitter", href: "https://twitter.com/CirunHQ", className: "footer-icon footer-icon-twitter" },
+              { label: "Slack", href: "https://slack.cirun.io", className: "footer-icon footer-icon-slack" },
             ],
           },
         ],
-        copyright: `Copyright © 2021-${new Date().getFullYear()} Cirun.io`,
+        copyright: `© 2021-${new Date().getFullYear()} Cirun.io, Aktech Labs`,
       },
       prism: {
         theme: lightCodeTheme,

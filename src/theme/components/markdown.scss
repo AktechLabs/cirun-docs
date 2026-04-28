@@ -21,6 +21,18 @@
     }
   }
 
+  --ifm-list-paragraph-margin: 0.25rem;
+  --ifm-list-item-margin: 0.25rem;
+
+  ul,
+  ol {
+    li {
+      > p {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
   blockquote {
     background-color: var(--cirun-blue-gray-11);
     border-color: var(--accent-cirun);

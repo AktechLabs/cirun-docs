@@ -1,0 +1,192 @@
+// ==============================================================================
+// Inline navbar search (no modal). Theme-only on top of @easyops-cn/docusaurus-search-local.
+// Plugin uses CSS modules with hashed class names — target via [class*="..."].
+// ==============================================================================
+
+[class*="searchBox_"] {
+  position: relative;
+  margin: 0 0.5rem;
+}
+
+[class*="searchBarContainer_"] {
+  position: relative;
+  width: 240px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__search-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 999px !important;
+  height: 36px !important;
+  padding: 0 4.5rem 0 2.5rem !important;
+  width: 100% !important;
+  font-family: var(--global-font-family) !important;
+  font-size: 0.9rem !important;
+  color: var(--cirun-blue-gray-11) !important;
+  cursor: text;
+  background-image: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &::placeholder {
+    color: var(--cirun-blue-gray-7) !important;
+  }
+
+  &:hover {
+    border-color: rgba(94, 114, 228, 0.5) !important;
+    box-shadow: 0 0 0 1px rgba(94, 114, 228, 0.35) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    border-color: var(--cirun-blue-7) !important;
+    background-color: rgba(94, 114, 228, 0.06) !important;
+    box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.4) !important;
+  }
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+}
+
+// Magnifier icon — render via pseudo on the searchBarContainer (always shows even
+// if plugin's own icon span is absent or themed differently).
+[class*="searchBarContainer_"]::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239c9eba' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Hide plugin's own icon (we render our own via ::before above)
+[class*="searchBoxIcon_"],
+[class*="iconWrapper_"] {
+  display: none !important;
+}
+
+// ⌘K kbd hint — inside the input box, vertically centered
+[class*="searchHintContainer_"] {
+  position: absolute !important;
+  right: 8px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 2px;
+  pointer-events: none;
+  height: auto !important;
+}
+
+[class*="searchHint_"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  color: var(--cirun-blue-gray-7) !important;
+  font-family: var(--global-font-family) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+// Hide kbd hint while focused
+[class*="searchBox_"]:focus-within [class*="searchHintContainer_"] { display: none; }
+
+// ==============================================================================
+// Suggestion dropdown (rendered below input by plugin)
+// ==============================================================================
+[class*="dropdownMenu_"] {
+  background-color: #14161e !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+  font-family: var(--global-font-family) !important;
+  padding: 8px !important;
+  margin-top: 6px !important;
+}
+
+[class*="suggestion_"] {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  color: var(--cirun-blue-gray-11) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+[class*="suggestion_"][aria-selected="true"],
+[class*="suggestion_"]:hover,
+[class*="cursor_"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[class*="suggestion_"] svg {
+  width: 16px;
+  height: 16px;
+  color: var(--cirun-blue-gray-7);
+  flex-shrink: 0;
+}
+
+[class*="suggestion_"][aria-selected="true"] svg {
+  color: var(--cirun-blue-9);
+}
+
+// Match highlight
+[class*="dropdownMenu_"] mark,
+mark {
+  background: transparent !important;
+  color: var(--cirun-blue-gray-11) !important;
+  font-weight: 700 !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  padding: 0 !important;
+}
+
+[class*="hitTitle_"],
+[class*="suggestionTitle_"] {
+  color: var(--cirun-blue-gray-11) !important;
+  font-weight: 500 !important;
+  font-size: 0.92rem !important;
+}
+
+[class*="hitPath_"],
+[class*="suggestionPath_"] {
+  color: var(--cirun-blue-gray-7) !important;
+  font-size: 0.78rem !important;
+  margin-top: 2px;
+}
+
+[class*="hitFooter_"],
+[class*="seeAll_"] {
+  color: var(--cirun-blue-9) !important;
+  font-size: 0.82rem !important;
+  text-align: center;
+  padding: 10px !important;
+}

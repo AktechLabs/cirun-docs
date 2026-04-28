@@ -1,0 +1,39 @@
+/* Compact reference-list style card — no emoji, no underline, subtle border */
+.cardContainer {
+  display: block;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  height: 100%;
+}
+
+.cardContainer:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none !important;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--ifm-color-content);
+  font-family: var(--global-heading-family);
+  letter-spacing: -0.01em;
+  text-decoration: none !important;
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+  margin: 0;
+  line-height: 1.5;
+  text-decoration: none !important;
+}
+
+.cardContainer:hover .cardTitle {
+  color: var(--ifm-color-primary);
+}

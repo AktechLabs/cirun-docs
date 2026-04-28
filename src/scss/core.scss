@@ -10,7 +10,21 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--global-heading-family);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+
+  // Anchor wrapping heading text — drop underline
+  a,
+  a:hover {
+    text-decoration: none;
+    color: inherit;
+    text-decoration-color: transparent;
+  }
 }
+
+h1 { letter-spacing: -0.025em; }
+h2 { letter-spacing: -0.02em; }
 
 html,
 body {
@@ -19,6 +33,9 @@ body {
 
 body {
   font-family: var(--global-font-family);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 [data-theme="dark"] {
