@@ -177,11 +177,11 @@ sudo -E cirun-agent --install-service --max-runners 5   # Linux
 cirun-agent --install-service --max-runners 5           # macOS
 ```
 
-### Zero-latency jobs with [idle runners](reference/idle-runners.md)
+### Zero-latency jobs with [idle runners](./reference/idle_runners.md)
 
 Cloud runners take a couple of minutes to provision, but on-prem runners
 provision in seconds — and even those seconds disappear if you keep a
-warm pool with [`idle:`](reference/idle-runners.md). An idle runner is
+warm pool with [`idle:`](./reference/idle_runners.md). An idle runner is
 already booted and registered with GitHub, so a job picks it up instantly.
 
 ```yml
@@ -199,5 +199,5 @@ runners:
 
 Keep `replicas` ≤ `--max-runners` (otherwise the idle pool can't reach its
 target). When using idle runners, drop the `--${{ github.run_id }}` suffix
-on `runs-on` — see [Idle Runners](reference/idle-runners.md) for full
+on `runs-on` — see [Idle Runners](./reference/idle_runners.md) for full
 details and time-windowed schedules.
