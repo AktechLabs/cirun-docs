@@ -76,7 +76,7 @@ runners:
   - name: gcp-cpu-runner
     cloud: gcp
     instance_type: n1-standard-1
-    machine_image: ubuntu-2004-focal-v20220712
+    machine_image: ubuntu-2204-lts
     labels:
       - cirun-gcp-cpu
 
