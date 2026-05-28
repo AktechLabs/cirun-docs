@@ -535,6 +535,17 @@ Configure service accounts for the instance.
             - "https://www.googleapis.com/auth/compute"
 ```
 
+#### Disable public IP address for GCP
+
+By default, GCP runners are provisioned with an external (public) IP. Set `enable_public_ip: false` to provision runners with only a private IP — use this when you don't want runners reachable on a public IP (security policy, internal-only egress, or any setup where a public IP on the runner is undesirable).
+
+Cirun provisions a Cloud NAT in your GCP project the first time you use this flag in a region, so your runners still have outbound access to GitHub, package registries, and the public internet. The NAT is reused by every subsequent runner in the same region.
+
+```yml
+    extra_config:
+      enable_public_ip: false
+```
+
 ### Azure Extra Configuration
 
 #### Custom Disk Size for Azure
@@ -550,7 +561,7 @@ To customize the root volume size for runners spun up on Azure:
 
 #### Enable public IP address for Azure
 
-This will enable provisioning of public ip address on VMs created on Azure.
+By default, Azure runners are provisioned without a public IP — outbound traffic to GitHub and package registries goes through Azure's default outbound. Set `enable_public_ip: true` to attach a static public IP to the runner, which you'll want when the workflow needs the VM to be reachable from outside Azure or you have a firewall allowlist that requires a stable source IP.
 
 ```yml
     extra_config:
