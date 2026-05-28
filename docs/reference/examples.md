@@ -30,8 +30,9 @@ runners:
     gpu: "nvidia-tesla-t4"
     # Cheapest VM on GCP, with GPU attachable
     instance_type: "n1-standard-1"
-    # Ubuntu-20.4, can be seen from "gcloud compute images list"
-    machine_image: "ubuntu-2004-focal-v20221018"
+    # Ubuntu 22.04 LTS family — auto-resolves to the current image.
+    # Canonical retires dated snapshots; prefer the family name over a pinned version.
+    machine_image: "ubuntu-2204-lts"
     preemptible: false
     # Add this label in the "runs-on" param in .github/workflows/<workflow-name>.yml
     # So that this runner is created for running the workflow
