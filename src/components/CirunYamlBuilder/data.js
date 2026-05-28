@@ -217,14 +217,16 @@ export const AZURE_IMAGES = {
   },
 };
 
+// Family names from ubuntu-os-cloud. They auto-resolve to the current
+// non-deprecated image, so we don't rot when Canonical retires snapshots.
 export const GCP_IMAGES = {
   'ubuntu-2204': {
-    x86_64: 'ubuntu-2204-jammy-v20260313',
-    arm64: 'ubuntu-minimal-2204-jammy-arm64-v20260313',
+    x86_64: 'ubuntu-2204-lts',
+    arm64: 'ubuntu-2204-lts-arm64',
   },
   'ubuntu-2404': {
-    x86_64: 'ubuntu-2404-noble-amd64-v20260316',
-    arm64: 'ubuntu-2404-noble-arm64-v20260316',
+    x86_64: 'ubuntu-2404-lts-amd64',
+    arm64: 'ubuntu-2404-lts-arm64',
   },
 };
 
