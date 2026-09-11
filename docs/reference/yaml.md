@@ -546,6 +546,17 @@ Cirun provisions a Cloud NAT in your GCP project the first time you use this fla
       enable_public_ip: false
 ```
 
+#### Host maintenance behavior for GCP
+
+When Google performs maintenance on the physical host, `e2` machine types live migrate and every other machine type is stopped, which fails any job running on the runner at that moment. Set `onHostMaintenance` to `MIGRATE` to keep the runner alive through a maintenance event.
+
+```yml
+    extra_config:
+      onHostMaintenance: MIGRATE
+```
+
+GCP does not allow `MIGRATE` on preemptible instances or on instances with a GPU attached, and rejects the instance request if you combine them.
+
 ### Azure Extra Configuration
 
 #### Custom Disk Size for Azure
