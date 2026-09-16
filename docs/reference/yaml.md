@@ -552,7 +552,8 @@ When Google performs maintenance on the physical host, `e2` machine types live m
 
 ```yml
     extra_config:
-      onHostMaintenance: MIGRATE
+      scheduling:
+        onHostMaintenance: MIGRATE
 ```
 
 GCP does not allow `MIGRATE` on preemptible instances or on instances with a GPU attached, and rejects the instance request if you combine them.
