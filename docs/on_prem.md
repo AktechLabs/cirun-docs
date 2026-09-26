@@ -126,6 +126,43 @@ on-demand ephemeral runners for GitHub Actions.
     toolchain. Host needs `nvidia-container-toolkit` installed; `gpu: all`
     is passed through to `docker run --gpus`.
 
+    **GPU VM (meda) — VFIO passthrough:**
+    ```yml
+    runners:
+      - name: cirun-meda-gpu
+        cloud: on_prem
+        instance_type: 4vcpu-8gb-50gb
+        machine_image: "ubuntu-gpu:latest"
+        region: RegionOne
+        extra_config:
+          executor: meda
+          gpu: all
+        labels:
+          - cirun-meda-gpu
+    ```
+
+    This passes a physical NVIDIA GPU straight into a lightweight VM via
+    VFIO, so the job gets the real device (`nvidia-smi` works inside the
+    runner), not a shared container view. `gpu: all` leases every free GPU
+    on the host to the VM; `gpu: 1` (or any integer) leases that many.
+
+    Each GPU is leased **exclusively** to one runner. When all GPUs are
+    in use, further GPU jobs are held as backpressure and retried once a
+    device frees up — they are not failed. Non-GPU jobs are unaffected.
+
+    The `ubuntu-gpu` image ships the NVIDIA driver pre-installed and is
+    built + published to `ghcr.io/cirunlabs/ubuntu-gpu` by
+    [`packer-plugin-meda`](https://github.com/cirunlabs/packer-plugin-meda).
+
+    :::note Host setup
+    VFIO passthrough needs one-time host configuration: enable the IOMMU
+    (`intel_iommu=on` on the kernel cmdline, **without** `iommu=pt`), bind
+    the target NVIDIA device to the `vfio-pci` driver, install `genisoimage`
+    and `qemu-utils`, and give `cirun-agent` `LimitMEMLOCK=infinity` (VFIO
+    pins guest RAM). See the reference host script in the
+    [meda repository](https://github.com/cirunlabs/meda).
+    :::
+
 5. Configure your workflow to use the runner:
 
     ```yml
@@ -145,7 +182,7 @@ all apply to the `docker` executor unless noted.
 | `executor` | `meda` \| `lume` \| `docker` | Override the host default. Required if the host supports more than one (e.g. Linux with Docker installed but you want a VM). |
 | `privileged` | bool | Run the container with `--privileged`. Required for docker-in-docker. |
 | `docker_socket_mount` | bool | Bind-mount `/var/run/docker.sock` from the host into the runner so jobs share the host daemon (docker-out-of-docker). |
-| `gpu` | string (e.g. `all`) | Pass through to `docker run --gpus`. Requires `nvidia-container-toolkit` on the host. |
+| `gpu` | `all` \| `none` \| integer | GPU request. **docker**: passed to `docker run --gpus` (needs `nvidia-container-toolkit`). **meda**: VFIO passthrough of that many physical GPUs into the VM, leased exclusively per runner. `all` = every free GPU; an integer = that many. |
 
 ## Capacity planning
 
